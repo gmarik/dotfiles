@@ -1,0 +1,24 @@
+#!/bin/bash
+
+COUNT_DOWN=5
+SLEEP=5
+COUNT=0
+CMD="$@"
+
+[[ -z $CMD ]] && echo 'repeat COMMAND' && exit 1
+
+echo $CMD
+
+while [ $COUNT_DOWN -gt 0 ]; do
+# if [ -z $COUNT ]; then 
+#   let COUNT_DOWN-=1
+# fi
+
+  let COUNT+=1
+  echo $COUNT >&2
+  
+  $CMD
+
+  sleep $SLEEP
+done
+

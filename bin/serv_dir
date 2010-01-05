@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+require 'webrick'
+
+conf = {
+  :Port => 5000, 
+  :BindAddress => "127.0.0.1", 
+  :DocumentRoot => Dir.pwd
+}
+
+conf.merge!({:BindAddress => '0.0.0.0'}) if ENV['P']
+
+
+s = WEBrick::HTTPServer.new(conf)
+
+trap('INT') { s.shutdown }
+trap('TERM') { s.shutdown }
+
+s.start

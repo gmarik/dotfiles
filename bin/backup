@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo rsync -a --delete /home/gmarik /etc /home/gms /media/disk/backup
