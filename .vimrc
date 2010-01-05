@@ -140,27 +140,19 @@ inoremap <C-S> <C-O>:update<CR>
 
 
 " FuzzyFinder 
-nnoremap <silent> <LocalLeader>fb :FuzzyFinderBuffer<CR>
+nnoremap <silent> <LocalLeader>h :FufHelp<CR>
 
-nnoremap <silent> <LocalLeader>ff :FuzzyFinderFile<CR>
-nnoremap <silent> <LocalLeader>fd :FuzzyFinderDir<CR>
-"nnoremap <silent> <LocalLeader>fj :FuzzyFinderTextMate<CR>
-nnoremap <silent> <LocalLeader>ft :FuzzyFinderTag<CR>
-nnoremap <silent> <LocalLeader>fk :FuzzyFinderMruCmd<CR>
-nnoremap <silent> <LocalLeader>fm :FuzzyFinderMruFile<CR>
-
-nnoremap <silent> <F2> :FuzzyFinderFileWithCurrentBufferDir<CR>
-nnoremap <silent> <S-F2> :FuzzyFinderFile<CR>
-nnoremap <silent> <F3> :FuzzyFinderBuffer<CR>
-nnoremap <silent> <F4> :FuzzyFinderDir<CR>
-nnoremap <silent> <F5> :FuzzyFinderTag<CR>
-nnoremap <silent> <F6> :FuzzyFinderMruFile<CR>
-nnoremap <silent> <F7> :FuzzyFinderMruCmd<CR>
-nnoremap <silent> <F8> :FuzzyFinderBookmark<CR> 
-nnoremap <silent> <F9> :FuzzyFinderTaggedFile<CR> 
-
-"AutoBookmark
+nnoremap <silent> <F2> :FufFileWithCurrentBufferDir<CR>
+nnoremap <silent> <S-F2> :FufFile<CR>
+nnoremap <silent> <F3> :FufBuffer<CR>
+nnoremap <silent> <F4> :FufDirWithCurrentBufferDir<CR>
+nnoremap <silent> <S-F4> :FufDir<CR>
+nnoremap <silent> <F5> :FufChangeList<CR>
+nnoremap <silent> <F6> :FufMruFile<CR>
+nnoremap <silent> <F7> :FufLine<CR>
+nnoremap <silent> <F8> :FufBookmark<CR> 
 nnoremap <silent> <S-F8> :FuzzyFinderAddBookmark<CR><CR>
+nnoremap <silent> <F9> :FufTaggedFile<CR> 
 
 "
 " Misc
