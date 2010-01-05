@@ -1,0 +1,10 @@
+*.iml
+*.ipr
+*.iws
+.generators
+.rakeTasks
+TAGS
+tags
+*.DS_Store
+__MACOSX/*
+dotfiles.git

@@ -1,0 +1,76 @@
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = black bold
+  frag = magenta bold
+  old = red 
+  new = blue
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+
+[core]
+	excludesfile = /home/gmarik/.gitignore
+[alias]
+	b = branch
+	bd = branch -D
+	bmv = branch -m
+	cg = config --global
+  ceg = config --global --edit
+	clg = config --global --list
+	c = config 
+	cl = config --list
+  ce = config --edit
+	co = checkout
+	cob = checkout -b
+	com = "!f() { git fetch; git checkout -b master origin/master; }; f"
+	cot = "!f() { git fetch; git checkout -b $1 origin/$1; }; f"
+	ci = commit -v
+  cia = commit -v -a
+  ciab = !B=$(git symbolic-ref HEAD 2>/dev/null) && git commit -v -a --edit -m "${B##refs/heads/}:"
+	cii = commit --interactive
+	cid = commit --amend
+	cim = commit -m
+	cip = commit -am '[...in progress...]' 
+  cir = reset HEAD^
+	chp = cherry-pick 
+	d = diff
+	do = diff ORIG_HEAD..
+  ds = diff --stat=120,130 -M -C 
+	dy = diff --summary -M -C
+  em = "!${EDITOR:-vim} $(git ls-files --modified)"
+  eo = "!${EDITOR:-vim} $(git ls-files --other)"
+  k = "!gitk &"
+	l = log --date=local
+  ls = log --stat=120,130 --date=local
+  lp = log -p --date=local
+	ll = log --pretty=oneline --date=local
+	lu = log ORIG_HEAD.. --stat --no-merges --date=local
+  po = push origin HEAD
+  poh = push origin HEAD
+	r = rebase
+  ra = rebase --abort
+	rc = rebase --continue
+	ri = rebase --interactive
+  rih = "!f() { git rebase -i HEAD$1; }; f "
+  rst = reset
+	st = status
+	sv = svn
+	svci = svn dcommit --no-rebase
+	svr = svn rebase
+  ta = tag -a
+#  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
+  up = pull
+[user]
+	name = gmarik
+	email = gmarik@gmail.com
+[push]
+	default = tracking
