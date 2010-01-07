@@ -154,6 +154,8 @@ nnoremap <silent> <F8> :FufBookmark<CR>
 nnoremap <silent> <S-F8> :FuzzyFinderAddBookmark<CR><CR>
 nnoremap <silent> <F9> :FufTaggedFile<CR> 
 
+let g:fuf_modesDisable = []
+
 "
 " Misc
 set pastetoggle=<F10> "  toggle between paste and normal: for 'safer' pasting from keyboard
