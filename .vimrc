@@ -117,16 +117,18 @@ nnoremap <silent> <LocalLeader>= YP
 "Selection searc
 vnoremap / y/<C-R>"<CR>N
 
-" Line splitting
-nnoremap <silent> <C-J> gEa<CR><ESC>ew "Split line(opposite to S-J - joining line) 
+" Line splitting "Split line(opposite to S-J - joining line) 
+nnoremap <silent> <C-J> gEa<CR><ESC>ew 
 
 " Folding with SimpleFold
 map <unique> <silent> <LocalLeader>- <Plug>SimpleFold_Foldsearch
 
 "remap forward|backward-search-word-under-cursor to stay on the keyword and highlight it 
 " movement: n (up) or N (down)
-nmap # #N " strict highlight: delimited word
-nmap * "ayiw/<C-r>a<CR> " loose highlight: maybe a part of 
+" strict highlight: delimited word
+" loose highlight: maybe a part of 
+nmap # #N
+nmap * "ayiw/<C-r>a<CR>
 
 map <S-CR> A<CR><ESC>
 "TODO: doesnt work
@@ -159,8 +161,10 @@ let g:fuf_modesDisable = []
 "
 " Misc
 set pastetoggle=<F10> "  toggle between paste and normal: for 'safer' pasting from keyboard
-map <silent> <F12> :set invlist<CR>     " show/Hide hidden Chars
-map <silent> <LocalLeader>2h :runtime! syntax/2html.vim<CR> " generate HTML version current buffer using current color scheme
+" show/Hide hidden Chars
+map <silent> <F12> :set invlist<CR>     
+" generate HTML version current buffer using current color scheme
+map <silent> <LocalLeader>2h :runtime! syntax/2html.vim<CR> 
 
 if has("autocmd")
   " This section returns to the last place you were in a file
