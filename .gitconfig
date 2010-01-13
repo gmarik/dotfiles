@@ -58,7 +58,7 @@
   po = push origin HEAD
   poh = push origin HEAD
   pu = pull
-  pp = !git pull && git push
+  s = !git pull && git push
 	r = rebase
   ra = rebase --abort
 	rc = rebase --continue
