@@ -85,8 +85,8 @@ set mousehide  " Hide mouse after chars typed
 
 
 " Backup
+set nowritebackup
 set nobackup
-set writebackup
 set backupdir=~/.backup,/tmp
 set directory=~/.backup,/tmp
 
