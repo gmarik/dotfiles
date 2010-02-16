@@ -3,6 +3,12 @@ require 'irb/ext/save-history'
 
 require 'pp'
 
+def mps(entry = nil)
+  puts entry if entry
+  mm = `ps -p #{$$} -o rss -o %mem| tail -1`.strip.split(/\s+/)
+  {:rss =>mm[0], :mem => mm[1]}
+end
+
 IRB.conf[:SAVE_HISTORY] = 100
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history" 
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
@@ -20,6 +26,7 @@ if rails_env = ENV['RAILS_ENV']
     :PROMPT_C => "#{rails_root}? ",
     :RETURN   => "=> %s\n" 
   }
+
   IRB.conf[:PROMPT_MODE] = :RAILS
 
   # Called after the irb session is initialized and Rails has
