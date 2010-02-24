@@ -2,6 +2,7 @@
 gem: --no-ri --no-rdoc
 :sources: 
 #- http://gems.rubyforge.org/
+- http://rubygems.org
 - http://gemcutter.org
 - http://gems.github.com
 :update_sources: true
