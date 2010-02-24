@@ -127,7 +127,8 @@ map <unique> <silent> <LocalLeader>- <Plug>SimpleFold_Foldsearch
 " movement: n (up) or N (down)
 " strict highlight: delimited word
 " loose highlight: maybe a part of 
-nmap # #N
+"nmap # #N
+nnoremap # :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
 nmap * "ayiw/<C-r>a<CR>
 
 map <S-CR> A<CR><ESC>
