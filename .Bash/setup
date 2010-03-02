@@ -1,3 +1,0 @@
-#/bin/sh
-ln -s ~/.Bash/.bashrc ~/
-ln -s ~/.Bash/.bash_profile ~/
