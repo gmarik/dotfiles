@@ -3,4 +3,4 @@
 source ~/.bash/profile
 source ~/.bash/functions.bash
 
-if [[ -s /home/gmarik/.rvm/scripts/rvm ]] ; then source /home/gmarik/.rvm/scripts/rvm ; fi
+[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
