@@ -1,6 +1,6 @@
 # .bashrc
 
-source ~/.bash/profile.bash
+source ~/.bash/profile
 source ~/.bash/functions.bash
 
 if [[ -s /home/gmarik/.rvm/scripts/rvm ]] ; then source /home/gmarik/.rvm/scripts/rvm ; fi
