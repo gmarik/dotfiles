@@ -1,4 +1,4 @@
 alias ?='\grep -i'
 alias ??='? -nR'
 # grep results recursively into editor
-alias ?e='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |e - ; }; f '
+alias ?E='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |E - ; }; f '

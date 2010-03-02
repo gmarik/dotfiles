@@ -1,3 +1,3 @@
 alias vi='vim'
-alias e='vi'
+alias E=$EDITOR
 
