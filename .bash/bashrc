@@ -1,10 +1,7 @@
 # .bashrc
-RCS=~/.bash/rc.d/ 
-FILES=$(find $RCS -type f)
 
-for f in $FILES; do
-  source $f
-done
+source ~/.bash/profile.bash
+source ~/.bash/functions.bash
 
 export EC2_HOME='/opt/aws/ec2-api-tools'
 export AWS_ELB_HOME='/opt/aws/elb-api-tools'
