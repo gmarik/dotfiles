@@ -5,15 +5,17 @@
 #
 export EDITOR='vim'
 
+export EC2_HOME='/opt/aws/ec2-api-tools'
+export AWS_ELB_HOME='/opt/aws/elb-api-tools'
+export AWS_RDS_HOME='/opt/aws/rds-tools'
+
+export PATH=$PATH:$EC2_HOME/bin:$AWS_ELB_HOME/bin:$AWS_RDS_HOME/bin
+export PATH=$PATH:~/.gem/ruby/1.8/bin
+
 #
 # Completion
 #
 [ -f /etc/bash_completion ] && source /etc/bash_completion
-
-#
-# Grep 
-#
-export GREP_OPTIONS='--color=auto'
 
 #
 # History
@@ -37,6 +39,24 @@ export PROMPT_COMMAND="$PROMPT_COMMAND;history -a" #evaluated each time command 
 # Prompt string
 #
 PS1='\[\033[1;3;12;43m\]\D{%H:%M}\[\033[0;20m\]\[\033[0;35m\] $(__git_ps1 "%s\\\" )\[\033[00m\]\[\033[01;34m\]\W\[\033[00m\]\$ '
+
+#
+# Git
+#
+alias G='git'
+complete -o default -o nospace -F _git G # allow git-completion to work with alias either
+
+# dotfiles
+alias Gdf="G --work-tree=$HOME --git-dir=$HOME/dotfiles.git"
+
+#
+# Grep
+#
+export GREP_OPTIONS='--color=auto'
+
+alias ?='\grep -i'
+alias ??='? -nR'
+alias ?E='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |E - ; }; f ' # grep results into editor
 
 #
 # Aliases
@@ -83,17 +103,6 @@ alias Bstats='f() { history|cut -d\  -f4-5|sort|uniq -c|sort -rn|head -${1:-30};
 alias vi='vim'
 alias E=$EDITOR
 
-# git
-alias G='git'
-complete -o default -o nospace -F _git G # allow git-completion to work with alias either
-
-# dotfiles
-alias Gdf="G --work-tree=$HOME --git-dir=$HOME/dotfiles.git"
-
-# grep
-alias ?='\grep -i'
-alias ??='? -nR'
-alias ?E='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |E - ; }; f ' # grep results into editor
 
 # rails
 alias rails1='rails _1.2.6_'
