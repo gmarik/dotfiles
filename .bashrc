@@ -1,5 +1,5 @@
 # .bashrc
-RCS=~/.Bash/rc.d/ 
+RCS=~/.bash/rc.d/ 
 FILES=$(find $RCS -type f)
 
 for f in $FILES; do
