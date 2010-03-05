@@ -4,6 +4,7 @@
 # Environment
 #
 export EDITOR='vim'
+export LESS="--RAW-CONTROL-CHARS"  # colored, same as -R
 
 export EC2_HOME='/opt/aws/ec2-api-tools'
 export AWS_ELB_HOME='/opt/aws/elb-api-tools'
@@ -59,6 +60,17 @@ alias ??='? -nR'
 alias ?E='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |E - ; }; f ' # grep results into editor
 
 #
+# Less coloring
+#
+#export LESS_TERMCAP_mb=$'\E[01;31m'
+#export LESS_TERMCAP_md=$'\E[01;31m'
+#export LESS_TERMCAP_me=$'\E[0m'
+#export LESS_TERMCAP_se=$'\E[0m'
+#export LESS_TERMCAP_so=$'\E[01;44;33m'
+#export LESS_TERMCAP_ue=$'\E[0m'
+#export LESS_TERMCAP_us=$'\E[01;32m'
+
+#
 # Aliases
 #
 
@@ -93,7 +105,6 @@ alias du='du -sh'
 alias dua='\du -ah'
 
 alias tf='tail -f '
-alias less='less -R'
 
 # bash
 alias Brc='E ~/.bashrc && source ~/.bashrc'
