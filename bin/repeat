@@ -1,7 +1,7 @@
 #!/bin/bash
 
 COUNT_DOWN=5
-SLEEP=5
+SLEEP=${SLEEP:-5}
 COUNT=0
 CMD="$@"
 
