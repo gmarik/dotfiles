@@ -104,6 +104,8 @@ alias l='ls -l'
 alias du='du -sh'
 alias dua='\du -ah'
 
+alias df='df --human-readable' 
+
 alias tf='tail -f '
 
 # bash
@@ -113,7 +115,6 @@ alias Bstats='f() { history|cut -d\  -f4-5|sort|uniq -c|sort -rn|head -${1:-30};
 # editor
 alias vi='vim'
 alias E=$EDITOR
-
 
 # rails
 alias rails1='rails _1.2.6_'
