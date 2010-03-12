@@ -21,7 +21,7 @@
 	excludesfile = /home/gmarik/.gitignore
 [alias]
 	b = branch
-	bd = branch -D
+	brm = branch -D
 	bmv = branch -m
 	cg = config --global
   ceg = config --global --edit
