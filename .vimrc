@@ -1,5 +1,4 @@
 " Notes "{{{
-" folding organization: from http://vi-improved.org/vimrc.php
 " http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/225852#225852
 " Shortcuts to quit the Insert mode:
 "
