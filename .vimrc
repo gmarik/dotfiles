@@ -32,17 +32,16 @@ set incsearch   "
 
 " Folding "{{{
   set foldenable " Turn on folding
-  set foldmarker={,} " Fold C style code (only use this as default 
                       " if you use a high foldlevel)
   set foldmethod=marker " Fold on the marker
   set foldlevel=100 " Don't autofold anything (but I can still 
                     " fold manually)
   set foldopen=block,hor,mark,percent,quickfix,tag " what movements
                                                     " open folds 
-  function SimpleFoldText() " "{{{
-      return getline(v:foldstart).' '
-  endfunction " "}}}
-  set foldtext=SimpleFoldText() " Custom fold text function 
+" function SimpleFoldText() " "{{{
+"     return getline(v:foldstart).' '
+" endfunction " "}}}
+" set foldtext=SimpleFoldText() " Custom fold text function 
                                  " (cleaner than default)
 " "}}}
 
