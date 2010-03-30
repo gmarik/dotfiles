@@ -1,31 +1,53 @@
-" NEW STUFF: http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/225852#225852
+" Notes {
+" vim: set foldmarker={,} foldlevel=0 :
+" folding organization: from http://vi-improved.org/vimrc.php
+" http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/225852#225852
 " Shortcuts to quit the Insert mode:
 "
 "Ctrl-c " "quit Insert mode (faster than ESC)
 "Ctrl-o " "quit insert mode just for the time of one command
 "CTRL-o + I, or CTRL-o + 0 " "quit insert mode, go at beginning of line, and go back to insert mode
 "CTRL-o + A, or CTRL-o + $ " "quit insert mode, go at end of line, and go back to insert mode
+" }
 "
-"
-syntax on " enable syntax
-filetype on  " Automatically detect file types.
+" General {
+set nocompatible  " disable vi compatibility.
+
+syntax on               " enable syntax
+filetype on             " Automatically detect file types.
 filetype plugin on
 filetype indent on
 
-" General
-set nocompatible  " disable vi compatibility.
+set runtimepath+=~/.vim " For our local plugins and files
 
-" configuration
 set modeline
 set modelines=5 " default numbers of lines to read for modeline instructions
+" }
 
-" Matching and searchin
+" Matching and searchin {
 set hlsearch    " highlight search
 set ignorecase  " Do case in sensitive matching with
 set smartcase		" be sensitive when there's a capital letter
 set incsearch   "
+" }
 
-" Buffers
+" Folding {
+  set foldenable " Turn on folding
+  set foldmarker={,} " Fold C style code (only use this as default 
+                      " if you use a high foldlevel)
+  set foldmethod=marker " Fold on the marker
+  set foldlevel=100 " Don't autofold anything (but I can still 
+                    " fold manually)
+  set foldopen=block,hor,mark,percent,quickfix,tag " what movements
+                                                    " open folds 
+  function SimpleFoldText() " {
+      return getline(v:foldstart).' '
+  endfunction " }
+  set foldtext=SimpleFoldText() " Custom fold text function 
+                                 " (cleaner than default)
+" }
+
+" Buffers {
 set hidden " The current buffer can be put to the background without writing to disk
 
 set cf  " Enable error files & error jumping.
@@ -34,33 +56,40 @@ set history=256  " Number of things to remember in history.
 set autowrite  " Writes on make/shell commands
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 
-"" Formatting
+" }
+
+" Formatting {
 set fo+=o " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
 set fo-=r " Do not automatically insert a comment leader after an enter
 set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
-"
-" Indent options
+" }
+
+" Indent options {
 set cindent
 set autoindent
 set cinoptions=:s,ps,ts,cs
 set cinwords=if,else,while,do,for,switch,case
-"
-" Line wrapping
+" }
+
+" Line wrapping {
 set nowrap
 set textwidth=0		" Don't wrap lines by default
+"}
 
-" Backspace 
+" Backspace {
 set backspace=indent,eol,start	" more powerful backspacing
-"
-" Tabs and spaces
+" }
+
+" Tabs and spaces {
 set tabstop=2    " Set the default tabstop
 set shiftwidth=2 " Set the default shift width for indents
 set expandtab   " Make tabs into spaces (set by tabstop)
 set smarttab " Smarter tab levels
 set list " Display unprintable characters
 set listchars=tab:·\ ,eol:↲,trail:·,extends:>,precedes:< " Unprintable chars mapping
+"}
 
-" Visual
+" Visual {
 set nonumber  " Line numbers off
 set showmatch  " Show matching brackets.
 set matchtime=5  " Bracket blinking.
@@ -71,30 +100,30 @@ set ruler  " Show ruler
 set showcmd " Display an incomplete command in the lower right corner of the Vim window
 set shortmess=atI " Shortens messages
 set wildmode=longest,list " At command line, complete longest common string, then list alternatives.
-"
-" Color Themes
+" }
+
+" Color Themes {
 " colorscheme vividchalk
 " colorscheme darkblue
 " TODO:
 "colorscheme desert
 colorscheme gmarik
+"}
 
-" Mouse
+" Mouse {
 set mouse-=a " Disable mouse
 set mousehide  " Hide mouse after chars typed
+"}
 
-
-" Backup
+" Backup {
 set nowritebackup
 set nobackup
 set backupdir=~/.backup,/tmp
 set directory=~/.backup,/tmp
+" }
 
-" For our local plugins and files
-set runtimepath+=~/.vim
-
-" KEY MAPPING:
-" .vimrc
+" Key Mappings {
+" .vimrc 
 nnoremap <silent> <LocalLeader>rs :source ~/.vimrc<CR>
 nnoremap <silent> <LocalLeader>re :e ~/.vimrc<CR>
 nnoremap <silent> <LocalLeader>rt :tabnew ~/.vimrc<CR>
@@ -103,25 +132,25 @@ nnoremap <silent> <S-Insert> "+p
 "TODO:
 "inoremap <silent> <ESC>"+p i
 
-" Tabs
+" Tabs 
 nnoremap <C-W><C-T> :tabnew<CR>
 nnoremap <C-W><C-T> :tabnew<CR>
 nnoremap <silent> <LocalLeader>[ :tabprev<CR>
 nnoremap <silent> <LocalLeader>] :tabnext<CR>
 
-" Duplication
+" Duplication 
 vnoremap <silent> <LocalLeader>= yP
 nnoremap <silent> <LocalLeader>= YP
 
-
-"Selection searc
+"Selection searc 
 vnoremap / y/<C-R>"<CR>N
 
-" Line splitting "Split line(opposite to S-J - joining line) 
+" Line splitting 
+" Split line(opposite to S-J - joining line) 
 nnoremap <silent> <C-J> gEa<CR><ESC>ew 
 
 " Folding with SimpleFold
-map <unique> <silent> <LocalLeader>- <Plug>SimpleFold_Foldsearch
+"map <unique> <silent> <LocalLeader>- <Plug>SimpleFold_Foldsearch
 
 "remap forward|backward-search-word-under-cursor to stay on the keyword and highlight it 
 " movement: n (up) or N (down)
@@ -139,9 +168,9 @@ map <S-CR> A<CR><ESC>
 noremap <C-S> :update<CR>
 vnoremap <C-S> <C-C>:update<CR>
 inoremap <C-S> <C-O>:update<CR>
+" }
 
-
-
+" Plugins {
 " FuzzyFinder 
 nnoremap <silent> <LocalLeader>h :FufHelp<CR>
 
@@ -159,8 +188,9 @@ nnoremap <silent> <F9> :FufTaggedFile<CR>
 
 let g:fuf_modesDisable = []
 
-"
-" Misc
+" }
+
+" Misc {
 set pastetoggle=<F10> "  toggle between paste and normal: for 'safer' pasting from keyboard
 " show/Hide hidden Chars
 map <silent> <F12> :set invlist<CR>     
@@ -173,4 +203,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute "normal g'\"" | endif
 endif
 
-cmap w!! %!sudo tee > /dev/null % " http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492
+" http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492
+cmap w!! %!sudo tee > /dev/null % 
+" }
+
