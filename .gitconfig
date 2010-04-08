@@ -21,7 +21,8 @@
 	excludesfile = /home/gmarik/.gitignore
 [alias]
 	b = branch
-	brm = branch -D
+	brm = branch -d # remove if branch-to-be-removed if fully merged into HEAD
+	brm-f = branch -D # force removal
 	bmv = branch -m
 	cg = config --global
   ceg = config --global --edit
