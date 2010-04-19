@@ -1,0 +1,36 @@
+# cucumber snippets
+snippet F:
+	Feature: ${1:what_is_desired}
+	In order to ${2:named_business_value}
+	As a ${3:system_actor}
+	I want to ${4:gain_beneficial_outcome}
+
+snippet S:
+	Scenario: ${1:a_business_situation}
+	Given ${2:precondition(known_state)}
+		And ${3:additional_precondition}
+	When ${4:action_by_the_actor(state_transition)}
+		And ${5:additional_action}
+	Then ${6:an_expectation(observe_outcome)}
+		And ${7:additional_expectation}
+
+snippet G:
+	Given '${1:state}' do
+		${2}	
+	end
+
+snippet A:
+	And '${1:condition}' do
+		${2}	
+	end
+
+snippet W:
+	When 'I do action on ${1:stuff}' do |${2:$1}|
+		${3}	
+	end
+
+snippet T:
+	Then 'I get ${1:outcome}' do |${2:$1}|
+		${3}	
+	end
+
