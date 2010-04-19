@@ -1,0 +1,9 @@
+#set editing-mode vi
+#set show-all-if-ambiguous on 
+## History navigation
+# Up arrow - searches backwards
+"\e[A": history-search-backward
+# Down arrow - searches forwards
+"\e[B": history-search-forward
+# allow completion in history
+#"\t": menu-complete
