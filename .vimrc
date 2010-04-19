@@ -82,7 +82,7 @@ set tabstop=2    " Set the default tabstop
 set shiftwidth=2 " Set the default shift width for indents
 set expandtab   " Make tabs into spaces (set by tabstop)
 set smarttab " Smarter tab levels
-set list " Display unprintable characters
+set nolist " Display unprintable characters f12 - switches
 set listchars=tab:·\ ,eol:↲,trail:·,extends:>,precedes:< " Unprintable chars mapping
 ""}}}
 
@@ -103,8 +103,8 @@ set wildmode=longest,list " At command line, complete longest common string, the
 " colorscheme vividchalk
 " colorscheme darkblue
 " TODO:
-"colorscheme desert
-colorscheme gmarik
+colorscheme vibrantink2
+"colorscheme gmarik
 ""}}}
 
 " Mouse "{{{
