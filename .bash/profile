@@ -14,6 +14,13 @@ export PATH=$PATH:$EC2_HOME/bin:$AWS_ELB_HOME/bin:$AWS_RDS_HOME/bin
 export PATH=$PATH:~/.gem/ruby/1.8/bin
 
 #
+# Terminal
+# 
+stty -ixon # disable XON/XOFF flow control
+           # terminal wont treat ^s as flow control character
+           # and ^s now can be used as shortcut
+
+#
 # Completion
 #
 [ -f /etc/bash_completion ] && source /etc/bash_completion
