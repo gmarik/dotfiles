@@ -1,0 +1,5 @@
+*font: xft:Terminus:pixelsize=18
+
+urxvt*scrollBar: false
+urxvt*saveLines: 10000
+
