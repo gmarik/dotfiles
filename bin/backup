@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo rsync -a --delete /home/gmarik /etc /home/gms /media/disk/backup
+sudo rsync --archive --delete --one-file-system --exclude='/*/.gvfs' /home/gmarik /etc /home/gms /media/backup
