@@ -7,6 +7,3 @@ TAGS
 tags
 *.DS_Store
 __MACOSX/*
-dotfiles.git
-.*_history
-.*.pid
