@@ -92,7 +92,7 @@ set showmatch  " Show matching brackets.
 set matchtime=5  " Bracket blinking.
 set novisualbell  " No blinking
 set noerrorbells  " No noise.
-set laststatus=0  " Always show status line.
+set laststatus=2  " Always show status line.
 set ruler  " Show ruler
 set showcmd " Display an incomplete command in the lower right corner of the Vim window
 set shortmess=atI " Shortens messages
