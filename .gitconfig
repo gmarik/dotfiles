@@ -67,7 +67,9 @@
 	ri = rebase --interactive
   rih = "!f() { git rebase -i HEAD$1; }; f "
   rst = reset
-	st = status
+  ss = status --untracked-files=normal 
+	st = status --untracked-files=no --short
+  sta = status --untracked-files=normal -short
 	sv = svn
 	svci = svn dcommit --no-rebase
 	svr = svn rebase
