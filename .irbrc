@@ -1,20 +1,22 @@
+require 'pp'
 require 'irb/completion'
 require 'irb/ext/save-history'
 
-require 'pp'
+# http://stackoverflow.com/questions/2065923/irb-history-not-working
+module IRB
+  def HistorySavingAbility.extended(obj); 
+    Kernel.at_exit{ HistorySavingAbility.create_finalizer.call }
+    obj.load_history #TODO: super?
+    obj
+  end
+end 
 
-def mps(entry = nil)
-  puts entry if entry
-  mm = `ps -p #{$$} -o rss -o %mem| tail -1`.strip.split(/\s+/)
-  {:rss =>mm[0], :mem => mm[1]}
-end
+IRB.conf[:USE_READLINE] = true
+IRB.conf[:AUTO_INDENT] = true
 
 IRB.conf[:SAVE_HISTORY] = 100
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history" 
 IRB.conf[:PROMPT_MODE]  = :SIMPLE
 
-IRB.conf[:AUTO_INDENT] = true
-IRB.conf[:USE_READLINE] = true
 
 # Just for Rails...
 if rails_env = ENV['RAILS_ENV']
@@ -36,3 +38,10 @@ if rails_env = ENV['RAILS_ENV']
     ActiveRecord::Base.instance_eval { alias :[] :find }
   end
 end
+
+def mps(entry = nil)
+  puts entry if entry
+  mm = `ps -p #{$$} -o rss -o %mem| tail -1`.strip.split(/\s+/)
+  {:rss =>mm[0], :mem => mm[1]}
+end
+
