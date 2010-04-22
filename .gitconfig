@@ -21,6 +21,7 @@
 	excludesfile = /home/gmarik/.gitignore
 [alias]
 	b = branch
+  bls = branch -v # list branches with last commit in
 	brm = branch -d # remove if branch-to-be-removed if fully merged into HEAD
 	brm-f = branch -D # force removal
 	bmv = branch -m
