@@ -69,7 +69,7 @@
   rst = reset
   ss = status --untracked-files=normal 
 	st = status --untracked-files=no --short
-  sta = status --untracked-files=normal -short
+  sta = status --untracked-files=normal --short
 	sv = svn
 	svci = svn dcommit --no-rebase
 	svr = svn rebase
