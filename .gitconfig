@@ -58,6 +58,7 @@
   lp    = log -p --date=local
   lll   = "log --date=local --pretty=format:'%C(yellow) %h %Cblue %cd %C(green) %cn %C(black) %s'"
   ll    = log --pretty=oneline --date=local --abbrev-commit 
+  lg    = log --pretty=oneline --date=local --abbrev-commit --graph --decorate
   lu    = log ORIG_HEAD.. --stat --no-merges --date=local
   po    = push origin HEAD
   poh   = push origin HEAD
