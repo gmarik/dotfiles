@@ -2,6 +2,24 @@ require 'pp'
 require 'irb/completion'
 require 'irb/ext/save-history'
 
+IRB.conf[:USE_READLINE] = true
+IRB.conf[:AUTO_INDENT] = true
+
+IRB.conf[:SAVE_HISTORY] = 100
+IRB.conf[:PROMPT_MODE]  = :SIMPLE
+
+if cwd = File.basename(Dir.pwd)
+  IRB.conf[:PROMPT] ||= {}
+  IRB.conf[:PROMPT][:VERBOSE] = {
+    :PROMPT_I => "#{cwd}> ",
+    :PROMPT_S => "#{cwd}* ",
+    :PROMPT_C => "#{cwd}? ",
+    :RETURN   => "=> %s\n" 
+  }
+
+  IRB.conf[:PROMPT_MODE] = :VERBOSE
+end
+
 # http://stackoverflow.com/questions/2065923/irb-history-not-working
 module IRB
   # use at_exit hook instead finalizer to save history
@@ -12,26 +30,4 @@ module IRB
     obj
   end
 end 
-
-IRB.conf[:USE_READLINE] = true
-IRB.conf[:AUTO_INDENT] = true
-
-IRB.conf[:SAVE_HISTORY] = 100
-IRB.conf[:PROMPT_MODE]  = :SIMPLE
-
-
-# Just for Rails...
-if rails_env = ENV['RAILS_ENV']
-  rails_root = File.basename(Dir.pwd)
-  IRB.conf[:PROMPT] ||= {}
-  IRB.conf[:PROMPT][:RAILS] = {
-    :PROMPT_I => "#{rails_root}> ",
-    :PROMPT_S => "#{rails_root}* ",
-    :PROMPT_C => "#{rails_root}? ",
-    :RETURN   => "=> %s\n" 
-  }
-
-  IRB.conf[:PROMPT_MODE] = :RAILS
-
-end
 
