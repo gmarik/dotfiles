@@ -5,20 +5,16 @@ require 'irb/ext/save-history'
 IRB.conf[:USE_READLINE] = true
 IRB.conf[:AUTO_INDENT] = true
 
-IRB.conf[:SAVE_HISTORY] = 100
-IRB.conf[:PROMPT_MODE]  = :SIMPLE
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:PROMPT_MODE] = :VERBOSE
 
-if cwd = File.basename(Dir.pwd)
-  IRB.conf[:PROMPT] ||= {}
-  IRB.conf[:PROMPT][:VERBOSE] = {
-    :PROMPT_I => "#{cwd}> ",
-    :PROMPT_S => "#{cwd}* ",
-    :PROMPT_C => "#{cwd}? ",
-    :RETURN   => "=> %s\n" 
-  }
-
-  IRB.conf[:PROMPT_MODE] = :VERBOSE
-end
+IRB.conf[:PROMPT] ||= {}
+IRB.conf[:PROMPT][:VERBOSE] = {
+  :PROMPT_I => "#{cwd = File.basename(Dir.pwd)}> ",
+  :PROMPT_S => "#{cwd}* ",
+  :PROMPT_C => "#{cwd}? ",
+  :RETURN   => "=> %s\n" 
+}
 
 # http://stackoverflow.com/questions/2065923/irb-history-not-working
 module IRB
