@@ -1,0 +1,8 @@
+#
+# http://tbaggery.com/2007/02/11/auto-loading-ruby-code.html
+
+if [ -f "$HOME/.ruby/lib/gmarik.rb" ]; then
+  RUBYLIB="$RUBYLIB:$HOME/.ruby/lib"
+  RUBYOPT="-rgmarik"
+  export RUBYLIB RUBYOPT
+fi
