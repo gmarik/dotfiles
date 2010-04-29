@@ -16,6 +16,11 @@ IRB.conf[:PROMPT][:VERBOSE] = {
   :RETURN   => "=> %s\n" 
 }
 
+IRB.conf[:IRB_RC] = Proc.new do
+  require 'gmarik'
+  require 'gmarik/activerecord_ext'
+end
+
 # http://stackoverflow.com/questions/2065923/irb-history-not-working
 module IRB
   # use at_exit hook instead finalizer to save history
