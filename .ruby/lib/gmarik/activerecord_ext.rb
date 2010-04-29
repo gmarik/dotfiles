@@ -16,4 +16,4 @@ module ActiveRecord
       alias :l :last 
     end
   end
-end
+end if defined?(::ActiveRecord)
