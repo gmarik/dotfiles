@@ -3,5 +3,5 @@
 source ~/.bash/profile
 source ~/.bash/functions.bash
 
-#[[ -s ~/.rubyrc ]] && source ~/.rubyrc
+[[ -s ~/.rubyrc ]] && source ~/.rubyrc
 [[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
