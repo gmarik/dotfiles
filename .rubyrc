@@ -3,6 +3,6 @@
 
 if [ -f "$HOME/.ruby/lib/gmarik.rb" ]; then
   RUBYLIB="$RUBYLIB:$HOME/.ruby/lib"
-  RUBYOPT="-rgmarik"
+  #RUBYOPT="-rgmarik"
   export RUBYLIB RUBYOPT
 fi
