@@ -1,0 +1,6 @@
+# http://www.radekw.com/blog/2009/05/06/linux-and-apple-keyboard/
+clear Mod4
+keycode 169 = Delete
+
+# keycode 133 = Alt_L Meta_L
+# keycode 134 = Alt_R Meta_R
