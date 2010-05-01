@@ -1,1 +1,1 @@
-/home/gmarik/.bash/bashrc
+/Users/marjanhratson/.bash/bashrc

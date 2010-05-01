@@ -13,6 +13,11 @@ export AWS_RDS_HOME='/opt/aws/rds-tools'
 export PATH=$PATH:$EC2_HOME/bin:$AWS_ELB_HOME/bin:$AWS_RDS_HOME/bin
 export PATH=$PATH:~/.gem/ruby/1.8/bin
 
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+export JAVA_HOME=/opt/java/
+export JDK_HOME=$JAVA_HOME
+
 #
 # Terminal
 # 
@@ -24,6 +29,7 @@ stty -ixon # disable XON/XOFF flow control
 # Completion
 #
 [ -f /etc/bash_completion ] && source /etc/bash_completion
+[ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
 
 #
 # History
