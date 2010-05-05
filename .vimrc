@@ -204,3 +204,7 @@ endif
 cmap w!! %!sudo tee > /dev/null % 
 " "}}}
 
+if has("gui_running")
+  set noantialias
+  set guifont=Terminus:h16
+endif
