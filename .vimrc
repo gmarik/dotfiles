@@ -103,8 +103,8 @@ set wildmode=longest,list " At command line, complete longest common string, the
 " colorscheme vividchalk
 " colorscheme darkblue
 " TODO:
-"colorscheme vibrantink2
-colorscheme gmarik
+colorscheme vibrantink2
+"colorscheme gmarik
 ""}}}
 
 " Mouse "{{{
