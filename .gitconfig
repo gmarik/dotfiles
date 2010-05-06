@@ -19,7 +19,7 @@
 
 
 [core]
-  excludesfile = /home/gmarik/.gitignore
+  excludesfile = ~/.gitignore
 [alias]
   b     = branch
   bls   = branch -v # list branches with last commit in
