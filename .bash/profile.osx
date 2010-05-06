@@ -16,3 +16,6 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # alias
 alias ls='ls -h'
 alias df='df -h'
+
+#  Git
+alias G='EDITOR=vim git'
