@@ -2,8 +2,16 @@
 # 
 # Some OS X specific definitions
 
+export EDITOR='mvim'
+
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export CLICOLOR=true
+
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+# Completion
+
+[ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
 
 # alias
 alias ls='ls -h'
