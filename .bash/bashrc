@@ -2,6 +2,7 @@
 
 source ~/.bash/profile
 source ~/.bash/functions.bash
+[ "Darwin" == "`uname`" ] &&  source ~/.bash/profile.osx
 
 [[ -s ~/.rubyrc ]] && source ~/.rubyrc
 [[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
