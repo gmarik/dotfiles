@@ -83,7 +83,7 @@ set shiftwidth=2 " Set the default shift width for indents
 set expandtab   " Make tabs into spaces (set by tabstop)
 set smarttab " Smarter tab levels
 set nolist " Display unprintable characters f12 - switches
-set listchars=tab:·\ ,eol:↲,trail:·,extends:>,precedes:< " Unprintable chars mapping
+set listchars=tab:·\ ,eol:¶,trail:·,extends:»,precedes:« " Unprintable chars mapping
 ""}}}
 
 " Visual "{{{
