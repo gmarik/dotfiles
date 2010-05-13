@@ -7,3 +7,6 @@
 "\e[B": history-search-forward
 # allow completion in history
 #"\t": menu-complete
+
+set show-all-if-ambiguous On
+set completion-ignore-case on
