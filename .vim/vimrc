@@ -103,8 +103,7 @@ set wildmode=longest,list " At command line, complete longest common string, the
 " colorscheme vividchalk
 " colorscheme darkblue
 " TODO:
-colorscheme vibrantink2
-"colorscheme gmarik
+colorscheme gmarik
 ""}}}
 
 " Mouse "{{{
@@ -208,4 +207,5 @@ if has("gui_running")
   set noantialias
   set guifont=Terminus:h16
   set vb t_vb='' " disable any beeps or flashes on error
+  colorscheme vibrantink2
 endif
