@@ -138,6 +138,10 @@ nnoremap <silent> <LocalLeader>] :tabnext<CR>
 vnoremap <silent> <LocalLeader>= yP
 nnoremap <silent> <LocalLeader>= YP
 
+" Buffers
+" removal
+nnoremap <silent> <LocalLeader>- :bd<CR>
+
 "Selection searc 
 vnoremap / y/<C-R>"<CR>N
 
