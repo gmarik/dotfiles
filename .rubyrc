@@ -6,3 +6,16 @@ if [ -f "$HOME/.ruby/lib/gmarik.rb" ]; then
   #RUBYOPT="-rgmarik"
   export RUBYLIB RUBYOPT
 fi
+
+#TODO: doenst work
+# http://jasonseifer.com/2010/05/05/osx-post-install-guide-4
+_mategem()
+{
+    local curw
+    COMPREPLY=()
+    curw=${COMP_WORDS[COMP_CWORD]}
+    local gems="$(gem environment gemdir)/gems"
+    COMPREPLY=($(compgen -W '$(ls $gems)' -- $curw));
+    return 0
+}
+complete -F _mategem -o dirnames mategem
