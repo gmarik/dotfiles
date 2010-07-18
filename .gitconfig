@@ -19,7 +19,7 @@
 
 
 [core]
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore-global
 [alias]
   b     = branch
   bls   = branch -v # list branches with last commit in
@@ -37,6 +37,7 @@
   com   = "!f() { git fetch; git checkout -b master origin/master; }; f"
   cot   = "!f() { git fetch; git checkout -b $1 origin/$1; }; f"
   #coe   = "!f() { git symbolic-ref HEAD refs/heads/${1:-empty}; rm .git/index; git clean -fdx; git commit --allow-empty -m 'empty, clean branch'; }; f"
+  ca    = "!f() { git add $1; git ci -v $1; }; f"
   ci    = commit -v --untracked-files=no
   cia   = commit -v -a --untracked-files=no
   ciab  = !B=$(git symbolic-ref HEAD 2>/dev/null) && git commit -v -a --edit -m "${B##refs/heads/}:" --untracked-files=no
