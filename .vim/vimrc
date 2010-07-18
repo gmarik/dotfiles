@@ -19,6 +19,7 @@ filetype indent on
 " pathogen.vim - plugin manager 
 " see ~/.vim/bundle/ for managed plugins
 " TODO: migrate all plugins
+source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
 filetype off 
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
