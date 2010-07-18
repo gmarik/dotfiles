@@ -1,0 +1,24 @@
+~/* # ignore all by default
+!~/.Xdefaults
+!~/.bashrc
+!~/.gemrc
+!~/.gitconfig
+!~/.gitignore
+!~/.gitignore-global
+!~/.gvimrc
+!~/.inputrc
+!~/.irbrc
+!~/.my.cnf
+!~/.profile
+!~/.rubyrc
+!~/.toprc
+!~/.vimrc
+!~/.xinitrc
+!~/.xmodmap
+!~/.xsession
+
+!~/.bash
+!~/.vim
+!~/.ruby
+!~/bin
+~
