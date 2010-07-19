@@ -218,7 +218,9 @@ cmap w!! %!sudo tee > /dev/null %
 if has("gui_running")
   set noantialias
   "set guifont=Terminus:h16
-  set guifont=Courier\ New:h14
+  "set guifont=Courier\ New:h14
+  set guifont=Andale\ Mono:h13
   set vb t_vb='' " disable any beeps or flashes on error
   colorscheme vibrantink2
+  set guioptions=cMg " do not show menu and toolbar
 endif
