@@ -10,8 +10,8 @@
 [color "diff"]
   meta = black bold
   frag = magenta bold
-  old = red 
-  new = blue
+  old = red bold
+  new = yellow bold
 [color "status"]
   added = yellow
   changed = green
