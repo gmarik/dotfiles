@@ -64,7 +64,6 @@
   po    = push origin HEAD
   poh   = push origin HEAD
   pu    = pull
-  s     = !git pull && git push
   r     = rebase
   ra    = rebase --abort
   rc    = rebase --continue
@@ -72,11 +71,13 @@
   rih   = "!f() { git rebase -i HEAD$1; }; f "
   rst   = reset
   ss    = status --untracked-files=normal 
+  s    = status --untracked-files=no --short
   st    = status --untracked-files=no --short
   sta   = status --untracked-files=normal --short
   sv    = svn
   svci  = svn dcommit --no-rebase
   svr   = svn rebase
+  sy     = !git pull && git push
   ta    = tag -a
 #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
   up    = pull
