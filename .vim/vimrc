@@ -217,6 +217,7 @@ cmap w!! %!sudo tee > /dev/null %
 
 if has("gui_running")
   set noantialias
+  set mouse=a "enable mouse in GUI mode
   "set guifont=Terminus:h16
   "set guifont=Courier\ New:h14
   set guifont=Andale\ Mono:h13
