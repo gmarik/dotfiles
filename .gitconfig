@@ -57,6 +57,7 @@
   l     = log --date=local
   ls    = log --stat=120,130 --date=local
   lp    = log -p --date=local
+  lpw   = log -p --word-diff --date=local
   lll   = "log --date=local --pretty=format:'%C(yellow) %h %Cblue %cd %C(green) %cn %C(black) %s'"
   ll    = log --pretty=oneline --date=local --abbrev-commit 
   lg    = log --pretty=oneline --date=local --abbrev-commit --graph --decorate
