@@ -65,16 +65,15 @@
   po    = push origin HEAD
   poh   = push origin HEAD
   pu    = pull
+  pr    = pull --rebase
   r     = rebase
   ra    = rebase --abort
   rc    = rebase --continue
   ri    = rebase --interactive
   rih   = "!f() { git rebase -i HEAD$1; }; f "
   rst   = reset
-  ss    = status --untracked-files=normal 
-  s    = status --untracked-files=no --short
-  st    = status --untracked-files=no --short
-  sta   = status --untracked-files=normal --short
+  st    = status --short --branch --untracked-files=no 
+  sta   = status --short --branch --untracked-files=normal 
   sv    = svn
   svci  = svn dcommit --no-rebase
   svr   = svn rebase
