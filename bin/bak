@@ -1,0 +1,6 @@
+
+#TODO: fix bak dir/: fails to move to dir/_bak
+echo "moving $* to $*_bak"
+mv $* $*_bak
+
+# vim: ft=sh
