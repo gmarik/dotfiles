@@ -1,1 +1,1 @@
-/Users/marjanhratson/.bash/bashrc
+source $HOME/.bash/bashrc
