@@ -1,2 +1,22 @@
 #!/bin/sh
-sudo rsync --archive --delete --one-file-system --exclude='/*/.gvfs' /home/gmarik /etc /home/gms /media/backup
+case `uname` in
+  Darwin)
+    OPTS=""
+    DATA="$HOME /Users/Shared"
+    VOLUME=`ls -1d /Volumes/wd1T*|head -1`
+  ;;
+
+  Linux)
+    OPTS="--exclude='/*/.gvfs'"
+    DATA="$HOME /etc /media/backup"
+    VOLUME=/media/backup
+  ;;
+esac
+echo "this: $OPTS"
+echo "  to: $VOLUME"
+echo ""
+echo "Enter to continue or ^C to abort..."
+read 
+echo 'Working...'
+
+rsync --archive --delete --one-file-system $OPTS $DATA $VOLUME
