@@ -28,3 +28,7 @@ alias G='EDITOR=vim git'
 # Firefox with custom profile
 alias Fg="open -a Firefox -n --args -P developer --no-remote"
 alias FP="open -a Firefox -n --args --profilemanager --no-remote"
+
+# Terminal shortcuts
+alias .t='~/bin/osx/terminal --new-tab'
+alias .w='~/bin/osx/terminal --new-window'
