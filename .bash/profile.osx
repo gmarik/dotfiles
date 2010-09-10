@@ -10,8 +10,13 @@ export CLICOLOR=true
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 # Completion
+#Brew support
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  source `brew --prefix`/etc/bash_completion
+else
+  [ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
+fi
 
-[ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
 
 # alias
 alias ls='ls -h'
