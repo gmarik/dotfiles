@@ -8,21 +8,29 @@
 "CTRL-o + A, or CTRL-o + $ " "quit insert mode, go at end of line, and go back to insert mode
 " "}}}
 "
+" Pathogen - plugin manager "{{{
+" see ~/.vim/bundle/ for managed plugins
+source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+silent! call pathogen#runtime_append_all_bundles()
+silent! call pathogen#helptags()
+" "}}}
+
 " General "{{{
 set nocompatible  " disable vi compatibility.
+
+set runtimepath+=~/.vim " For our local plugins and files
 
 syntax on               " enable syntax
 filetype on             " Automatically detect file types.
 filetype plugin on
 filetype indent on
 
-set runtimepath+=~/.vim " For our local plugins and files
-
 set modeline
 set modelines=5 " default numbers of lines to read for modeline instructions
 " "}}}
 
 " Matching and searchin "{{{
+
 set hlsearch    " highlight search
 set ignorecase  " Do case in sensitive matching with
 set smartcase		" be sensitive when there's a capital letter
