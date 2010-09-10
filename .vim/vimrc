@@ -10,7 +10,7 @@
 "
 " Pathogen - plugin manager "{{{
 " see ~/.vim/bundle/ for managed plugins
-source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+source ~/.vim/bundle/vim-pathogen.git/autoload/pathogen.vim
 silent! call pathogen#runtime_append_all_bundles()
 silent! call pathogen#helptags()
 " "}}}
