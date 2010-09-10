@@ -37,18 +37,12 @@ vim_org_scripts = [
 require 'fileutils'
 require 'open-uri'
 
-bundles_dir = File.join(File.dirname(__FILE__), "bundle")
-
-FileUtils.cd(bundles_dir)
-
-puts "Trashing everything (lookout!)"
-Dir["*"].each {|d| FileUtils.rm_rf d }
+FileUtils.cd(bundle_dir = File.expand_path('../bundle/', __FILE__))
 
 git_bundles.each do |url|
-  dir = url.split('/').last.sub(/\.git$/, '')
-  puts "  Unpacking #{url} into #{dir}"
-  `git clone #{url} #{dir}`
-  FileUtils.rm_rf(File.join(dir, ".git"))
+  dir = File.basename(url)
+  puts "* Unpacking #{url} into #{dir}"
+  `cd #{File.join(bundle_dir, dir)} && git pull || git clone #{url} #{dir}`
 end
 
 vim_org_scripts.each do |name, script_id, script_type|
