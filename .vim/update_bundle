@@ -23,6 +23,7 @@ git_bundles = [
   "git://github.com/tsaleh/vim-shoulda.git",
   "git://github.com/tsaleh/vim-supertab.git",
   "git://github.com/tsaleh/vim-tcomment.git",
+  "git://github.com/vim-bundles/fuzzyfinder",
 #"git://github.com/vim-ruby/vim-ruby.git",
 ]
 
@@ -30,6 +31,7 @@ vim_org_scripts = [
   ["gist",          "12732", "plugin"],
   ["jquery",        "12107", "syntax"],
   ["file:line",     "9148",  "plugin"],
+  ["indexedsearch",     "7062",  "plugin"],
 ]
 
 require 'fileutils'
