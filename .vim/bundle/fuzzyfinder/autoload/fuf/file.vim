@@ -48,7 +48,7 @@ let s:MODE_NAME = expand('<sfile>:t:r')
 
 "
 function s:enumItems(dir)
-  let key = getcwd() . g:fuf_file_exclude . "\n" . a:dir
+  let key = join([getcwd(), g:fuf_ignoreCase, g:fuf_file_exclude, a:dir], "\n")
   if !exists('s:cache[key]')
     let s:cache[key] = fuf#enumExpandedDirsEntries(a:dir, g:fuf_file_exclude)
     call fuf#mapToSetSerialIndex(s:cache[key], 1)
@@ -58,15 +58,13 @@ function s:enumItems(dir)
 endfunction
 
 "
-function s:enumNonCurrentItems(dir, bufNr, cache)
+function s:enumNonCurrentItems(dir, bufNrPrev, cache)
   let key = a:dir . 'AVOIDING EMPTY KEY'
   if !exists('a:cache[key]')
-    " NOTE: filtering should be done with
-    "       'bufnr("^" . v:val.word . "$") != a:bufNr'.
-    "       But it takes a lot of time!
-    let bufName = bufname(a:bufNr)
+    " NOTE: Comparing filenames is faster than bufnr()
+    let bufNamePrev = bufname(a:bufNrPrev)
     let a:cache[key] =
-          \ filter(copy(s:enumItems(a:dir)), 'v:val.word != bufName')
+          \ filter(copy(s:enumItems(a:dir)), 'v:val.word !=# bufNamePrev')
   endif
   return a:cache[key]
 endfunction

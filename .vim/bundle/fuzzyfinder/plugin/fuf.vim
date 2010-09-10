@@ -51,6 +51,7 @@ function s:initialize()
   call s:defineOption('g:fuf_enumeratingLimit' , 50)
   call s:defineOption('g:fuf_maxMenuWidth'     , 78)
   call s:defineOption('g:fuf_previewHeight'    , 10)
+  call s:defineOption('g:fuf_autoPreview'      , 1)
   call s:defineOption('g:fuf_useMigemo'        , 0)
   "---------------------------------------------------------------------------
   call s:defineOption('g:fuf_buffer_prompt'     , '>Buffer[]>')

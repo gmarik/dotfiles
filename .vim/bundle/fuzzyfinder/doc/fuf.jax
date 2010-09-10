@@ -401,6 +401,19 @@ API 関数:
 ==============================================================================
 詳細なトピック                                           *fuf-detailed-topics*
 
+                     *fuf-setting-one-time-option* *fuf#setOneTimeVariables()*
+一回限りのオプションの設定 ~
+
+次回の FuzzyFinder 用に一回限りのオプションを設定したいとき、
+|fuf#setOneTimeVariables()|関数が役に立ちます。この関数は次のようにして使いま
+す:
+>
+        fuf#setOneTimeVariables(['g:fuf_ignoreCase', 0], ['&lines', 50])
+<
+この関数は 0 個以上の引数を取り、各々は変数名と値のペアです。
+指定されたオプションは次回 FuzzyFinder が起動したときに実際に設定され、
+終了するときに復元されます。
+
                                                          *fuf-search-patterns*
 検索パターン ~
 
@@ -844,6 +857,11 @@ See also: |fuf-vimrc-example|
         プレビューをサポートするモードを起動したとき、'cmdheight'がこの値に設
         定されます。選択されている補完アイテムの情報がコマンドライン領域に表示
         されます。0 ならプレビュー機能は無効になります。
+
+                                                        *g:fuf_autoPreview*  >
+  let g:fuf_autoPreview = 1
+<
+        TODO
 
                                                           *g:fuf_useMigemo*  >
   let g:fuf_useMigemo = 0

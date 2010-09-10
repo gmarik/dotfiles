@@ -158,11 +158,12 @@ endfunction
 
 "
 function s:handler.onModeEnterPost()
-  let self.items = map(filter(range(1, bufnr('$')),
-        \                     'buflisted(v:val) && v:val != self.bufNrPrev'),
-        \              's:makeItem(v:val)')
+  let self.items = range(1, bufnr('$'))
+  call filter(self.items, 'buflisted(v:val) && v:val != self.bufNrPrev')
+  call map(self.items, 's:makeItem(v:val)')
   if g:fuf_buffer_mruOrder
-    call fuf#mapToSetSerialIndex(sort(self.items, 's:compareTimeDescending'), 1)
+    call sort(self.items, 's:compareTimeDescending')
+    call fuf#mapToSetSerialIndex(self.items, 1)
   endif
   let self.items = fuf#mapToSetAbbrWithSnippedWordAsPath(self.items)
 endfunction

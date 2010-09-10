@@ -175,10 +175,10 @@ endfunction
 
 "
 function s:handler.onOpen(word, mode)
-  if a:mode == s:OPEN_TYPE_DELETE
+  if a:mode ==# s:OPEN_TYPE_DELETE
     call filter(self.info.data, 'v:val.word !=# a:word')
-    call fuf#saveInfoFile(s:MODE_NAME, self.info)
-    call fuf#launch(s:MODE_NAME, self.lastPattern, self.partialMatching)
+    call fuf#saveInfoFile(self.getModeName(), self.info)
+    let self.reservedMode = self.getModeName()
     return
   else
     let item = s:findItem(self.info.data, a:word)

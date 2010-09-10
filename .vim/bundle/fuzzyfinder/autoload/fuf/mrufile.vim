@@ -140,11 +140,13 @@ endfunction
 
 "
 function s:handler.onModeEnterPost()
+  " NOTE: Comparing filenames is faster than bufnr()
+  let bufNamePrev = fnamemodify(bufname(self.bufNrPrev), ':~')
   let self.items = copy(self.info.data)
-  let self.items = map(self.items, 's:formatItemUsingCache(v:val)')
-  let self.items = filter(self.items, '!empty(v:val) && bufnr("^" . v:val.word . "$") != self.bufNrPrev')
-  let self.items = fuf#mapToSetSerialIndex(self.items, 1)
-  let self.items = fuf#mapToSetAbbrWithSnippedWordAsPath(self.items)
+  call map(self.items, 's:formatItemUsingCache(v:val)')
+  call filter(self.items, '!empty(v:val) && v:val.word !=# bufNamePrev')
+  call fuf#mapToSetSerialIndex(self.items, 1)
+  call fuf#mapToSetAbbrWithSnippedWordAsPath(self.items)
 endfunction
 
 "
