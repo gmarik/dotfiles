@@ -38,13 +38,16 @@ vim_org_scripts = [
 require 'fileutils'
 require 'open-uri'
 
-FileUtils.cd(bundle_dir = File.expand_path('../bundle/', __FILE__))
+bundle_dir = File.expand_path('../bundle/', __FILE__)
 
 git_bundles.each do |url|
-  dir = File.basename(url)
-  puts "* Unpacking #{url} into #{dir}"
-  `cd #{File.join(bundle_dir, dir)} && git pull || git clone #{url} #{dir}`
+  dirname = File.basename(url)
+  puts "* Unpacking #{url} into #{dirname}"
+  dir = File.join(bundle_dir, dirname)
+  `cd #{dir} 2>/dev/null && git pull || git clone #{url} #{dir}`
 end
+
+FileUtils.cd(bundle_dir)
 
 vim_org_scripts.each do |name, script_id, script_type|
   puts "  Downloading #{name}"
