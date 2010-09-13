@@ -12,7 +12,7 @@ case `uname` in
     VOLUME=/media/backup
   ;;
 esac
-echo "this: $OPTS"
+echo "this: $DATA"
 echo "  to: $VOLUME"
 echo ""
 echo "Enter to continue or ^C to abort..."
