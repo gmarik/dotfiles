@@ -20,17 +20,7 @@ IRB.conf[:PROMPT][:VERBOSE] = {
 
 IRB.conf[:IRB_RC] = Proc.new do
   require 'gmarik'
+  require 'gmarik/irb-1.8.6-history-fix'
   #require 'gmarik/activerecord_ext'
 end
-
-# http://stackoverflow.com/questions/2065923/irb-history-not-working
-module IRB
-  # use at_exit hook instead finalizer to save history
-  # as finalizer is NOT guaranteed to run
-  def HistorySavingAbility.extended(obj); 
-    Kernel.at_exit{ HistorySavingAbility.create_finalizer.call }
-    obj.load_history #TODO: super?
-    obj
-  end
-end 
 
