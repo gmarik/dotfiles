@@ -1,15 +1,15 @@
 module ActiveRecord
   class Base
       class << self
-      def first
-        find(:first); 
-      end unless instance_methods.include?(:first)
+        def first
+          find(:first, *args); 
+        end unless method_defined?(:first)
 
-      def last
-        find(:first, :order => 'id DESC' ); 
-      end unless instance_methods.include?(:last)
+        def last
+          find(:first, :order => 'id DESC' ); 
+        end unless method_defined?(:last)
 
-        alias  :[] :find 
+        alias  :[] :find unless method_defined?(:[])
         alias  :f  :first
         alias  :l  :last 
       end
