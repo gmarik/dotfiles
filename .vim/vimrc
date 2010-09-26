@@ -214,6 +214,12 @@ nnoremap <silent> <LocalLeader>9  :FufTaggedFile<CR>
 
 let g:fuf_modesDisable = []
 
+" Zoomwin
+noremap <LocalLeader>o :ZoomWin<CR>
+vnoremap <LocalLeader>o <C-C>:ZoomWin<CR>
+inoremap <LocalLeader>o <C-O>:ZoomWin<CR>
+inoremap <C-w>o :ZoomWin<CR>
+
 " "}}}
 
 " Misc "{{{
