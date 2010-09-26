@@ -80,13 +80,14 @@ function s:getHelpTagEntries(tagFile)
 endfunction
 
 "
-function s:parseHelpTagFiles(tagFiles, key)
+function s:parseHelpTagFiles(tagFiles)
   if !empty(g:fuf_help_cache_dir)
     if !isdirectory(expand(g:fuf_help_cache_dir))
       call mkdir(expand(g:fuf_help_cache_dir), 'p')
     endif
     " NOTE: fnamemodify('a/b', ':p') returns 'a/b/' if the directory exists.
-    let cacheFile = fnamemodify(g:fuf_help_cache_dir, ':p') . fuf#hash224(a:key)
+    let cacheFile = fnamemodify(g:fuf_help_cache_dir, ':p')
+          \ . fuf#hash224(join(a:tagFiles, "\n"))
     if filereadable(cacheFile) && fuf#countModifiedFiles(a:tagFiles, getftime(cacheFile)) == 0
       return map(readfile(cacheFile), 'eval(v:val)')
     endif
@@ -106,11 +107,11 @@ function s:enumHelpTags(tagFiles)
   if !len(a:tagFiles)
     return []
   endif
-  let key = join([g:fuf_ignoreCase] + a:tagFiles, "\n")
+  let key = join(a:tagFiles, "\n")
   if !exists('s:cache[key]') || fuf#countModifiedFiles(a:tagFiles, s:cache[key].time)
     let s:cache[key] = {
           \   'time'  : localtime(),
-          \   'items' : s:parseHelpTagFiles(a:tagFiles, key)
+          \   'items' : s:parseHelpTagFiles(a:tagFiles)
           \ }
   endif
   return s:cache[key].items
