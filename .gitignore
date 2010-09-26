@@ -1,24 +1,8 @@
-~/* # ignore all by default
-!~/.Xdefaults
-!~/.bashrc
-!~/.gemrc
-!~/.gitconfig
-!~/.gitignore
-!~/.gitignore-global
-!~/.gvimrc
-!~/.inputrc
-!~/.irbrc
-!~/.my.cnf
-!~/.profile
-!~/.rubyrc
-!~/.toprc
-!~/.vimrc
-!~/.xinitrc
-!~/.xmodmap
-!~/.xsession
+# ignore all by default
+/*
 
-!~/.bash
-!~/.vim
-!~/.ruby
-!~/bin
-~
+# do not ignore: 
+!.bash/
+!.vim/
+!.ruby/
+!bin/
