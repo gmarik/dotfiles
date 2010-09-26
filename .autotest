@@ -1,0 +1,11 @@
+#
+# vim: ft=ruby
+# http://marioaquino.blogspot.com/2009/12/my-dot-autotest.html
+
+require 'autotest/growl'
+
+Autotest.add_hook :initialize do |at|
+  %w[.sqlite. db/ log/ tmp/ .svn/ .hg/ .git/ vendor/].each {|exception| at.add_exception(exception)}
+end
+
+
