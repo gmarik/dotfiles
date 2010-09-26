@@ -218,7 +218,11 @@ let g:fuf_modesDisable = []
 noremap <LocalLeader>o :ZoomWin<CR>
 vnoremap <LocalLeader>o <C-C>:ZoomWin<CR>
 inoremap <LocalLeader>o <C-O>:ZoomWin<CR>
-inoremap <C-w>o :ZoomWin<CR>
+noremap <C-W>+o :ZoomWin<CR>
+
+" Ack
+noremap <LocalLeader># "ayiw:Ack <C-r>a<CR>
+vnoremap <LocalLeader># "ay:Ack <C-r>a<CR>
 
 " "}}}
 
