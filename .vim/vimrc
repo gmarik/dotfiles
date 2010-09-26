@@ -226,18 +226,25 @@ vnoremap <LocalLeader># "ay:Ack <C-r>a<CR>
 
 " "}}}
 
+" Autocmd "{{{
+if has("autocmd")
+
+au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
+au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
+
+" This section returns to the last place you were in a file
+" When you repoen it. Comment out to disable this behavior
+au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute "normal g'\"" | endif
+
+endif " has autocmd
+" }}}
+
 " Misc "{{{
 set pastetoggle=<F10> "  toggle between paste and normal: for 'safer' pasting from keyboard
 " show/Hide hidden Chars
 map <silent> <F12> :set invlist<CR>     
 " generate HTML version current buffer using current color scheme
 map <silent> <LocalLeader>2h :runtime! syntax/2html.vim<CR> 
-
-if has("autocmd")
-  " This section returns to the last place you were in a file
-  " When you repoen it. Comment out to disable this behavior
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute "normal g'\"" | endif
-endif
 
 " http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492
 cmap w!! %!sudo tee > /dev/null % 
