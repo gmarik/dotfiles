@@ -224,6 +224,9 @@ noremap <C-W>+o :ZoomWin<CR>
 noremap <LocalLeader># "ayiw:Ack <C-r>a<CR>
 vnoremap <LocalLeader># "ay:Ack <C-r>a<CR>
 
+" Command-T
+let g:CommandTMatchWindowAtTop=1 " show window at top
+
 " "}}}
 
 " Autocmd "{{{
