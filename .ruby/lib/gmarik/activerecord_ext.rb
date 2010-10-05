@@ -15,3 +15,13 @@ module ActiveRecord
       end
   end
 end if defined?(::ActiveRecord)
+
+if defined?(::ActiveRecord)
+  def DB!(db_env)
+    ActiveRecord::Base.establish_connection(db_env)
+  end
+
+  def C()
+    ActiveRecord::Base.connection
+  end
+end
