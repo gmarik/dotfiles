@@ -7,5 +7,5 @@ module IRB
     obj.load_history #TODO: super?
     obj
   end
-end if RUBY_VERSION < '1.8.7'
+end if RUBY_VERSION <= '1.8.7'
 

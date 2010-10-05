@@ -1,6 +1,7 @@
 require 'pp'
 require 'irb/completion'
 require 'irb/ext/save-history'
+require 'gmarik/irb-1.8-history-fix'
 
 IRB.conf[:IRB_RC] = lambda { 
   require 'gmarik/all' 
