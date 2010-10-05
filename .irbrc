@@ -2,7 +2,9 @@ require 'pp'
 require 'irb/completion'
 require 'irb/ext/save-history'
 
-IRB.conf[:IRB_RC] = lambda { require 'gmarik/all' }
+IRB.conf[:IRB_RC] = lambda { 
+  require 'gmarik/all' 
+}
 
 
 IRB.conf.merge!({
