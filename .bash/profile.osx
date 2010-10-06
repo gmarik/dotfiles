@@ -2,7 +2,7 @@
 # 
 # Some OS X specific definitions
 
-export EDITOR='mvim'
+export EDITOR='mvim --remote-tab-silent'
 
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export CLICOLOR=true
