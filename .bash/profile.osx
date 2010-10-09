@@ -22,6 +22,9 @@ fi
 alias ls='ls -h'
 alias df='df -h'
 
+# ctags
+alias ctags="`brew --prefix`/bin/ctags"
+
 #  Git
 alias G='EDITOR="mvim -f" git'
 
