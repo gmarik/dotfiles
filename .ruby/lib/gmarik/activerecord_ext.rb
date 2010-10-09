@@ -21,7 +21,14 @@ if defined?(::ActiveRecord)
     ActiveRecord::Base.establish_connection(db_env)
   end
 
-  def C()
-    ActiveRecord::Base.connection
+  def SQL(sql)
+    ActiveRecord::Base.connection.select_all(sql)
   end
+
+  def log!(stream = $stdout) 
+    ActiveRecord::Base.logger = Logger.new(stream)
+    ActiveRecord::Base.clear_active_connections!
+  end
+
+  def nolog!; log!(nil); end
 end
