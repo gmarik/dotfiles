@@ -122,8 +122,7 @@ set mousehide  " Hide mouse after chars typed
 " Backup "{{{
 set nowritebackup
 set nobackup
-set backupdir=~/.backup,/tmp
-set directory=~/.backup,/tmp
+set directory^=~/.tmp// " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
 " "}}}
 
 " Key Mappings "{{{
