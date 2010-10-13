@@ -6,6 +6,6 @@ source ~/.bash/profile
 
 [[ -s ~/.rubyrc ]] && source ~/.rubyrc
 
-export PATH=~/bin:$PATH
+[[ -d ~/bin ]] && export PATH=~/bin:$PATH
 
 [[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
