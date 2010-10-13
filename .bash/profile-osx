@@ -4,6 +4,8 @@
 
 export EDITOR='mvim --remote-tab-silent'
 
+export GIT_EDITOR='mvim -f'
+
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export CLICOLOR=true
 
@@ -24,9 +26,6 @@ alias df='df -h'
 
 # ctags
 alias ctags="`brew --prefix`/bin/ctags"
-
-#  Git
-alias G='EDITOR="mvim -f" git'
 
 # Firefox with custom profile
 alias Fg="open -a Firefox -n --args -P developer --no-remote"
