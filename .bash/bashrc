@@ -1,8 +1,11 @@
 # .bashrc
 
-source ~/.bash/profile
 source ~/.bash/functions.bash
+source ~/.bash/profile
 [ "Darwin" == "`uname`" ] &&  source ~/.bash/profile.osx
 
 [[ -s ~/.rubyrc ]] && source ~/.rubyrc
+
+export PATH=~/bin:$PATH
+
 [[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
