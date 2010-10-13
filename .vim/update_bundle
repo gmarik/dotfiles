@@ -20,6 +20,7 @@ git_bundles = [
   "git://github.com/vim-scripts/Align.git",
   "git://github.com/vim-scripts/SuperTab.git",
   "git://github.com/vim-scripts/tComment.git",
+  "git://github.com/vim-scripts/L9",
   "git://github.com/vim-scripts/FuzzyFinder",
   "git://github.com/vim-scripts/Command-T.git",
   "git://github.com/vim-scripts/ZoomWin.git",
