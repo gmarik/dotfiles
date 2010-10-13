@@ -9,8 +9,8 @@ export GIT_EDITOR='mvim -f'
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export CLICOLOR=true
 
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=$PATH:/usr/local/mysql/bin/
+export PATH=/usr/local/bin:$PATH:/usr/local/mysql/bin/
+
 # Completion
 #Brew support
 if [ -f `brew --prefix`/etc/bash_completion ]; then
