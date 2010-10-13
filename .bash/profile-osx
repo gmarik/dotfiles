@@ -4,11 +4,13 @@
 
 export EDITOR='mvim --remote-tab-silent'
 
+export GIT_EDITOR='mvim -f'
+
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export CLICOLOR=true
 
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export PATH=$PATH:/usr/local/mysql/bin/
+export PATH=/usr/local/bin:$PATH:/usr/local/mysql/bin/
+
 # Completion
 #Brew support
 if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -22,16 +24,10 @@ fi
 alias ls='ls -h'
 alias df='df -h'
 
-# ctags
-alias ctags="`brew --prefix`/bin/ctags"
-
-#  Git
-alias G='EDITOR="mvim -f" git'
-
 # Firefox with custom profile
 alias Fg="open -a Firefox -n --args -P developer --no-remote"
 alias FP="open -a Firefox -n --args --profilemanager --no-remote"
 
 # Terminal shortcuts
 alias .t='~/bin/osx/terminal --new-tab'
-alias .w='~/bin/osx/terminal --new-window'
+alias w='~/bin/osx/terminal --new-window'
