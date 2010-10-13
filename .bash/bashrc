@@ -2,7 +2,7 @@
 
 source ~/.bash/functions.bash
 source ~/.bash/profile
-[ "Darwin" == "`uname`" ] &&  source ~/.bash/profile.osx
+[ "Darwin" == "`uname`" ] &&  source ~/.bash/profile-osx
 
 [[ -s ~/.rubyrc ]] && source ~/.rubyrc
 
