@@ -22,7 +22,7 @@ git_bundles = [
   "git://github.com/vim-scripts/tComment.git",
   "git://github.com/vim-scripts/L9",
   "git://github.com/vim-scripts/FuzzyFinder",
-  "git://github.com/vim-scripts/Command-T.git",
+  "git://git.wincent.com/command-t.git",
   "git://github.com/vim-scripts/ZoomWin.git",
   "git://github.com/vim-scripts/Gist.vim",
   "git://github.com/vim-scripts/jQuery.git",
