@@ -41,3 +41,5 @@ git_bundles.each do |url|
   dir = File.join(bundle_dir, dirname)
   `cd #{dir} 2>/dev/null && git pull || git clone #{url} #{dir}`
 end
+
+`vim -e -c "call pathogen#helptags()" -c q` # regenerate helptags
