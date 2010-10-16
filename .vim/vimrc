@@ -3,7 +3,6 @@
 " General "{{{
 set nocompatible  " disable vi compatibility.
 set runtimepath+=~/.vim " For our local plugins and files
-set cf  " Enable error files & error jumping.
 set history=256  " Number of things to remember in history.
 set autowrite  " Writes on make/shell commands
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
@@ -33,23 +32,23 @@ set fo-=t " Do no auto-wrap text using textwidth (does not apply to comments)
 
 set nowrap
 set textwidth=0		" Don't wrap lines by default
+set wildmode=longest,list " At command line, complete longest common string, then list alternatives.
 
 set backspace=indent,eol,start	" more powerful backspacing
 
 set tabstop=2    " Set the default tabstop
+set softtabstop=2
 set shiftwidth=2 " Set the default shift width for indents
 set expandtab   " Make tabs into spaces (set by tabstop)
 set smarttab " Smarter tab levels
 
-set cindent
 set autoindent
+set cindent
 set cinoptions=:s,ps,ts,cs
 set cinwords=if,else,while,do,for,switch,case
 
 syntax on               " enable syntax
-filetype on             " Automatically detect file types.
-filetype plugin on
-filetype indent on
+filetype plugin indent on             " Automatically detect file types.
 " "}}}
 
 " Visual "{{{
@@ -59,10 +58,10 @@ set matchtime=5  " Bracket blinking.
 set novisualbell  " No blinking
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
+set vb t_vb='' " disable any beeps or flashes on error
 set ruler  " Show ruler
 set showcmd " Display an incomplete command in the lower right corner of the Vim window
 set shortmess=atI " Shortens messages
-set wildmode=longest,list " At command line, complete longest common string, then list alternatives.
 
 set nolist " Display unprintable characters f12 - switches
 set listchars=tab:·\ ,eol:¶,trail:·,extends:»,precedes:« " Unprintable chars mapping
@@ -75,137 +74,12 @@ set foldopen=block,hor,mark,percent,quickfix,tag " what movements open folds
 set mouse-=a   " Disable mouse
 set mousehide  " Hide mouse after chars typed
 
+set splitbelow
+set splitright
+
 colorscheme gmarik
 " "}}}
-"
-" Gui Settings "{{{
-if has("gui_running")
-  set noantialias
-  set mouse=a "enable mouse in GUI mode
-  "set guifont=Terminus:h16
-  "set guifont=Courier\ New:h14
-  set guifont=Andale\ Mono:h13
-  set vb t_vb='' " disable any beeps or flashes on error
-  colorscheme vibrantink2
-  set guioptions=cMg " do not show menu and toolbar
-endif
-" "}}}
 
-" Plugins "{{{
-" Pathogen - plugin manager see ~/.vim/bundle/ for managed plugins
-source ~/.vim/bundle/pathogen.vim.git/plugin/pathogen.vim
-silent! call pathogen#runtime_append_all_bundles()
-"silent! call pathogen#helptags()
-" FuzzyFinder 
-nnoremap <silent> <LocalLeader>h :FufHelp<CR>
-nnoremap <silent> <LocalLeader>2  :FufFileWithCurrentBufferDir<CR>
-nnoremap <silent> <LocalLeader>@  :FufFile<CR>
-nnoremap <silent> <LocalLeader>3  :FufBuffer<CR>
-nnoremap <silent> <LocalLeader>4  :FufDirWithCurrentBufferDir<CR>
-nnoremap <silent> <LocalLeader>$  :FufDir<CR>
-nnoremap <silent> <LocalLeader>5  :FufChangeList<CR>
-nnoremap <silent> <LocalLeader>6  :FufMruFile<CR>
-nnoremap <silent> <LocalLeader>7  :FufLine<CR>
-nnoremap <silent> <LocalLeader>8  :FufBookmark<CR> 
-nnoremap <silent> <LocalLeader>*  :FuzzyFinderAddBookmark<CR><CR>
-nnoremap <silent> <LocalLeader>9  :FufTaggedFile<CR> 
-let g:fuf_modesDisable = []
-" Zoomwin
-noremap <LocalLeader>o :ZoomWin<CR>
-vnoremap <LocalLeader>o <C-C>:ZoomWin<CR>
-inoremap <LocalLeader>o <C-O>:ZoomWin<CR>
-noremap <C-W>+o :ZoomWin<CR>
-" Ack
-noremap <LocalLeader># "ayiw:Ack <C-r>a<CR>
-vnoremap <LocalLeader># "ay:Ack <C-r>a<CR>
-" Command-T
-let g:CommandTMatchWindowAtTop=1 " show window at top
-" "}}}
-"
-" Key Mappings "{{{
-" .vimrc 
-nnoremap <silent> <LocalLeader>rs :source ~/.vimrc<CR>
-nnoremap <silent> <LocalLeader>re :e ~/.vimrc<CR>
-nnoremap <silent> <LocalLeader>rt :tabnew ~/.vimrc<CR>
-
-nnoremap <silent> <S-Insert> "+p
-"TODO:
-"inoremap <silent> <ESC>"+p i
-
-" Tabs 
-nnoremap <C-W><C-T> :tabnew<CR>
-nnoremap <silent> <LocalLeader>[ :tabprev<CR>
-nnoremap <silent> <LocalLeader>] :tabnext<CR>
-" OSx tested only
-imap      <D-1> <C-o>1gt
-imap      <D-2> <C-o>2gt
-imap      <D-3> <C-o>3gt
-imap      <D-4> <C-o>4gt
-imap      <D-5> <C-o>5gt
-imap      <D-6> <C-o>6gt
-imap      <D-7> <C-o>7gt
-imap      <D-8> <C-o>8gt
-imap      <D-9> <C-o>9gt
-map      <D-1> 1gt
-map      <D-2> 2gt
-map      <D-3> 3gt
-map      <D-4> 4gt
-map      <D-5> 5gt
-map      <D-6> 6gt
-map      <D-7> 7gt
-map      <D-8> 8gt
-map      <D-9> 9gt
-" Duplication 
-vnoremap <silent> <LocalLeader>= yP
-nnoremap <silent> <LocalLeader>= YP
-" Buffers
-nnoremap <silent> <LocalLeader>- :bd<CR>
-"Selection searc 
-vnoremap / y/<C-R>"<CR>N
-" Line splitting 
-" Split line(opposite to S-J - joining line) 
-nnoremap <silent> <C-J> gEa<CR><ESC>ew 
-" Folding with SimpleFold
-"map <unique> <silent> <LocalLeader>- <Plug>SimpleFold_Foldsearch
-
-"remap forward|backward-search-word-under-cursor to stay on the keyword and highlight it 
-" movement: n (up) or N (down)
-" strict highlight: delimited word
-" loose highlight: maybe a part of 
-"nnoremap # #N
-nnoremap # :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>
-nmap * "ayiw/<C-r>a<CR>
-
-map <S-CR> A<CR><ESC>
-"TODO: doesnt work
-"map <C-s> :w<CR>
-" Control+S and Control+Q are flow-control characters: disable them in your terminal settings.
-" $ stty -ixon -ixoff
-noremap <C-S> :update<CR>
-vnoremap <C-S> <C-C>:update<CR>
-inoremap <C-S> <C-O>:update<CR>
-
-" Misc
-" show/Hide hidden Chars
-map <silent> <F12> :set invlist<CR>     
-" generate HTML version current buffer using current color scheme
-map <silent> <LocalLeader>2h :runtime! syntax/2html.vim<CR> 
-
-" http://stackoverflow.com/questions/95072/what-are-your-favorite-vim-tricks/96492#96492
-cmap w!! %!sudo tee > /dev/null % 
-" "}}}
-
-" Autocmd "{{{
-if has("autocmd")
-
-au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby
-au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
-au BufRead,BufNewFile {COMMIT_EDITMSG}                                set ft=gitcommit
-
-
-" This section returns to the last place you were in a file
-" When you repoen it. Comment out to disable this behavior
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | execute "normal g'\"" | endif
-
-endif " has autocmd
-" }}}
+source ~/.vim/plugins.vim
+source ~/.vim/keymap.vim
+source ~/.vim/autocmd.vim
