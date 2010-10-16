@@ -7,3 +7,4 @@ TAGS
 tags
 *.DS_Store
 __MACOSX/*
+*.local
