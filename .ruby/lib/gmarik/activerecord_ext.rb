@@ -27,7 +27,7 @@ if defined?(::ActiveRecord)
 
   def log!(stream = $stdout) 
     ActiveRecord::Base.logger = Logger.new(stream)
-    ActiveRecord::Base.clear_active_connections!
+    ActiveRecord::Base.clear_reloadable_connections!
   end
 
   def nolog!; log!(nil); end
