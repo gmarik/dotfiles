@@ -1,11 +1,14 @@
 # .bashrc
 
-source ~/.bash/functions.bash
+source ~/.bash/functions
 source ~/.bash/profile
-[ "Darwin" == "`uname`" ] &&  source ~/.bash/profile-osx
 
-[[ -s ~/.rubyrc ]] && source ~/.rubyrc
+[ "Darwin" == "`uname`" ] &&  source ~/.bash/darwin_profile
+# env_profile="~/.bash/$(uname|tr 'A-Z' 'a-z')_profile"
+# [ -s $env_profile ] &&  source $env_profile
 
-[[ -d ~/bin ]] && export PATH=~/bin:$PATH
+[ -s ~/.rubyrc ] && source ~/.rubyrc
 
-[[ -s ~/.rvm/scripts/rvm ]] && source ~/.rvm/scripts/rvm
+[ -d ~/bin ] && export PATH=~/bin:$PATH
+
+[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
