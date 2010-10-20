@@ -2,7 +2,7 @@
 # 
 # Some OS X specific definitions
 
-export EDITOR='mvim --remote-tab-silent ${*:-.}'
+export EDITOR="mvim --remote-tab-silent"
 export GIT_EDITOR='mvim -f'
 
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
