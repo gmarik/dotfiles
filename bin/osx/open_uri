@@ -1,0 +1,7 @@
+#!/usr/bin/osascript
+#
+# http://github.com/gmarik/dotfiles
+
+on run argv
+  open location item 1 of argv
+end run
