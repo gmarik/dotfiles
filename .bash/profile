@@ -49,7 +49,7 @@ complete -o default -o nospace -F _git G # allow git-completion to work with ali
 
 # dotfiles
 alias .G="G --work-tree=$HOME --git-dir=$HOME/dotfiles.git"
-
+complete -o default -o nospace -F _git .G # allow git-completion to work with alias either
 #
 # Grep
 #
