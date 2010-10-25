@@ -35,7 +35,7 @@
   co    = checkout
   cob   = checkout -b
   com   = "!f() { git fetch; git checkout -b master origin/master; }; f"
-  cot   = "!f() { git fetch; git checkout -b $1 origin/$1; }; f"
+  cot   = "!f() { git fetch; git checkout -b ${1##*/} $1; }; f " 
   #coe   = "!f() { git symbolic-ref HEAD refs/heads/${1:-empty}; rm .git/index; git clean -fdx; git commit --allow-empty -m 'empty, clean branch'; }; f"
   ca    = "!f() { git add $1; git ci -v $1; }; f"
   ci    = commit -v --untracked-files=no
@@ -56,8 +56,8 @@
   k     = "!gitk &"
   l     = log --date=local
   ls    = log --stat=120,130 --date=local
-  lp    = log -p --date=local
-  lpw   = log -p --word-diff --date=local
+  lp    = log --patch --date=local
+  lpw   = log --patch --word-diff --date=local
   lll   = "log --date=local --pretty=format:'%C(yellow) %h %Cblue %cd %C(green) %cn %C(black) %s'"
   ll    = log --pretty=oneline --date=local --abbrev-commit 
   lg    = log --pretty=oneline --date=local --abbrev-commit --graph --decorate
@@ -66,6 +66,7 @@
   poh   = push origin HEAD
   pu    = pull
   pr    = pull --rebase
+  up    = pull --rebase
   r     = rebase
   ra    = rebase --abort
   rc    = rebase --continue
@@ -80,7 +81,6 @@
   sy     = !git pull && git push
   ta    = tag -a
 #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
-  up    = pull
 [user]
   name  = gmarik
   email = gmarik@gmail.com
