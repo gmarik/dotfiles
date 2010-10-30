@@ -7,6 +7,11 @@ source ~/.bash/profile
 # env_profile="~/.bash/$(uname|tr 'A-Z' 'a-z')_profile"
 # [ -s $env_profile ] &&  source $env_profile
 
+# Disable annoying ~ expansion
+#http://www.linuxquestions.org/questions/linux-software-2/how-to-stop-bash-from-replacing-%7E-with-home-username-643162/#post3162026
+_expand() { return 0; }
+__expand_tilde_by_ref() { return 0; }
+
 [ -s ~/.rubyrc ] && source ~/.rubyrc
 
 [ -d ~/bin ] && export PATH=~/bin:$PATH
