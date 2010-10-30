@@ -2,8 +2,10 @@
 # 
 # Some OS X specific definitions
 
-export EDITOR="mvim --remote-tab-silent"
-export GIT_EDITOR='mvim -f'
+vim='/Applications/MacVim.app/Contents/MacOS/Vim -n'
+alias vim="${vim}"
+export EDITOR="${vim} -g --remote-tab-silent"
+export GIT_EDITOR="${vim} -g -f"
 
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export CLICOLOR=true
