@@ -91,3 +91,5 @@
   email = gmarik@gmail.com
 [push]
   default = tracking
+[commit]
+	template = ~/.gitfiles/commit-template
