@@ -1,4 +1,13 @@
 # vim: st=2:ts=2:et
+[core]
+  excludesfile = ~/.gitignore-global
+[user]
+  name  = gmarik
+  email = gmarik@gmail.com
+[push]
+  default = tracking
+[commit]
+	template = ~/.gitfiles/commit-template
 [color]
   branch = auto
   diff = auto
@@ -17,12 +26,9 @@
   changed = green
   untracked = cyan
 
-
-[core]
-  excludesfile = ~/.gitignore-global
 [alias]
   a     = add
-  ae     = add --edit
+  ae    = add --edit
   ai    = add --interactive
   ap    = add --patch
   au    = add --update
@@ -87,8 +93,3 @@
   sy     = !git pull && git push
   ta    = tag -a
 #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
-[user]
-  name  = gmarik
-  email = gmarik@gmail.com
-[push]
-  default = tracking

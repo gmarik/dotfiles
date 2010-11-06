@@ -1,9 +1,10 @@
-require 'autotest/growl'# http://marioaquino.blogspot.com/2009/12/my-dot-autotest.html
-require 'autotest/fsevent' # http://ph7spot.com/musings/getting-started-with-autotest#fsevent_plugin
+#  http://rubydoc.info/gems/autotest/4.4.1/frames
+require 'autotest/growl'
+require 'autotest/fsevent' 
 require 'autotest/restart'
 
 Autotest.add_hook :initialize do |at|
-  %w[.sqlite. doc/ db/ log/ tmp/ .svn/ .hg/ .git/ vendor/].each {|exception| at.add_exception(exception)}
+  %w[.sqlite. doc/ db/ log/ tmp/ .svn/ .hg/ .git/ vendor/ spec/fixtures/].each {|exception| at.add_exception(exception)}
 end
 
 # vim: ft=ruby
