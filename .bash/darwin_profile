@@ -10,7 +10,8 @@ export GIT_EDITOR="${vim} -g -f"
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export CLICOLOR=true
 
-export BREW_HOME=`brew --prefix`
+# export BREW_HOME=`brew --prefix`
+export BREW_HOME=/usr/local/
 export PATH=$BREW_HOME/bin:$BREW_HOME/sbin/:$PATH:/usr/local/mysql/bin/
 
 # Completion
