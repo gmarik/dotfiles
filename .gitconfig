@@ -66,14 +66,14 @@
   em    = "!${EDITOR:-vim} $(git ls-files --modified)"
   eo    = "!${EDITOR:-vim} $(git ls-files --other)"
   k     = "!gitk &"
-  l     = log --date=local
-  ls    = log --stat=120,130 --date=local
-  lp    = log --patch --date=local
-  lpw   = log --patch --word-diff --date=local
-  lll   = "log --date=local --pretty=format:'%C(yellow) %h %Cblue %cd %C(green) %cn %C(black) %s'"
-  ll    = log --pretty=oneline --date=local --abbrev-commit 
-  lg    = log --pretty=oneline --date=local --abbrev-commit --graph --decorate
-  lu    = log ORIG_HEAD.. --stat --no-merges --date=local
+  l     = log --date=relative
+  ls    = log --stat=120,130 --date=relative
+  lp    = log --patch --date=relative
+  lpw   = log --patch --word-diff --date=relative
+  lll   = "log --date=relative --pretty=format:'%C(yellow) %h %Cblue %cd %C(green) %cn %C(black) %s'"
+  ll    = log --pretty=oneline --date=relative --abbrev-commit 
+  lg    = log --pretty=oneline --date=relative --abbrev-commit --graph --decorate
+  lu    = log ORIG_HEAD.. --stat --no-merges --date=relative
   po    = push origin HEAD
   poh   = push origin HEAD
   pu    = pull
