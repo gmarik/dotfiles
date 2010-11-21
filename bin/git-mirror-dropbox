@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e 
+
+mirror_dbox() {
+  repo=$(basename -s .git $(pwd)).git 
+  git clone --bare ./.git/ ~/Dropbox/.gitrepos/${repo}
+  git remote add dbox ~/Dropbox/.gitrepos/${repo}
+  git push dbox --mirror
+}
+
+repo_not_found() {
+  echo "${git_dir} not found"
+  exit 1
+}
+
+git_dir=${1:-`pwd`}/.git
+
+[ -d ${git_dir} ] && mirror_dbox || repo_not_found
+
