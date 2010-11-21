@@ -15,5 +15,6 @@ __expand_tilde_by_ref() { return 0; }
 [ -s ~/.rubyrc ] && source ~/.rubyrc
 
 [ -d ~/bin ] && export PATH=~/bin:$PATH
+[ -d ~/bin ] && [ "Darwin" == "`uname`" ] && export PATH=~/bin/osx:$PATH
 
 [ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
