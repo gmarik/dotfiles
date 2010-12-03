@@ -19,3 +19,7 @@ _mategem()
     return 0
 }
 complete -F _mategem -o dirnames mategem
+
+[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
+
+# vim: ft=sh:ts=2
