@@ -1,20 +1,13 @@
-# .bashrc
+# http://gmarik.info/blog/2010/05/02/tracking-dotfiles-with-git 
 
-source ~/.bash/functions
-source ~/.bash/profile
-[ "Darwin" == "`uname`" ] &&  source ~/.bash/darwin_profile
-# env_profile="~/.bash/$(uname|tr 'A-Z' 'a-z')_profile"
-# [ -s $env_profile ] &&  source $env_profile
-[ -s ~/.bash/bashrc.local ] && source ~/.bash/bashrc.local
+so() { [ -s $1 ] && source $1; }
 
-# Disable annoying ~ expansion
-#http://www.linuxquestions.org/questions/linux-software-2/how-to-stop-bash-from-replacing-%7E-with-home-username-643162/#post3162026
-_expand() { return 0; }
-__expand_tilde_by_ref() { return 0; }
+so ~/.bash/profile                        # main configuration
+so ~/.bash/${ENV_NAME}_profile            # configuration per OS linux/OSX
+so ~/.bash/common                         # common stuff or overriding
+so ~/.bash/functions                      # 
+so ~/.bash/dotfilesrc                     # my git-dotfiles specific stuff
+so ~/.rubyrc                              # Ruby stuff. Rvm is sourced there aswell
+so ~/.bash/bashrc.local                   # machine specific config. not tracked
 
-[ -s ~/.rubyrc ] && source ~/.rubyrc
-
-[ -d ~/bin ] && export PATH=~/bin:$PATH
-[ -d ~/bin ] && [ "Darwin" == "`uname`" ] && export PATH=~/bin/osx:$PATH
-
-[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
+[ -d ~/bin ] && export PATH=~/bin:$PATH # users' ~/bin/ takes precedence

@@ -4,6 +4,7 @@
 
 vim='/Applications/MacVim.app/Contents/MacOS/Vim -n'
 alias vim="${vim}"
+
 export EDITOR="${vim} -g --remote-tab-silent"
 export GIT_EDITOR="${vim} -g -f"
 
@@ -13,6 +14,7 @@ export CLICOLOR=true
 # export BREW_HOME=`brew --prefix`
 export BREW_HOME=/usr/local/
 export PATH=$BREW_HOME/bin:$BREW_HOME/sbin/:$PATH:/usr/local/mysql/bin/
+export PATH=~/bin/osx:$PATH
 
 # Completion
 #Brew support
