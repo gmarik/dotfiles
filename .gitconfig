@@ -5,7 +5,7 @@
   name  = gmarik
   email = gmarik@gmail.com
 [push]
-  default = tracking
+  default = current
 [commit]
 	template = ~/.gitfiles/commit-template
 [color]
