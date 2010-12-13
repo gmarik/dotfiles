@@ -1,0 +1,5 @@
+#!/bin/sh
+ping -c 1 -i 2000 -t 2000 -W 2000 google.com >/dev/null 2>&1 \
+  && echo "online"  \
+  || echo "offline"
+
