@@ -54,7 +54,7 @@ complete -o default -o nospace -F _git G # allow git-completion to work with ali
 #
 # Grep
 #
-export GREP_OPTIONS='--color=auto'
+export GREP_OPTIONS='--color=auto --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log'
 
 alias ?='\grep -i'
 alias ??='? -nR'
