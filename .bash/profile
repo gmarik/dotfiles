@@ -89,8 +89,10 @@ complete -cf sudo
 complete -cf S
 
 alias pm='pacman'
-alias kill9='kill -9'
+alias k9='kill -9'
 alias ssn='sudo shutdown -h now'
+alias ps='ps -axf'
+alias ps?='ps -axf|? '
 
 # shell
 alias ..='cd ..'
@@ -100,7 +102,7 @@ alias cp='cp -i'
 alias rm='rm -i'
 alias mv='mv -i'
 
-alias mdcd='f () { mkdir -p $1 && cd $1; }; f '
+alias mcd='f () { mkdir -p $1 && cd $1; }; f '
 alias mkdir='mkdir -p'
 alias md='mkdir'
 
