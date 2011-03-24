@@ -64,7 +64,7 @@
   ds    = diff --stat=120,130 -M -C 
   dy    = diff --summary -M -C
   em    = "!${EDITOR:-vim} $(git ls-files --modified)"
-  eo    = "!${EDITOR:-vim} $(git ls-files --other)"
+  ea    = "!${EDITOR:-vim} $(git status --short --porcelain|cut -f2 -d' ')"
   k     = "!gitk &"
   l     = log --date=relative
   ls    = log --stat=120,130 --date=relative
