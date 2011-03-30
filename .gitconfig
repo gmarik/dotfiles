@@ -25,6 +25,9 @@
   added = yellow
   changed = green
   untracked = cyan
+[mergetool "mvimdiff"]
+  cmd="mvim -d -g -c 'wincmd J' $MERGED $LOCAL $BASE $REMOTE"
+  keepbackup=false
 
 [alias]
   a     = add
@@ -91,6 +94,8 @@
   svr   = svn rebase
   sy     = !git pull && git push
   ta    = tag -a
+  mt    = "! [ `which mvim` ] && git mergetool -t mvimdiff || git mergetool -t vimdiff"
+
 #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
 
 
