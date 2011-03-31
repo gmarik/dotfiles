@@ -7,7 +7,7 @@ CMD="$@"
 
 [[ -z $CMD ]] && echo 'repeat COMMAND' && exit 1
 
-echo $CMD
+echo $CMD >&2
 
 while [ $COUNT_DOWN -gt 0 ]; do
 # if [ -z $COUNT ]; then 
