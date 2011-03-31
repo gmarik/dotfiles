@@ -7,7 +7,7 @@
 [push]
   default = current
 [commit]
-	template = ~/.gitfiles/commit-template
+  template = ~/.gitfiles/commit-template
 [color]
   branch = auto
   diff = auto
@@ -25,6 +25,9 @@
   added = yellow
   changed = green
   untracked = cyan
+[mergetool "mvimdiff"]
+  cmd="mvim -d -g -c 'wincmd J' $MERGED $LOCAL $BASE $REMOTE"
+  keepbackup=false
 
 [alias]
   a     = add
@@ -64,7 +67,7 @@
   ds    = diff --stat=120,130 -M -C 
   dy    = diff --summary -M -C
   em    = "!${EDITOR:-vim} $(git ls-files --modified)"
-  eo    = "!${EDITOR:-vim} $(git ls-files --other)"
+  ea    = "!${EDITOR:-vim} $(git status --short --porcelain|cut -f2 -d' ')"
   k     = "!gitk &"
   l     = log --date=relative
   ls    = log --stat=120,130 --date=relative
@@ -91,4 +94,23 @@
   svr   = svn rebase
   sy     = !git pull && git push
   ta    = tag -a
+  mt    = "! [ `which mvim` ] && git mergetool -t mvimdiff || git mergetool -t vimdiff"
+
 #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
+
+
+# http://bit.ly/g9c9Y2
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+  insteadOf = "github:"
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+[url "git@heroku.com:"]
+  insteadOf = "heroku:"

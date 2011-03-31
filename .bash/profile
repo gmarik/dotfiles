@@ -5,7 +5,7 @@
 #
 
 export EDITOR='vim'
-export LESS="--RAW-CONTROL-CHARS"  # colored, same as -R
+export LESS="--RAW-CONTROL-CHARS --ignore-case"  # colored, same as -R
 export PAGER='less'
 export MANPAGER='col -bx | view - -c ":set ft=man noml" -c ":nmap q :q<CR>"'
 
