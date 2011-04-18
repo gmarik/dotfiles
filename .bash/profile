@@ -62,7 +62,7 @@ galias () {
 #
 # Grep
 #
-export GREP_OPTIONS='--color=auto --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log'
+export GREP_OPTIONS='--color=auto --exclude="tags" --exclude="TAGS" --exclude="TAGS" --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log'
 
 alias ?='\grep -i'
 alias ??='? -nR'
