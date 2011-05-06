@@ -9,7 +9,7 @@
 [init]
   templatedir = ~/.gitfiles/templates/
 [commit]
-  template = ~/.gitfiles/commit-template
+  template = ~/.gitfiles/COMMIT_EDITMSG
 [color]
   branch = auto
   diff = auto
