@@ -6,6 +6,8 @@
   email = gmarik@gmail.com
 [push]
   default = current
+[init]
+  templatedir = ~/.gitfiles/templates/
 [commit]
   template = ~/.gitfiles/commit-template
 [color]
