@@ -7,4 +7,4 @@ txtred='[0;31m' # Red
 txtgrn='[0;32m' # Green
 txtrst='[0m'     # Reset
 
-echo "Yay, '${txtgrn}$user <$email>${txtrst}', ^_^ ${txtred}<3${txtrst}"  # this is actually here to make sure proper email/name is used
+echo "Yay ${txtgrn}$user <$email>${txtrst} ^_^ ${txtred}<3${txtrst}"  # this is actually here to make sure proper email/name is used
