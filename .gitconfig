@@ -25,6 +25,8 @@
   added = yellow
   changed = green
   untracked = cyan
+; [apply]
+;   whitespace = fix
 [mergetool "mvimdiff"]
   cmd="mvim -d -g -c 'wincmd J' $BASE $LOCAL $MERGED $REMOTE"
   keepbackup=false
