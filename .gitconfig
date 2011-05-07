@@ -6,8 +6,10 @@
   email = gmarik@gmail.com
 [push]
   default = current
+[init]
+  templatedir = ~/.gitfiles/templates/
 [commit]
-  template = ~/.gitfiles/commit-template
+  template = ~/.gitfiles/COMMIT_EDITMSG
 [color]
   branch = auto
   diff = auto
@@ -25,6 +27,8 @@
   added = yellow
   changed = green
   untracked = cyan
+; [apply]
+;   whitespace = fix
 [mergetool "mvimdiff"]
   cmd="/Applications/MacVim.app/Contents/MacOS/Vim -d -g -c 'wincmd J'  $MERGED $LOCAL $BASE $REMOTE"
   keepbackup=false
