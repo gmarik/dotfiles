@@ -60,7 +60,7 @@
   cia   = commit -e -C HEAD --untracked-files=no -v -a 
   ciab  = !B=$(git symbolic-ref HEAD 2>/dev/null) && git commit -v -a --edit -m "${B##refs/heads/}:" --untracked-files=no
   cii   = commit --interactive
-  cid   = commit --amend
+  cid   = commit --amend -v
   cim   = commit -m
   cip   = commit -am '[...in progress...]' 
   cir   = reset HEAD^
