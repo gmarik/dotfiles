@@ -97,6 +97,8 @@
   svci  = svn dcommit --no-rebase
   svr   = svn rebase
   sy     = !git pull && git push
+  sw    = update-index  --skip-worktree 
+  nosw  = update-index --no-skip-worktree
   ta    = tag -a
   mt    = "! [ -f /Applications/MacVim.app/Contents/MacOS/Vim ] && git mergetool -t mvimdiff || git mergetool -t vimdiff"
 
