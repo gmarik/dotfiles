@@ -54,8 +54,10 @@ complete -o default -o nospace -F _git G # allow git-completion to work with ali
 galias () {
   aliases=`git config --global --get-regexp 'alias.*'|cut -f1 -d' '|cut -f2 -d'.'`
   for a in ${aliases}; do 
-    alias "${1:-.}${a}"="git $a" 
-    # complete -o default -o nospace -F _git G # allow git-completion to work with alias aswell
+    local _alias=${1:-:}${a}
+    local cmd=`git config alias.$a|cut -f1 -d ' '`
+    alias "$_alias"="git $a"
+    complete -o default -o nospace -F _git_$cmd $_alias # allow git-completion to work with alias aswell
   done
 }
 
