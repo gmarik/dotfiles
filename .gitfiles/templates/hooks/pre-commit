@@ -1,10 +1,15 @@
 #!/bin/bash
 
-user=$(git config user.name)
-email=$(git config user.email)
-
 txtred='[0;31m' # Red
-txtgrn='[0;32m' # Green
 txtrst='[0m'     # Reset
 
-echo "Yay ${txtgrn}$user <$email>${txtrst} ^_^ ${txtred}<3${txtrst}"  # this is actually here to make sure proper email/name is used
+user=$(git config --local user.name)
+email=$(git config --local user.email)
+
+if [ "${user}" == "" -a "${name}" == "" ]; then
+  echo "${txtred}"
+  echo "You don't have user/email configured for this repo, please configure!"
+  echo "${txtrst}"
+  exit 1
+fi
+
