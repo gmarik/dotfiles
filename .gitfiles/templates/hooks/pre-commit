@@ -11,10 +11,11 @@ if [ "${user}" == "" -a "${name}" == "" ]; then
 
   echo "You don't have user/email configured for this repo, please configure!"
 
+  echo "${txtrst}"
   echo "configure with:"
   echo "git config user.email email@address"
   echo "git config user.name 'your full name'"
-  echo "${txtrst}"
+
   exit 1
 fi
 
