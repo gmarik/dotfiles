@@ -43,6 +43,8 @@
   bls   = branch -v # list branches with last commit in
   brm   = branch -d # remove if branch-to-be-removed if fully merged into HEAD
   brmf  = branch -D # force removal
+  # bt - branch track configures current branch to "track" same name from origin or specified remote
+  bt    = "!f() { B=$(git symbolic-ref HEAD|cut -f3 -d/) && git config branch.$B.remote ${1:-origin} && git config branch.$B.merge refs/heads/$B; }; f"
   bmv   = branch -m
   cg    = config --global
   ceg   = config --global --edit
@@ -78,7 +80,8 @@
   ls    = log --stat=120,130 --date=relative
   lp    = log --patch --date=relative
   lpw   = log --patch --word-diff --date=relative
-  ll    = log  --abbrev-commit --date=relative --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d'
+  ll    = log  --abbrev-commit --date=relative --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
+  l1    = !"git ll -10|cat; echo ''"
   lg    = !git ll --graph 
   lu    = log ORIG_HEAD.. --stat --no-merges --date=relative
   po    = push origin HEAD
