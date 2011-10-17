@@ -2,6 +2,7 @@
 
 so() { [ -s $1 ] && source $1; }
 
+so ~/.bash/colors                         #
 so ~/.bash/profile                        # main configuration
 so ~/.bash/${ENV_NAME}_profile            # configuration per OS linux/OSX
 so ~/.bash/common                         # common stuff or overriding
