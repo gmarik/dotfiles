@@ -126,3 +126,5 @@
 
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
+[diff]
+	tool = vimdiff
