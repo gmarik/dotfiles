@@ -1,13 +1,20 @@
+*.local
+
+TAGS
+tags
+
+
+# IntelliJ IDEA
 *.iml
 *.ipr
 *.iws
 .generators
 .rakeTasks
-TAGS
-tags
+
+
+# OSX
 *.DS_Store
 __MACOSX/*
-*.local
 
 
 # Xcode
