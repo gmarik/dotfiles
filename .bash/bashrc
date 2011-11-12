@@ -5,7 +5,9 @@ so() { [ -s $1 ] && source $1; }
 so ~/.bash/profile                        # main configuration
 so ~/.bash/${ENV_NAME}_profile            # configuration per OS linux/OSX
 so ~/.bash/common                         # common stuff or overriding
-so ~/.bash/functions                      # 
+so ~/.bash/colors                         #
+so ~/.bash/ruby                           #
+so ~/.bash/functions                      #
 so ~/.bash/dotfilesrc                     # my git-dotfiles specific stuff
 so ~/.rubyrc                              # Ruby stuff. Rvm is sourced there aswell
 so ~/.bash/bashrc.local                   # machine specific config. not tracked
