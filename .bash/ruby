@@ -1,0 +1,37 @@
+# vim:ft=sh
+
+rails_script () 
+{
+  gd=$(__gitdir)
+  rfpath=${gd%git}
+  target=$1; shift
+  if [ -f $rfpath/script/rails ]; then
+    cmd="$rfpath/script/rails $target $@"
+  else
+    cmd="$rfpath/script/$target $@"
+  fi
+
+  echo "Running ${txtgrn}$cmd${txtrst}"
+  `$cmd`
+}
+
+Rc () { rails_script "console"  $@ ; }
+Rs () { rails_script "server"   $@ ; }
+Rg () { rails_script "generate" $@ ; }
+Rr () { rails_script "runner"   $@ ; }
+
+Rgm() { rails_script "generate" "migration" $@ ; }
+Rgs() { rails_script "generate" "scaffold"  $@ ; }
+Rgr() { rails_script "generate" "resource"  $@ ; }
+
+Rsb() { DB_ENV=build Rs      ; }
+Rss() { DB_ENV=staging Rs    ; }
+Rsp() { DB_ENV=production Rs ; }
+
+Rcb() { DB_ENV=build Rc      ; }
+Rcs() { DB_ENV=staging Rc    ; }
+Rcp() { DB_ENV=production Rc ; }
+
+Rrb() { DB_ENV=build Rr      ; }
+Rrs() { DB_ENV=staging Rr    ; }
+Rrp() { DB_ENV=production Rr ; }

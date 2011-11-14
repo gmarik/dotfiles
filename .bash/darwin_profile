@@ -15,6 +15,8 @@ export CLICOLOR=true
 export BREW_HOME=/usr/local/
 export PATH=$BREW_HOME/bin:$BREW_HOME/sbin/:$PATH:/usr/local/mysql/bin/
 export PATH=~/bin/osx:$PATH
+# required for dynamic libraries to be found
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/mysql/lib
 
 # Completion
 #Brew support

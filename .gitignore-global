@@ -1,10 +1,27 @@
+*.local
+
+TAGS
+tags
+
+
+# IntelliJ IDEA
 *.iml
 *.ipr
 *.iws
 .generators
 .rakeTasks
-TAGS
-tags
+
+
+# OSX
 *.DS_Store
 __MACOSX/*
-*.local
+
+
+# Xcode
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+project.xcworkspace/
+xcuserdata/
