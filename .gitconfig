@@ -1,6 +1,7 @@
 # vim: st=2:ts=2:et
 [core]
   excludesfile = ~/.gitignore-global
+	quotepath = false
 [user]
   name  = gmarik
   email = gmarik@gmail.com
@@ -112,6 +113,8 @@
 # http://bit.ly/g9c9Y2
 [url "http://github.com/"]
   insteadOf = "gh:"
+[url "http://github.com/gmarik/"]
+  insteadOf = "gm:"
 [url "git@github.com:"]
   pushInsteadOf = "https://github.com/"
   pushInsteadOf = "http://github.com/"
