@@ -106,6 +106,7 @@
   nosw  = update-index --no-skip-worktree
   ta    = tag -a
   mt    = "! [ -f /Applications/MacVim.app/Contents/MacOS/Vim ] && git mergetool -t mvimdiff || git mergetool -t vimdiff"
+  w     = "! echo \"$(git config user.name) <$(git config user.email)> \"" 
 
 #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
 
