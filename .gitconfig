@@ -114,12 +114,15 @@
 # http://bit.ly/g9c9Y2
 [url "http://github.com/"]
   insteadOf = "gh:"
-[url "http://github.com/gmarik/"]
-  insteadOf = "gm:"
 [url "git@github.com:"]
   pushInsteadOf = "https://github.com/"
   pushInsteadOf = "http://github.com/"
   pushInsteadOf = "gh:"
+
+[url "git@github.com:gmarik/"]
+  pushInsteadOf = "gm:"
+[url "http://github.com/gmarik/"]
+  insteadOf = "gm:"
 
 [url "https://gist.github.com/"]
   insteadOf = "gist:"
