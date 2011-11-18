@@ -12,7 +12,7 @@ rails_script ()
   fi
 
   echo "Running ${txtgrn}$cmd${txtrst}"
-  `$cmd`
+  $cmd
 }
 
 Rc () { rails_script "console"  $@ ; }
