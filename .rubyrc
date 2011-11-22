@@ -4,6 +4,7 @@
 if [ -d "$HOME/.ruby/lib/" ]; then
   RUBYLIB="$RUBYLIB:$HOME/.ruby/lib"
   #RUBYOPT="-rgmarik"
+  RUBYOPT="-rno_deprecation_warnings_kthxbye"
   export RUBYLIB RUBYOPT
 fi
 
