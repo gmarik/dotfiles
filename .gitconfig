@@ -82,9 +82,10 @@
   lp    = log --patch --date=relative
   lpw   = log --patch --word-diff --date=relative
   ll    = log  --abbrev-commit --date=relative --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
-  l1    = !"git ll -10|cat; echo ''"
+  l1    = !"git --no-pager ll -10; echo ''"
   lg    = !git ll --graph 
   lu    = log ORIG_HEAD.. --stat --no-merges --date=relative
+  lo    = !git ll ORIG_HEAD..
   po    = push origin HEAD
   poh   = push origin HEAD
   pu    = pull
