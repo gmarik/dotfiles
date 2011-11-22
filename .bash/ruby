@@ -1,9 +1,15 @@
-# vim:ft=sh
+# vim: set ft=sh:
+
+_set_root_dir () {
+  local gd=$(__gitdir)
+  rfpath=${gd%git}
+  echo "Root: ${txtgrn}${rfpath}${txtrst}"
+}
 
 rails_script () 
 {
-  gd=$(__gitdir)
-  rfpath=${gd%git}
+  _set_root_dir
+
   target=$1; shift
   if [ -f $rfpath/script/rails ]; then
     cmd="$rfpath/script/rails $target $@"
@@ -14,6 +20,12 @@ rails_script ()
   echo "Running ${txtgrn}$cmd${txtrst}"
   $cmd
 }
+
+
+alias Rdm='rake db:migrate'
+alias Rdmr='rake db:migrate:redo'
+
+-() { _set_root_dir; touch "$rfpath/tmp/restart.txt" ; }
 
 Rc () { rails_script "console"  $@ ; }
 Rs () { rails_script "server"   $@ ; }
