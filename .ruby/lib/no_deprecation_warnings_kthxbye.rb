@@ -2,7 +2,7 @@
 
 begin
 require 'rubygems'
-Gem::Deprecate.skip = true 
+Gem::Deprecate.skip = true if defined?(Gem::Deprecate)
 rescue LoadError => e
   p e
 end
