@@ -115,7 +115,11 @@
 
 #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
 
+[diff]
+	tool = vimdiff
 
+# read from given uri
+# push to writable one
 # http://bit.ly/g9c9Y2
 [url "http://github.com/"]
   insteadOf = "gh:"
@@ -138,5 +142,3 @@
 
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
-[diff]
-	tool = vimdiff
