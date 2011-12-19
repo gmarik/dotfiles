@@ -109,6 +109,10 @@
   mt    = "! [ -f /Applications/MacVim.app/Contents/MacOS/Vim ] && git mergetool -t mvimdiff || git mergetool -t vimdiff"
   w     = "! echo \"$(git config user.name) <$(git config user.email)> \"" 
 
+; http://gitready.com/advanced/2011/10/21/ribbon-and-catchup-reading-new-commits.html
+  ribbon = tag --force _ribbon origin/master
+  catchup = log --patch --reverse --topo-order _ribbon..origin/master
+
 #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
 
 
