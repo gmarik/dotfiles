@@ -97,6 +97,7 @@
   ri    = rebase --interactive
   rih   = "!f() { git rebase -i HEAD$1; }; f "
   rst   = reset
+  roh   = "! git --no-pager ll -10 ORIG_HEAD && read -p '^C to stop, anykey to continue' Z && git rst --hard ORIG_HEAD"
   st    = status --short --branch --untracked-files=no 
   sta   = status --short --branch --untracked-files=normal 
   sv    = svn
