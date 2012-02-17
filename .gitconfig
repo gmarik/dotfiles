@@ -35,6 +35,9 @@
   changed = green
   untracked = cyan
 
+[log]
+  date = relative
+
 ; [apply]
 ;   whitespace = fix
 
@@ -88,14 +91,14 @@
   ea    = "!${EDITOR:-vim} $(git status --short --porcelain|cut -f2 -d' ')"
   gr    = grep --color --ignore-case -n
   k     = "!gitk &"
-  l     = log --date=relative
-  ls    = log --stat=120,130 --date=relative
-  lp    = log --patch --date=relative
-  lpw   = log --patch --word-diff --date=relative
-  ll    = log  --abbrev-commit --date=relative --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
+  l     = log
+  ls    = log --stat=120,130
+  lp    = log --patch
+  lpw   = log --patch --word-diff
+  ll    = log  --abbrev-commit --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
   l1    = !"git --no-pager ll -10; echo ''"
   lg    = !git ll --graph 
-  lu    = log ORIG_HEAD.. --stat --no-merges --date=relative
+  lu    = log ORIG_HEAD.. --stat --no-merges
   lo    = !git ll ORIG_HEAD..
   po    = push origin HEAD
   poh   = push origin HEAD
