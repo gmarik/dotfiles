@@ -1,16 +1,22 @@
 # vim: st=2:ts=2:et
+
 [core]
   excludesfile = ~/.gitignore-global
-	quotepath = false
+  quotepath = false
+
 [user]
   name  = gmarik
   email = gmarik@gmail.com
-[push]
-  default = current
+
 [init]
   templatedir = ~/.gitfiles/templates/
+
+[push]
+  default = current
+
 [commit]
   template = ~/.gitfiles/COMMIT_EDITMSG
+
 [color]
   branch = auto
   diff = auto
@@ -28,8 +34,13 @@
   added = yellow
   changed = green
   untracked = cyan
+
 ; [apply]
 ;   whitespace = fix
+
+[diff]
+  tool = vimdiff
+
 [mergetool "mvimdiff"]
   cmd="/Applications/MacVim.app/Contents/MacOS/Vim -d -g -c 'wincmd J'  $MERGED $LOCAL $BASE $REMOTE"
   keepbackup=false
@@ -116,12 +127,11 @@
 
 #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
 
-[diff]
-	tool = vimdiff
 
 # read from given uri
 # push to writable one
 # http://bit.ly/g9c9Y2
+
 [url "http://github.com/"]
   insteadOf = "gh:"
 [url "git@github.com:"]
