@@ -117,6 +117,8 @@ alias S='sudo'
 complete -cf sudo
 complete -cf S
 
+alias dig='dig any'
+
 alias pm='pacman'
 alias k9='kill -9'
 alias ssn='sudo shutdown -h now'
