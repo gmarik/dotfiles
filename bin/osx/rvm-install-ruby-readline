@@ -2,7 +2,7 @@
 
 which rvm >/dev/null 2>&1 || (echo 'requires RVM' && exit 1)
 
-RUBY=$(rvm list default string)
+RUBY=$(rvm current)
 
 function install()
 {
