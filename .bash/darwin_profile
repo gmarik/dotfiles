@@ -30,3 +30,8 @@ fi
 # alias
 alias ls='ls -h'
 alias df='df -h'
+
+# posgres
+# use readline instead libedit
+alias psql='LD_PRELOAD=/lib/libreadline.so.5 psql'
+
