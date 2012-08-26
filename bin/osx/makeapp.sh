@@ -2,6 +2,11 @@
 
 # Create a Fluid-style app launcher for single-window Chrome instances on OSX
 # from https://gist.github.com/3484066
+#
+# icon
+# 1) https://www.google.com/search?q=anAPP+icon
+# 2) follow the likeable icon link
+# 3) Drag'n'Drop to apps' icon area(right click on anAPP.app, choose "Get Info" )
 
 echo "What should the Application be called (no spaces allowed e.g. GCal)?"
 read inputline
