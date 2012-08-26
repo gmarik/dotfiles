@@ -52,7 +52,9 @@ fi
 # create the executable
 cat >$execPath/$name <<EOF
 #!/bin/sh
-exec $chromePath  --app="$url" --user-data-dir="$profilePath" "\$@"
+profilePath="\$(dirname \$0)/../Profile"
+
+exec $chromePath  --app="$url" --user-data-dir="\$profilePath" "\$@"
 EOF
 chmod +x $execPath/$name
 
