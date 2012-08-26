@@ -2,6 +2,7 @@
 
 # Create a Fluid-style app launcher for single-window Chrome instances on OSX
 # from https://gist.github.com/3484066
+# related: http://mathiasbynens.be/notes/shell-script-mac-apps
 #
 # icon
 # 1) https://www.google.com/search?q=anAPP+icon
