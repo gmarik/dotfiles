@@ -1,0 +1,9 @@
+#!/bin/bash
+
+INFILE=$1
+OUTFILE=${2:-$(basename $1)}
+OUTFILE=`echo $OUTFILE | sed -e's/\.epub$//'`
+
+export PATH=$PATH:/Applications/calibre.app/Contents/MacOS/
+
+ebook-convert "$INFILE" "$OUTFILE.epub" --no-default-epub-cover --no-svg-cover
