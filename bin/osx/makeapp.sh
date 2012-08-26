@@ -4,10 +4,6 @@
 # from https://gist.github.com/3484066
 # related: http://mathiasbynens.be/notes/shell-script-mac-apps
 #
-# icon
-# 1) https://www.google.com/search?q=anAPP+icon
-# 2) follow the likeable icon link
-# 3) Drag'n'Drop to apps' icon area(right click on anAPP.app, choose "Get Info" )
 
 echo "What should the Application be called (no spaces allowed e.g. GCal)?"
 read inputline
@@ -17,12 +13,21 @@ echo "What is the url (e.g. https://www.google.com/calendar/render)?"
 read inputline
 url=$inputline
 
-echo "What is the full path to the icon (e.g. /Users/username/Desktop/icon.png)?"
-read inputline
-icon=$inputline
+# echo "What is the full path to the icon (e.g. /Users/username/Desktop/icon.png)?"
+# read inputline
+# icon=$inputline
+
+cat <<EOF
 
 
 
+How to quickly get an icon
+  1) https://www.google.com/search?q=anAPP+icon
+  2) follow the likeable icon link
+  3) Drag'n'Drop to apps' icon area(right click on anAPP.app, choose "Get Info" )
+EOF
+
+echo "Done!"
 
 chromePath="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 appRoot="/Applications"
