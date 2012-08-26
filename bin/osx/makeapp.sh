@@ -30,7 +30,7 @@ EOF
 echo "Done!"
 
 chromePath="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
-appRoot="/Applications"
+appRoot="$HOME/Applications"
 
 
 
