@@ -2,7 +2,7 @@
 
 which rvm >/dev/null 2>&1 || (echo 'requires RVM' && exit 1)
 
-RUBY=$(rvm list default string)
+RUBY=$(rvm current)
 
 function install()
 {
@@ -14,11 +14,11 @@ Plan:
 "
 
   echo "1. Installing RVM Readline package"
-  rvm package install readline
+  rvm pkg install readline
 
 
   echo "2. Rebuilding $RUBY with Readline support"
-  rvm install $RUBY -C --with-readline-dir=$HOME/.rvm/usr
+  rvm reinstall $RUBY --with-readline-dir=$HOME/.rvm/usr
 }
 
 function uninstall()

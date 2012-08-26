@@ -21,7 +21,7 @@ rails_script ()
   $cmd
 }
 
-
+alias unexample="find ./config/ -name '*.example'|xargs basename -s .example | xargs -I % cp -i config/%{.example,}"
 alias Rdm='rake db:migrate'
 alias Rdmr='rake db:migrate:redo'
 

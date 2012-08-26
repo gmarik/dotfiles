@@ -1,16 +1,22 @@
 # vim: st=2:ts=2:et
+
 [core]
   excludesfile = ~/.gitignore-global
-	quotepath = false
+  quotepath = false
+
 [user]
   name  = gmarik
   email = gmarik@gmail.com
-[push]
-  default = current
+
 [init]
   templatedir = ~/.gitfiles/templates/
+
+[push]
+  default = current
+
 [commit]
   template = ~/.gitfiles/COMMIT_EDITMSG
+
 [color]
   branch = auto
   diff = auto
@@ -28,8 +34,16 @@
   added = yellow
   changed = green
   untracked = cyan
+
+[log]
+  date = relative
+
 ; [apply]
 ;   whitespace = fix
+
+[diff]
+  tool = vimdiff
+
 [mergetool "mvimdiff"]
   cmd="/Applications/MacVim.app/Contents/MacOS/Vim -d -g -c 'wincmd J'  $MERGED $LOCAL $BASE $REMOTE"
   keepbackup=false
@@ -77,14 +91,14 @@
   ea    = "!${EDITOR:-vim} $(git status --short --porcelain|cut -f2 -d' ')"
   gr    = grep --color --ignore-case -n
   k     = "!gitk &"
-  l     = log --date=relative
-  ls    = log --stat=120,130 --date=relative
-  lp    = log --patch --date=relative
-  lpw   = log --patch --word-diff --date=relative
-  ll    = log  --abbrev-commit --date=relative --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
+  l     = log
+  ls    = log --stat=120,130
+  lp    = log --patch
+  lpw   = log --patch --word-diff
+  ll    = log  --abbrev-commit --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
   l1    = !"git --no-pager ll -10; echo ''"
   lg    = !git ll --graph 
-  lu    = log ORIG_HEAD.. --stat --no-merges --date=relative
+  lu    = log ORIG_HEAD.. --stat --no-merges
   lo    = !git ll ORIG_HEAD..
   po    = push origin HEAD
   poh   = push origin HEAD
@@ -97,6 +111,7 @@
   ri    = rebase --interactive
   rih   = "!f() { git rebase -i HEAD$1; }; f "
   rst   = reset
+  roh   = "! git --no-pager ll -10 ORIG_HEAD && read -p '^C to stop, anykey to continue' Z && git rst --hard ORIG_HEAD"
   st    = status --short --branch --untracked-files=no 
   sta   = status --short --branch --untracked-files=normal 
   sv    = svn
@@ -108,11 +123,19 @@
   ta    = tag -a
   mt    = "! [ -f /Applications/MacVim.app/Contents/MacOS/Vim ] && git mergetool -t mvimdiff || git mergetool -t vimdiff"
   w     = "! echo \"$(git config user.name) <$(git config user.email)> \"" 
+  me2   = "!f() { B=$(git symbolic-ref HEAD|cut -f3 -d/) && git checkout $1 && git merge $B; }; f "
+
+; http://gitready.com/advanced/2011/10/21/ribbon-and-catchup-reading-new-commits.html
+  ribbon = tag --force _ribbon origin/master
+  catchup = log --patch --reverse --topo-order _ribbon..origin/master
 
 #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
 
 
+# read from given uri
+# push to writable one
 # http://bit.ly/g9c9Y2
+
 [url "http://github.com/"]
   insteadOf = "gh:"
 [url "git@github.com:"]
@@ -134,5 +157,3 @@
 
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
-[diff]
-	tool = vimdiff

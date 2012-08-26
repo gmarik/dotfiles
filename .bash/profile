@@ -91,7 +91,7 @@ git_prompt () {
 #
 # Grep
 #
-export GREP_OPTIONS='--color=auto --exclude="tags" --exclude="TAGS" --exclude="TAGS" --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log'
+export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log'
 
 alias ?='\grep -i'
 alias ??='? -nR'
@@ -116,6 +116,8 @@ alias ?E='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |E - ; }; f ' # grep resul
 alias S='sudo'
 complete -cf sudo
 complete -cf S
+
+alias dig='dig any'
 
 alias pm='pacman'
 alias k9='kill -9'
