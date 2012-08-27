@@ -17,17 +17,20 @@ url=$inputline
 # read inputline
 # icon=$inputline
 
+app=$(echo $url|sed -e 's/\.[[:alpha:]]*$//' -e 's/^\s*[[:alpha:]]*:\/\///')
+
 cat <<EOF
 
 
 
 How to quickly get an icon
-  1) https://www.google.com/search?q=anAPP+icon
+  1) https://www.google.com/search?tbm=isch&q=$app+icon
   2) follow the likeable icon link
   3) Drag'n'Drop to apps' icon area(right click on anAPP.app, choose "Get Info" )
 EOF
 
 echo "Done!"
+
 
 chromePath="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 appRoot="$HOME/Applications"
