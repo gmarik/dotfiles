@@ -31,10 +31,7 @@ fi
 alias ls='ls -h'
 alias df='df -h'
 
-# Firefox with custom profile
-alias Fg="open -a Firefox -n --args -P developer --no-remote"
-alias FP="open -a Firefox -n --args --profilemanager --no-remote"
+# posgres
+# use readline instead libedit
+alias psql='LD_PRELOAD=/lib/libreadline.so.5 psql'
 
-# Terminal shortcuts
-alias .t='~/bin/osx/terminal --new-tab'
-alias .w='~/bin/osx/terminal --new-window'
