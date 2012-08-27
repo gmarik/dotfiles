@@ -75,3 +75,4 @@ cat > $plistPath <<EOF
 </plist>
 EOF
 
+open $appRoot
