@@ -18,6 +18,7 @@ url=$inputline
 # icon=$inputline
 
 app=$(echo $url|sed -e 's/\.[[:alpha:]]*$//' -e 's/^\s*[[:alpha:]]*:\/\///')
+icon_url="https://www.google.com/search?tbm=isch&q=$app+icon"
 
 cat <<EOF
 
@@ -76,3 +77,4 @@ cat > $plistPath <<EOF
 EOF
 
 open $appRoot
+open "$icon_url"
