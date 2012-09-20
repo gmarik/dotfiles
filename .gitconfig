@@ -123,7 +123,9 @@
   ta    = tag -a
   mt    = "! [ -f /Applications/MacVim.app/Contents/MacOS/Vim ] && git mergetool -t mvimdiff || git mergetool -t vimdiff"
   w     = "! echo \"$(git config user.name) <$(git config user.email)> \"" 
-  me2   = "!f() { B=$(git symbolic-ref HEAD|cut -f3 -d/) && git checkout $1 && git merge $B; }; f "
+  # me2 == "merge to" merge current branch to named.
+  # does 3 operations in one shot unless merge conflicts
+  me2   = "!f() { git checkout $1 && git pull && git merge -; }; f "
 
 ; http://gitready.com/advanced/2011/10/21/ribbon-and-catchup-reading-new-commits.html
   ribbon = tag --force _ribbon origin/master
