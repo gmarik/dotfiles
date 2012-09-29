@@ -1,0 +1,1 @@
+SBT_OPTS="-Xmx1024M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M"
