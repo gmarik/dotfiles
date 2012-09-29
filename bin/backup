@@ -3,7 +3,7 @@ case `uname` in
   Darwin)
     OPTS=""
     DATA="$HOME /Users/Shared"
-    VOLUME=`ls -1d /Volumes/wd1T*|head -1`
+    VOLUME=`ls -1d /Volumes/wd1T*/backup|head -1`
   ;;
 
   Linux)
