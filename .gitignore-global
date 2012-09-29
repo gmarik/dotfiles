@@ -8,9 +8,19 @@ tags
 *.iml
 *.ipr
 *.iws
+# Eclipse / Java
+*.class
+target
+.metadata
+.cache
+.worksheet
+.settings
+.project
+.classpath
+
+# Ruby
 .generators
 .rakeTasks
-
 
 # OSX
 *.DS_Store
@@ -25,3 +35,5 @@ __MACOSX/*
 *.xcuserstate
 project.xcworkspace/
 xcuserdata/
+
+
