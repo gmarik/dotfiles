@@ -49,11 +49,15 @@
   keepbackup=false
 
 [alias]
+
+  # Adding
   a     = add
   ae    = add --edit
   ai    = add --interactive
   ap    = add --patch
   au    = add --update
+
+  # Branching
   b     = branch
   bls   = branch -v # list branches with last commit in
   brm   = branch -d # remove if branch-to-be-removed if fully merged into HEAD
@@ -61,36 +65,54 @@
   # bt - branch track configures current branch to "track" same name from origin or specified remote
   bt    = "!f() { B=$(git symbolic-ref HEAD|cut -f3 -d/) && git config branch.$B.remote ${1:-origin} && git config branch.$B.merge refs/heads/$B; }; f"
   bmv   = branch -m
+
+  # Config
   cg    = config --global
   ceg   = config --global --edit
   clg   = config --global --list
   c     = config 
   cl    = config --list
   ce    = config --edit
+
+  # Checkout
   co    = checkout
   cob   = checkout -b
   com   = "!f() { git fetch; git checkout -b master origin/master; }; f"
   cot   = "!f() { git fetch; git checkout -b ${1##*/} $1; }; f " 
-  #coe   = "!f() { git symbolic-ref HEAD refs/heads/${1:-empty}; rm .git/index; git clean -fdx; git commit --allow-empty -m 'empty, clean branch'; }; f"
+
+  # Add and Commit
   ca    = "!f() { git add $1; git ci -v $1; }; f"
+
+  # Commit
   ci    = commit -e -C HEAD -v    --reset-author --untracked-files=no 
   cia   = commit -e -C HEAD -v -a --reset-author --untracked-files=no 
   ciab  = !B=$(git symbolic-ref HEAD 2>/dev/null) && git commit -v -a --edit -m "${B##refs/heads/}:" --untracked-files=no
   cii   = commit --interactive
+  # edit last commit's message
   cid   = commit --amend -v
   cim   = commit -m
   cip   = commit -am '[...in progress...]' 
-  cir   = reset HEAD^
+
   chp   = cherry-pick 
+
+  # Diff
   d     = diff
   dc    = diff --cached
   do    = diff ORIG_HEAD..
   ds    = diff --stat=120,130 -M -C 
   dy    = diff --summary -M -C
+
+  # Edit files
   em    = "!${EDITOR:-vim} $(git ls-files --modified)"
   ea    = "!${EDITOR:-vim} $(git status --short --porcelain|cut -f2 -d' ')"
+
+  # Grep
   gr    = grep --color --ignore-case -n
+
+  # GitK
   k     = "!gitk &"
+
+  # Log
   l     = log
   ls    = log --stat=120,130
   lp    = log --patch
@@ -100,38 +122,63 @@
   lg    = !git ll --graph 
   lu    = log ORIG_HEAD.. --stat --no-merges
   lo    = !git ll ORIG_HEAD..
+
+  # Push
   po    = push origin HEAD
   poh   = push origin HEAD
+
+  # Pull
   pu    = pull
   pr    = pull --rebase
-  up    = pull --rebase
+
+  # Rebase
   r     = rebase
   ra    = rebase --abort
   rc    = rebase --continue
   ri    = rebase --interactive
   rih   = "!f() { git rebase -i HEAD$1; }; f "
+
+  # Reset
   rst   = reset
+  # reset to ORIG_HEAD with confirmation
   roh   = "! git --no-pager ll -10 ORIG_HEAD && read -p '^C to stop, anykey to continue' Z && git rst --hard ORIG_HEAD"
-  st    = status --short --branch --untracked-files=no 
+  rl   = reset HEAD^
+
+  # Status
+  # don't show untracked files
+  st    = status --short --branch # --untracked-files=no 
+  # show all
   sta   = status --short --branch --untracked-files=normal 
+
+  # Svn
   sv    = svn
   svci  = svn dcommit --no-rebase
   svr   = svn rebase
+
+  # sync
   sy     = !git pull && git push
+
   sw    = update-index  --skip-worktree 
   nosw  = update-index --no-skip-worktree
+
   ta    = tag -a
+
+  # Merge Tool
   mt    = "! [ -f /Applications/MacVim.app/Contents/MacOS/Vim ] && git mergetool -t mvimdiff || git mergetool -t vimdiff"
+
+  # Show current `"user" <em@a.il>` configured
   w     = "! echo \"$(git config user.name) <$(git config user.email)> \"" 
-  # me2 == "merge to" merge current branch to named.
+
+  # me2 == "merge to" merge current branch to named one.
   # does 3 operations in one shot unless merge conflicts
   me2   = "!f() { git checkout $1 && git pull && git merge -; }; f "
 
-; http://gitready.com/advanced/2011/10/21/ribbon-and-catchup-reading-new-commits.html
+  # codereview
+  # http://gitready.com/advanced/2011/10/21/ribbon-and-catchup-reading-new-commits.html
   ribbon = tag --force _ribbon origin/master
   catchup = log --patch --reverse --topo-order _ribbon..origin/master
 
-#  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
+  #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
 
 
 # read from given uri
