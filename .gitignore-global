@@ -25,3 +25,6 @@ __MACOSX/*
 *.xcuserstate
 project.xcworkspace/
 xcuserdata/
+
+*.class
+target/
