@@ -68,11 +68,11 @@
 
   # Config
   cg    = config --global
-  ceg   = config --global --edit
   clg   = config --global --list
   c     = config 
   cl    = config --list
   ce    = config --edit
+  ceg   = config --global --edit
 
   # Checkout
   co    = checkout
@@ -84,14 +84,15 @@
   ca    = "!f() { git add $1; git ci -v $1; }; f"
 
   # Commit
-  ci    = commit -e -C HEAD -v    --reset-author --untracked-files=no 
-  cia   = commit -e -C HEAD -v -a --reset-author --untracked-files=no 
+  cis   = commit    -e -C HEAD -v --reset-author --untracked-files=no  # only staged
+  ci    = commit -a -e -C HEAD -v --reset-author --untracked-files=no  # everything
+
   ciab  = !B=$(git symbolic-ref HEAD 2>/dev/null) && git commit -v -a --edit -m "${B##refs/heads/}:" --untracked-files=no
   cii   = commit --interactive
-  # edit last commit's message
-  cid   = commit --amend -v
+  
+  cid   = commit --amend -v                                            # edit last commit's message
   cim   = commit -m
-  cip   = commit -am '[...in progress...]' 
+  cip   = commit -am 'WIP!'
 
   chp   = cherry-pick 
 
