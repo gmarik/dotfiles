@@ -36,4 +36,5 @@ __MACOSX/*
 project.xcworkspace/
 xcuserdata/
 
-
+*.class
+target/

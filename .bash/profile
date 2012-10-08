@@ -7,7 +7,7 @@
 export EDITOR='vim'
 export LESS="--RAW-CONTROL-CHARS --ignore-case"  # colored, same as -R
 export PAGER='less'
-export MANPAGER='col -bx | view - -c ":set ft=man noml" -c ":nmap q :q<CR>"'
+export MANPAGER='col -bx | view - -c ":set ft=man noml noma" -c ":nmap q :q<CR>"'
 
 export ENV_NAME=$(uname -s|tr 'A-Z' 'a-z')
 #
@@ -153,7 +153,7 @@ alias tf='tail -f '
 # bash
 alias Brc='E ~/.bashrc && source ~/.bashrc'
 alias Bstats='f() { history|cut -d\  -f4-5|sort|uniq -c|sort -rn|head -${1:-30}; }; f'
-alias pla='mcd /tmp/play-$RANDOM.$RANDOM'
+alias ,p='mcd /tmp/play`date +%y%m%d.%H%M`'
 
 # editor
 alias vi='vim'

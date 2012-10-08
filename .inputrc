@@ -10,3 +10,7 @@
 
 set show-all-if-ambiguous On
 set completion-ignore-case on
+
+
+# cycle through available options
+# TAB: menu-complete
