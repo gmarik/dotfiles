@@ -138,6 +138,7 @@
 
 [url "http://github.com/"]
   insteadOf = "gh:"
+
 [url "git@github.com:"]
   pushInsteadOf = "https://github.com/"
   pushInsteadOf = "http://github.com/"
@@ -157,3 +158,7 @@
 
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
+
+[url "git@bitbucket.org:gmarik/"]
+  insteadOf = "bbm:"
+
