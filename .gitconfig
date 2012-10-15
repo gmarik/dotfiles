@@ -212,3 +212,5 @@
 [url "git@bitbucket.org:gmarik/"]
   insteadOf = "bbm:"
 
+[url "~/Dropbox/.gitrepos/"]
+  insteadOf = "dx:"
