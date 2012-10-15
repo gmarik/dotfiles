@@ -84,8 +84,8 @@
   ca    = "!f() { git add $1; git ci -v $1; }; f"
 
   # Commit
-  cis   = commit    -e -C HEAD -v --reset-author --untracked-files=no  # only staged
-  ci    = commit -a -e -C HEAD -v --reset-author --untracked-files=no  # everything
+  cia   = commit -a -e -C HEAD -v --reset-author --untracked-files=no
+  ci    = commit    -e -C HEAD -v --reset-author --untracked-files=no
 
   ciab  = !B=$(git symbolic-ref HEAD 2>/dev/null) && git commit -v -a --edit -m "${B##refs/heads/}:" --untracked-files=no
   cii   = commit --interactive
