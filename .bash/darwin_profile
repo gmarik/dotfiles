@@ -31,7 +31,11 @@ fi
 alias ls='ls -h'
 alias df='df -h'
 
+#
+alias rmt='rmtrash'
+
 # posgres
 # use readline instead libedit
 alias psql='LD_PRELOAD=/usr/local/lib/libreadline.6.dylib \psql'
+
 
