@@ -137,7 +137,10 @@
   ra    = rebase --abort
   rc    = rebase --continue
   ri    = rebase --interactive
-  rih   = "!f() { git rebase -i HEAD$1; }; f "
+
+  # interactive rebase mostly for squashing/rearranging commits
+  # operates on last 2 if not specified otherwise
+  rih   = "!f() { git rebase -i HEAD~${1:-'2'}; }; f "
 
   # Reset
   rst   = reset
