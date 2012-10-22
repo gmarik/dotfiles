@@ -146,6 +146,9 @@
   rst   = reset
   # reset to ORIG_HEAD with confirmation
   roh   = "! git --no-pager ll -10 ORIG_HEAD && read -p '^C to stop, anykey to continue' Z && git rst --hard ORIG_HEAD"
+
+  # reset to prev commit
+  # used mostly to reset WIP commits(used as stash)
   rl   = reset HEAD^
 
   # Status
