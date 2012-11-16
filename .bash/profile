@@ -94,7 +94,8 @@ git_prompt () {
 export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log'
 
 alias ?='\grep -i'
-alias ??='? -nR'
+# alias ??='? -nR'
+alias ??='f () { ? -nr "$1" ${2:-.}; }; f '
 alias ?f='f () { find ${2:-.} -name "*$1*"; }; f '
 alias ?E='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |E - ; }; f ' # grep results into editor
 
