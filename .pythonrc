@@ -1,4 +1,4 @@
-# Save as ~/.pythonrc and add 'export PYTHONSTARTUP=/etc/pythonrc' to ~/.bashrc
+# Save as ~/.pythonrc and add 'export PYTHONSTARTUP=~/.pythonrc' to ~/.bashrc
 # from http://www.digitalprognosis.com/opensource/scripts/pythonrc
 
 try:
