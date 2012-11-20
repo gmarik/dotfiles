@@ -21,7 +21,7 @@ readline.parse_and_bind("tab: complete")
 readline.set_completer(irlcompleter().complete)
 
 # Restore our command-line history, and save it when Python exits.
-historyPath = os.path.expanduser("~/.pyhistory")
+historyPath = os.path.expanduser("~/.python_history")
 
 # Create a blank history file if it doesn't exist already
 if not os.path.exists(historyPath) and not os.path.isdir(historyPath):
