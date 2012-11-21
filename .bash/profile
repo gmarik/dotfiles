@@ -100,6 +100,12 @@ alias ?f='f () { find ${2:-.} -name "*$1*"; }; f '
 alias ?E='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |E - ; }; f ' # grep results into editor
 
 #
+# Python
+#
+
+test -f ~/.pythonrc && export PYTHONSTARTUP=~/.pythonrc
+
+#
 # Less coloring
 #
 #export LESS_TERMCAP_mb=$'\E[01;31m'
