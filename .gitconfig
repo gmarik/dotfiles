@@ -79,6 +79,7 @@
   cob   = checkout -b
   com   = "!f() { git fetch; git checkout -b master origin/master; }; f"
   cot   = "!f() { git fetch; git checkout -b ${1##*/} $1; }; f " 
+  con   = "!f() { git fetch; git checkout -b $1 origin/master }; f "
 
   # Add and Commit
   ca    = "!f() { git add $1; git ci -v $1; }; f"
