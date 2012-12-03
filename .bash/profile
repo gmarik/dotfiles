@@ -72,22 +72,6 @@ galias () {
   done
 }
 
-# http://www.andrewvos.com/2011/07/25/showing-git-status-in-your-bash-prompt/
-git_prompt () {
-  local STATUS=`git status 2>&1`
-  if [[ "$STATUS" == *'Not a git repository'* ]]
-  then
-    GITREPO_STATUS=''
-  else
-    if [[ "$STATUS" == *'working directory clean'* ]]
-    then
-      GITREPO_STATUS='[0;32m+'
-    else
-      GITREPO_STATUS='[0;31m*'
-    fi
-  fi
-}
-
 #
 # Grep
 #
