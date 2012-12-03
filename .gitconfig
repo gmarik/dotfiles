@@ -154,7 +154,7 @@
 
   # Status
   # don't show untracked files
-  st    = status --short --branch # --untracked-files=no 
+  st    = status --short --branch --untracked-files=no 
   # show all
   sta   = status --short --branch --untracked-files=normal 
 
