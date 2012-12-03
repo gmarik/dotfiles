@@ -1,6 +1,6 @@
 
-#TODO: fix bak dir/: fails to move to dir/_bak
-echo "moving $* to $*_bak"
-mv $* $*_bak
+
+dir=${@%/} # remove trailing slash
+mv $dir ${dir}_bak
 
 # vim: ft=sh
