@@ -49,6 +49,15 @@ _prompt () {
 # PS1='$(_prompt) [1A [7C'
 # PS1='$(_prompt) '
 
+# quick status stats over git repos, ie [1 M 1 D 59 ??]
+# whis is 1 Modified and 59 (??) Untracked files
+_git_status_stats() {
+  if [ -n "$(__gitdir)" ]; then 
+    stats=$(git status --short|tail +1|cut -c1-2|uniq -c|xargs) 
+    printf "$1" "$stats"
+  fi
+}
+
 #
 # Prompt string
 #
