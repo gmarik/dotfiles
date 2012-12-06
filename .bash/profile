@@ -49,17 +49,6 @@ _prompt () {
 # PS1='$(_prompt) [1A [7C'
 # PS1='$(_prompt) '
 
-# quick status stats over git repos, ie [1 M 1 D 59 ??]
-# which is 1 Modified 1 Deleted and 59 (??) Untracked files
-# use: _git_status_stats "%s"
-# depends on `__gitdir` from "bash-completion" package
-_git_status_stats() {
-  if [ -n "$(__gitdir)" ]; then 
-    stats=$(git status --short|cut -c1-2|uniq -c|xargs)
-    printf "$1" "$stats"
-  fi
-}
-
 #
 # Prompt string
 #
@@ -81,6 +70,17 @@ galias () {
     alias "$_alias"="git $a"
     complete -o default -o nospace -F _git_$cmd $_alias # allow git-completion to work with alias aswell
   done
+}
+
+# quick status stats over git repos, ie [1 M 1 D 59 ??]
+# which is 1 Modified 1 Deleted and 59 (??) Untracked files
+# use: _git_status_stats "%s"
+# depends on `__gitdir` from "bash-completion" package
+_git_status_stats() {
+  if [ -n "$(__gitdir)" ]; then 
+    stats=$(git status --short|cut -c1-2|uniq -c|xargs)
+    printf "$1" "$stats"
+  fi
 }
 
 #
