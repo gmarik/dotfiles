@@ -50,10 +50,12 @@ _prompt () {
 # PS1='$(_prompt) '
 
 # quick status stats over git repos, ie [1 M 1 D 59 ??]
-# whis is 1 Modified and 59 (??) Untracked files
+# which is 1 Modified 1 Deleted and 59 (??) Untracked files
+# use: _git_status_stats "%s"
+# depends on `__gitdir` from "bash-completion" package
 _git_status_stats() {
   if [ -n "$(__gitdir)" ]; then 
-    stats=$(git status --short|tail +1|cut -c1-2|uniq -c|xargs) 
+    stats=$(git status --short|cut -c1-2|uniq -c|xargs)
     printf "$1" "$stats"
   fi
 }
