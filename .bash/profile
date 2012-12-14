@@ -79,7 +79,9 @@ galias () {
 _git_status_stats() {
   if [ -n "$(__gitdir)" ]; then 
     stats=$(git status --short|cut -c1-2|uniq -c|xargs)
-    printf "$1" "$stats"
+    if [ -n "$stats" ]; then
+      printf "$1" "$stats"
+    fi
   fi
 }
 
