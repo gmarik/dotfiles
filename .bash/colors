@@ -1,38 +1,42 @@
 #https://wiki.archlinux.org/index.php/Color_Bash_Prompt
 # ^[ is entered as CTRL-v Esc
 
-txtblk='[0;30m' # Black - Regular
-txtred='[0;31m' # Red
-txtgrn='[0;32m' # Green
-txtylw='[0;33m' # Yellow
-txtblu='[0;34m' # Blue
-txtpur='[0;35m' # Purple
-txtcyn='[0;36m' # Cyan
-txtwht='[0;37m' # White
-bldblk='[1;30m' # Black - Bold
-bldred='[1;31m' # Red
-bldgrn='[1;32m' # Green
-bldylw='[1;33m' # Yellow
-bldblu='[1;34m' # Blue
-bldpur='[1;35m' # Purple
-bldcyn='[1;36m' # Cyan
-bldwht='[1;37m' # White
-unkblk='[4;30m' # Black - Underline
-undred='[4;31m' # Red
-undgrn='[4;32m' # Green
-undylw='[4;33m' # Yellow
-undblu='[4;34m' # Blue
-undpur='[4;35m' # Purple
-undcyn='[4;36m' # Cyan
-undwht='[4;37m' # White
-bakblk='[40m'   # Black - Background
-bakred='[41m'   # Red
-bakgrn='[42m'   # Green
-bakylw='[43m'   # Yellow
-bakblu='[44m'   # Blue
-bakpur='[45m'   # Purple
-bakcyn='[46m'   # Cyan
-bakwht='[47m'   # White
-txtrst='[0m'    # Text Reset
+tblk='[0;30m' # Black - Regular
+tred='[0;31m' # Red
+tgrn='[0;32m' # Green
+tylw='[0;33m' # Yellow
+tblu='[0;34m' # Blue
+tpur='[0;35m' # Purple
+tcyn='[0;36m' # Cyan
+twht='[0;37m' # White
+# Bold
+bblk='[1;30m' # Black
+bred='[1;31m' # Red
+bgrn='[1;32m' # Green
+bylw='[1;33m' # Yellow
+bblu='[1;34m' # Blue
+bpur='[1;35m' # Purple
+bcyn='[1;36m' # Cyan
+bwht='[1;37m' # White
+# Underline
+ublk='[4;30m' # Black
+ured='[4;31m' # Red
+ugrn='[4;32m' # Green
+uylw='[4;33m' # Yellow
+ublu='[4;34m' # Blue
+upur='[4;35m' # Purple
+ucyn='[4;36m' # Cyan
+uwht='[4;37m' # White
+# Background
+bgblk='[40m'   # Black 
+bgred='[41m'   # Red
+bggrn='[42m'   # Green
+bgylw='[43m'   # Yellow
+bgblu='[44m'   # Blue
+bgpur='[45m'   # Purple
+bgcyn='[46m'   # Cyan
+bgwht='[47m'   # White
+
+rst='[0m'    # Text Reset
 
 # vim:ft=sh
