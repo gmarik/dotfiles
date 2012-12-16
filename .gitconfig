@@ -21,6 +21,7 @@
   branch = auto
   diff = auto
   status = auto
+  grep = auto
 [color "branch"]
   current = yellow reverse
   local = yellow
