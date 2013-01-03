@@ -1,0 +1,23 @@
+#!/bin/bash
+# vim: ft=sh
+# http://www.derekwyatt.org/2012/09/01/the-most-useful-code-ive-written-in-weeks/
+
+fileSpec="$1"
+shift
+cmd="$@"
+sentinel=/tmp/t.$$
+
+touch -t197001010000 $sentinel
+while :
+do
+  files=$(find $fileSpec -newer $sentinel ) # -a '(' $fileSpec ')')
+#
+  if [ $? != 0 ]; then exit $?; fi
+
+  if [ "$files" != "" ]; then
+    $cmd
+    touch $sentinel
+  fi
+  sleep 0.1
+done
+
