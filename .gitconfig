@@ -128,7 +128,6 @@
 
   # Push
   po    = push origin HEAD
-  poh   = push origin HEAD
 
   # Pull
   pu    = pull
