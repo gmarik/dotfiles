@@ -1,13 +1,23 @@
 #!/bin/bash
 # vim: ft=sh
+#
+# based on 
 # http://www.derekwyatt.org/2012/09/01/the-most-useful-code-ive-written-in-weeks/
 
-fileSpec="$1"
+# watchme 'rspec %' ./spec
+# runs `rspec files_that_changed`
+#
+# watchme rspec ./spec
+# runs just `rspec`
+
+cmd="$1"
 shift
-cmd="$@"
+fileSpec="$@"
+
 sentinel=/tmp/t.$$
 
-touch -t197001010000 $sentinel
+touch $sentinel
+
 while :
 do
   files=$(find $fileSpec -newer $sentinel ) # -a '(' $fileSpec ')')
@@ -15,7 +25,10 @@ do
   if [ $? != 0 ]; then exit $?; fi
 
   if [ "$files" != "" ]; then
-    $cmd
+    run_cmd=${cmd//%/$files}
+    echo "Running $run_cmd"
+
+    $run_cmd
     touch $sentinel
   fi
   sleep 0.1
