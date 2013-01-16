@@ -128,7 +128,6 @@
 
   # Push
   po    = push origin HEAD
-  poh   = push origin HEAD
 
   # Pull
   pu    = pull
@@ -188,6 +187,10 @@
   catchup = log --patch --reverse --topo-order _ribbon..origin/master
 
   #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
+  #
+  # xargs
+  # run command on modified files
+  x = "!f() { git status --short --untracked-files=no | cut -d' ' -f3 | xargs $1; }; f"
 
 
 # read from given uri
