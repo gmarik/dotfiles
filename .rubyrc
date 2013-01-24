@@ -22,5 +22,6 @@ _mategem()
 complete -F _mategem -o dirnames mategem
 
 [ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
+[ -d ~/.rbenv ] && export PATH=$PATH:~/.rbenv/bin && eval "$(rbenv init -)"
 
 # vim: ft=sh:ts=2

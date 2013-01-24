@@ -34,6 +34,9 @@ alias df='df -h'
 #
 alias rmt='rmtrash'
 
+# top running processes
+alias psg='ps -efwww | awk "{print $8}" | sort | uniq -c | sort -n | tail -3'
+
 # Slow terminal.app startup
 # http://superuser.com/questions/31403/how-can-i-speed-up-terminal-app-or-iterm-on-mac-osx
 alias rmasl='sudo rm -rf /private/var/log/asl/*.asl'
