@@ -120,8 +120,8 @@
   ls    = log --stat=120,130
   lp    = log --patch
   lpw   = log --patch --word-diff
-  ll    = log  --abbrev-commit --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
-  l1    = !"git ll -10"
+  ll    = log  --abbrev-commit --pretty=tformat:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
+  l1    = !"git --no-pager ll -10"
   lg    = !git ll --graph
   lu    = log @{upstream}.. --stat --no-merges
   llu    = !git ll @{upstream}..
