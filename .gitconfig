@@ -101,7 +101,7 @@
   # Diff
   d     = diff
   dc    = diff --cached
-  do    = diff ORIG_HEAD..
+  du    = diff @{upstream}
   ds    = diff --stat=120,130 -M -C 
   dy    = diff --summary -M -C
 
@@ -121,10 +121,10 @@
   lp    = log --patch
   lpw   = log --patch --word-diff
   ll    = log  --abbrev-commit --pretty=format:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
-  l1    = !"git --no-pager ll -10; echo ''"
-  lg    = !git ll --graph 
-  lu    = log ORIG_HEAD.. --stat --no-merges
-  lo    = !git ll ORIG_HEAD..
+  l1    = !"git ll -10"
+  lg    = !git ll --graph
+  lu    = log @{upstream}.. --stat --no-merges
+  llu    = !git ll @{upstream}..
 
   # Push
   po    = push origin HEAD
@@ -138,6 +138,7 @@
   ra    = rebase --abort
   rc    = rebase --continue
   ri    = rebase --interactive
+  ru    = rebase --onto @{upstream}
 
   # interactive rebase mostly for squashing/rearranging commits
   # operates on last 2 if not specified otherwise
@@ -145,12 +146,12 @@
 
   # Reset
   rst   = reset
-  # reset to ORIG_HEAD with confirmation
-  roh   = "! git --no-pager ll -10 ORIG_HEAD && read -p '^C to stop, anykey to continue' Z && git rst --hard ORIG_HEAD"
+  # reset to @{upstream} with confirmation
+  roh   = "! git --no-pager ll -10 @{upstream} && read -p '^C to stop, anykey to continue' Z && git rst --hard @{upstream}"
 
   # reset to prev commit
   # used mostly to reset WIP commits(used as stash)
-  rl   = reset HEAD^
+  rl   = reset @{1}
 
   # Status
   # don't show untracked files
@@ -164,7 +165,7 @@
   svr   = svn rebase
 
   # sync
-  sy     = !git pull && git push
+  sy     = !git pull --rebase && git push
 
   sw    = update-index  --skip-worktree 
   nosw  = update-index --no-skip-worktree
