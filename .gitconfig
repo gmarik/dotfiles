@@ -110,7 +110,7 @@
   ea    = "!${EDITOR:-vim} $(git status --short --porcelain|cut -f2 -d' ')"
 
   # Grep
-  gr    = grep --color --ignore-case -n
+  g    = "!git --no-pager grep --color --ignore-case -n"
 
   # GitK
   k     = "!gitk &"
