@@ -118,7 +118,7 @@
   # Log
   l     = log
   ls    = log --stat=120,130
-  lp    = log --patch
+  lp    = log --patch -m -c # show merges and compressed diff format
   lpw   = log --patch --word-diff
   ll    = log  --abbrev-commit --pretty=tformat:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
   l1    = !"git --no-pager ll -10"
