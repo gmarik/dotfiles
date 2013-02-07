@@ -98,6 +98,8 @@
 
   chp   = cherry-pick 
 
+  ctags = "!.git/hooks/ctags"
+
   # Diff
   d     = diff
   dc    = diff --cached
