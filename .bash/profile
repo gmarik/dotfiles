@@ -88,7 +88,7 @@ _git_status_stats() {
 #
 # Grep
 #
-export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log'
+export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log --exclude-dir=tmp'
 
 alias ?='\grep -i'
 # alias ??='? -nR'
