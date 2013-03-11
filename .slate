@@ -3,6 +3,8 @@ config defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
+config modalEscapeKey esc
+
 config secondsBetweenRepeat 0.1
 config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
@@ -44,13 +46,15 @@ alias bottomright corner bottom-right resize: ${ssx}/2;${ssy}/2
 # bind up:ctrl;alt     resize +0   +10% bottom-right
 # bind down:ctrl;alt   resize +0   -10% bottom-right
 
-# Push Bindings
-bind right:${leader}  push right bar-resize:screenSizeX/2
-bind left:${leader}   push left  bar-resize:screenSizeX/2
-bind up:${leader}     push up    bar-resize:screenSizeY/2
-bind down:${leader}   push down  bar-resize:screenSizeY/2
+#
+bind space:${leader}  move ${fullscreen}
 
-bind esc:${leader}         move    ${fullscreen}
+# Push Bindings
+bind l:${leader}  push right bar-resize:screenSizeX/2
+bind h:${leader}  push left  bar-resize:screenSizeX/2
+bind k:${leader}  push up    bar-resize:screenSizeY/2
+bind j:${leader}  push down  bar-resize:screenSizeY/2
+
 
 # Nudge Bindings
 # bind right:shift;alt nudge +10% +0
@@ -81,4 +85,13 @@ bind t:${leader} focus 'Terminal'
 
 # Window Hints
 bind esc:alt hint
+
+# misc 
+bind return:${leader} relaunch
+bind delete:${leader} undo
+
+bind `:${leader} grid padding:1 1:8,6
+
+# bind tab:cmd switch
+
 # bind esc:fn hint
