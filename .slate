@@ -1,0 +1,84 @@
+# http://thume.ca/howto/2012/11/19/using-slate/
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+#config keyboardLayout dvorak
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+#config windowHintsDuration 5
+config windowHintsSpread true
+#config windowHintsOrder persist
+
+
+alias leader esc;cmd
+
+# General aliases
+alias sox screenOriginX
+alias soy screenOriginY
+alias ssx screenSizeX
+alias ssy screenSizeY
+
+alias fullscreen ${sox};${soy} ${ssx};${ssy}
+
+alias lefthalf ${sox};${soy}           ${ssx}/2;${ssy}
+alias righthalf ${sox}+${ssx}/2;${soy} ${ssx}/2;${ssy}
+
+alias topleft corner top-left resize: ${ssx}/2;${ssy}/2
+alias topright corner top-right resize: ${ssx}/2;${ssy}/2
+alias bottomleft corner bottom-left resize: ${ssx}/2;${ssy}/2
+alias bottomright corner bottom-right resize: ${ssx}/2;${ssy}/2
+
+
+
+# Resize Bindings
+# bind right:alt       resize +10% +0
+# bind left:alt        resize -10% +0
+# bind up:alt          resize +0   -10%
+# bind down:alt        resize +0   +10%
+# bind right:ctrl;alt  resize -10% +0 bottom-right
+# bind left:ctrl;alt   resize +10% +0 bottom-right
+# bind up:ctrl;alt     resize +0   +10% bottom-right
+# bind down:ctrl;alt   resize +0   -10% bottom-right
+
+# Push Bindings
+bind right:${leader}  push right bar-resize:screenSizeX/2
+bind left:${leader}   push left  bar-resize:screenSizeX/2
+bind up:${leader}     push up    bar-resize:screenSizeY/2
+bind down:${leader}   push down  bar-resize:screenSizeY/2
+
+bind esc:${leader}         move    ${fullscreen}
+
+# Nudge Bindings
+# bind right:shift;alt nudge +10% +0
+# bind left:shift;alt  nudge -10% +0
+# bind up:shift;alt    nudge +0   -10%
+# bind down:shift;alt  nudge +0   +10%
+#
+
+
+# Throw Bindings
+bind 1:${leader}      throw 0
+bind 2:${leader}      throw 1
+# bind 3:ctrl;alt         throw 2 resize
+# bind right:ctrl;alt;cmd throw right resize
+# bind left:ctrl;alt;cmd  throw left  resize
+# bind up:ctrl;alt;cmd    throw up    resize
+# bind down:ctrl;alt;cmd  throw down  resize
+
+# Focus Bindings
+# bind right:cmd    focus right
+# bind left:cmd     focus left
+# bind up:cmd       focus up
+# bind down:cmd     focus down
+# bind up:cmd;alt   focus behind
+# bind down:cmd;alt focus behind
+bind v:${leader} focus 'MacVim'
+bind t:${leader} focus 'Terminal'
+
+# Window Hints
+bind esc:alt hint
+# bind esc:fn hint
