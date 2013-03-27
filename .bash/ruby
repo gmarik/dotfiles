@@ -2,7 +2,7 @@
 
 _set_root_dir () {
   local gd=$(__gitdir)
-  rfpath=${gd%git}
+  rfpath=${gd%/.git}
   echo "Root: ${txtgrn}${rfpath}${txtrst}"
 }
 
@@ -10,11 +10,17 @@ rails_script ()
 {
   _set_root_dir
 
+  local lwd=`pwd`
+
   target=$1; shift
   if [ -f $rfpath/script/rails ]; then
     cmd="$rfpath/script/rails $target $@"
-  else
-    cmd="$rfpath/script/$target $@"
+  elif [ -f $rfpath/script/$target ]; then
+    cmd="$lwd/script/$target $@"
+  elif [ -f $lwd/script/rails ]; then
+    cmd="$lwd/script/rails $target $@"
+  elif [ -f $lwd/script/$target ]; then
+    cmd="$lwd/script/$target $@"
   fi
 
   echo "Running ${txtgrn}$cmd${txtrst}"
