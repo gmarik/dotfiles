@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#deletes branches that have been merged into master
+
+for b in `git branch --merged master|grep -v master`; do git branch -d $b; done
+
+# vim: ft=sh
