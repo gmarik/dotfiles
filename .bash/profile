@@ -93,7 +93,7 @@ export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude-dir=.g
 alias ?='\grep -i'
 # alias ??='? -nR'
 alias ??='f () { ? -nr "$1" ${2:-.}; }; f '
-alias ?f='f () { find ${2:-.} -name "*$1*"; }; f '
+alias ?f='f () { find ${2:-.} -iname "*$1*"; }; f '
 alias ?E='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |E - ; }; f ' # grep results into editor
 
 #
