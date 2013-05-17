@@ -1,21 +1,15 @@
 # vim: set ft=sh:
 
-_set_root_dir () {
-  local gd=$(__gitdir)
-  rfpath=${gd%/.git}
-  echo "Root: ${txtgrn}${rfpath}${txtrst}"
-}
-
-rails_script () 
+rails_script ()
 {
-  _set_root_dir
+  wd=$(__basedir)
 
   local lwd=`pwd`
 
   target=$1; shift
-  if [ -f $rfpath/script/rails ]; then
-    cmd="$rfpath/script/rails $target $@"
-  elif [ -f $rfpath/script/$target ]; then
+  if [ -f $wd/script/rails ]; then
+    cmd="$wd/script/rails $target $@"
+  elif [ -f $wd/script/$target ]; then
     cmd="$lwd/script/$target $@"
   elif [ -f $lwd/script/rails ]; then
     cmd="$lwd/script/rails $target $@"
@@ -23,7 +17,7 @@ rails_script ()
     cmd="$lwd/script/$target $@"
   fi
 
-  echo "Running ${txtgrn}$cmd${txtrst}"
+  echo "${tgrn}Running${rst} $cmd"
   $cmd
 }
 
@@ -31,7 +25,7 @@ alias unexample="find ./config/ -name '*.example'|xargs basename -s .example | x
 alias Rdm='rake db:migrate'
 alias Rdmr='rake db:migrate:redo'
 
--() { _set_root_dir; touch "$rfpath/tmp/restart.txt" ; }
+-() { touch "$(__basedir)/tmp/restart.txt" ; }
 
 Rc () { rails_script "console"  $@ ; }
 Rs () { rails_script "server"   $@ ; }

@@ -41,3 +41,17 @@ src()
 }
 
 complete -F _src_dir src
+
+__basedir() {
+  local wd;
+  if [ "$(type -t __gitdir)" == "function" -a -n "$(__gitdir)" -a "$(__gitdir)" != ".git" ]; then
+    local gd=$(__gitdir)
+    wd=${gd%/.git}
+  else
+    wd=$(pwd)
+  fi
+
+  # echo "Root: ${tgrn}${wd}${trst}"
+
+  echo "$wd"
+}
