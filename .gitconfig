@@ -205,16 +205,20 @@
 
 [url "http://github.com/"]
   insteadOf = "gh:"
+  insteadOf = "gh://"
 
 [url "git@github.com:"]
   pushInsteadOf = "https://github.com/"
   pushInsteadOf = "http://github.com/"
   pushInsteadOf = "gh:"
+  pushInsteadOf = "gh://"
 
 [url "git@github.com:gmarik/"]
   pushInsteadOf = "gm:"
+  pushInsteadOf = "gm://"
 [url "http://github.com/gmarik/"]
   insteadOf = "gm:"
+  insteadOf = "gm://"
 
 [url "https://gist.github.com/"]
   insteadOf = "gist:"
@@ -228,6 +232,9 @@
 
 [url "git@bitbucket.org:gmarik/"]
   insteadOf = "bbm:"
+  pushInsteadOf = "bbm:"
+  insteadOf = "bbm://"
+  pushInsteadOf = "bbm://"
 
 [url "~/Dropbox/.gitrepos/"]
   insteadOf = "dx:"
