@@ -238,3 +238,7 @@
 
 [url "~/Dropbox/.gitrepos/"]
   insteadOf = "dx:"
+
+[include]
+  path = ~/.gitconfig-local
+  path = ~/.gitconfig-private
