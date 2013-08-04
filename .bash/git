@@ -1,0 +1,26 @@
+# automatically create aliases from git config
+galias () {
+  # TODO: optimize it
+  aliases=`git config --global --get-regexp 'alias.*'|cut -f1 -d' '|cut -f2 -d'.'`
+  for a in ${aliases}; do 
+    local _alias=${1:-:}${a}
+    local cmd=`git config alias.$a|cut -f1 -d ' '`
+    alias "$_alias"="git $a"
+    complete -o default -o nospace -F _git_$cmd $_alias # allow git-completion to work with alias aswell
+  done
+}
+
+# quick status stats over git repos, ie [1 M 1 D 59 ??]
+# which is 1 Modified 1 Deleted and 59 (??) Untracked files
+# use: _git_status_stats "%s"
+# depends on `__gitdir` from "bash-completion" package
+_git_status_stats() {
+  if [ "$(type -t __gitdir)" == "function" -a -n "$(__gitdir)" ]; then
+    stats=$(git status --short|cut -c1-2|sort|uniq -c|awk '{print $2"/"$1 }'|xargs)
+    if [ -n "$stats" ]; then
+      printf "$1" "$stats"
+    fi
+  fi
+}
+
+# vim: ft=sh

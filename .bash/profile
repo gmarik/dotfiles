@@ -60,31 +60,6 @@ PS1='\[$bgylw\]\D{%H:%M}\[$rst\] $(__git_ps1 "\[$bpur\]%s" )$( _git_status_stats
 alias G='git'
 complete -o default -o nospace -F _git G # allow git-completion to work with alias aswell
 
-# automatically create aliases from git config
-galias () {
-  # TODO: optimize it
-  aliases=`git config --global --get-regexp 'alias.*'|cut -f1 -d' '|cut -f2 -d'.'`
-  for a in ${aliases}; do 
-    local _alias=${1:-:}${a}
-    local cmd=`git config alias.$a|cut -f1 -d ' '`
-    alias "$_alias"="git $a"
-    complete -o default -o nospace -F _git_$cmd $_alias # allow git-completion to work with alias aswell
-  done
-}
-
-# quick status stats over git repos, ie [1 M 1 D 59 ??]
-# which is 1 Modified 1 Deleted and 59 (??) Untracked files
-# use: _git_status_stats "%s"
-# depends on `__gitdir` from "bash-completion" package
-_git_status_stats() {
-  if [ -n "$(__gitdir)" ]; then 
-    stats=$(git status --short|cut -c1-2|sort|uniq -c|awk '{print $2"/"$1 }'|xargs)
-    if [ -n "$stats" ]; then
-      printf "$1" "$stats"
-    fi
-  fi
-}
-
 #
 # Grep
 #
@@ -93,7 +68,7 @@ export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude-dir=.g
 alias ?='\grep -i'
 # alias ??='? -nR'
 alias ??='f () { ? -nr "$1" ${2:-.}; }; f '
-alias ?f='f () { find ${2:-.} -name "*$1*"; }; f '
+alias ?f='f () { find ${2:-.} -iname "*$1*"; }; f '
 alias ?E='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |E - ; }; f ' # grep results into editor
 
 #
