@@ -34,6 +34,7 @@ alias topright corner top-right resize: ${ssx}/2;${ssy}/2
 alias bottomleft corner bottom-left resize: ${ssx}/2;${ssy}/2
 alias bottomright corner bottom-right resize: ${ssx}/2;${ssy}/2
 
+alias center  screenOriginX+screenSizeX/2-windowSizeX/2;screenOriginY+screenSizeY/2-windowSizeY/2 windowSizeX;windowSizeY
 
 
 # Resize Bindings
@@ -82,6 +83,7 @@ bind 2:${leader}      throw 1
 # bind down:cmd;alt focus behind
 bind v:${leader} focus 'MacVim'
 bind t:${leader} focus 'Terminal'
+bind x:${leader} focus 'Xcode'
 
 # Window Hints
 bind esc:alt hint
