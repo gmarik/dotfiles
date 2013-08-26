@@ -52,7 +52,7 @@ _prompt () {
 #
 # Prompt string
 #
-PS1='\[$bgylw\]\D{%H:%M}\[$rst\] $(__git_ps1 "\[$bpur\]%s" )$( _git_status_stats "\[$tgrn\][%s]" )\[$tylw\]\W\[$tred\]\$\[$rst\] '
+PS1='\[$bgylw\]\D{%H:%M}\[$rst\] $(__git_ps1 "\[$bpur\]%s" )$( _git_status_stats "\[$tgrn\][%s]" )\[$tylw\]$(ssh_prompt)\W\[$tred\]\$\[$rst\] '
 
 #
 # Git

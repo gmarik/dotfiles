@@ -34,9 +34,23 @@ alias topright corner top-right resize: ${ssx}/2;${ssy}/2
 alias bottomleft corner bottom-left resize: ${ssx}/2;${ssy}/2
 alias bottomright corner bottom-right resize: ${ssx}/2;${ssy}/2
 
+alias center  screenOriginX+screenSizeX/2-windowSizeX/2;screenOriginY+screenSizeY/2-windowSizeY/2 windowSizeX;windowSizeY
 
 
+default two count:2
+default one count:1
+
+layout two 'Xcode'	     move ${fullscreen} 0
+layout two 'Terminal'    move ${righthalf}  0
+layout two 'MacVim'	     move ${lefthalf}   0
+
+layout one 'Xcode'	     move ${fullscreen} 1
+layout one 'Terminal'    move ${righthalf}  1
+layout one 'MacVim'	     move ${lefthalf}   1
+
+#
 # Resize Bindings
+#
 # bind right:alt       resize +10% +0
 # bind left:alt        resize -10% +0
 # bind up:alt          resize +0   -10%
@@ -49,14 +63,18 @@ alias bottomright corner bottom-right resize: ${ssx}/2;${ssy}/2
 #
 bind space:${leader}  move ${fullscreen}
 
+#
 # Push Bindings
-bind l:${leader}  push right bar-resize:screenSizeX/2
-bind h:${leader}  push left  bar-resize:screenSizeX/2
+#
+bind l:${leader}  move ${righthalf} # push right bar-resize:screenSizeX/2
+bind h:${leader}  move ${lefthalf} # push left  bar-resize:screenSizeX/2
 bind k:${leader}  push up    bar-resize:screenSizeY/2
 bind j:${leader}  push down  bar-resize:screenSizeY/2
 
 
+#
 # Nudge Bindings
+#
 # bind right:shift;alt nudge +10% +0
 # bind left:shift;alt  nudge -10% +0
 # bind up:shift;alt    nudge +0   -10%
@@ -64,16 +82,20 @@ bind j:${leader}  push down  bar-resize:screenSizeY/2
 #
 
 
+#
 # Throw Bindings
-bind 1:${leader}      throw 0
-bind 2:${leader}      throw 1
+# 
+bind 1:${leader}      throw 0 resize
+bind 2:${leader}      throw 1 resize
 # bind 3:ctrl;alt         throw 2 resize
 # bind right:ctrl;alt;cmd throw right resize
 # bind left:ctrl;alt;cmd  throw left  resize
 # bind up:ctrl;alt;cmd    throw up    resize
 # bind down:ctrl;alt;cmd  throw down  resize
 
+#
 # Focus Bindings
+# 
 # bind right:cmd    focus right
 # bind left:cmd     focus left
 # bind up:cmd       focus up
@@ -82,6 +104,7 @@ bind 2:${leader}      throw 1
 # bind down:cmd;alt focus behind
 bind v:${leader} focus 'MacVim'
 bind t:${leader} focus 'Terminal'
+bind x:${leader} focus 'Xcode'
 
 # Window Hints
 bind esc:alt hint
