@@ -1,0 +1,6 @@
+export GOHOME=~/.golang
+#export GOROOT=
+
+[ -d ~/.golang ] && export PATH=$PATH:~/.golang/bin
+
+# vim: ft=sh:ts=2
