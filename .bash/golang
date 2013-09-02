@@ -1,5 +1,5 @@
  
-export GOPATH=~/golang
+export GOPATH=~/.golang
 
 [ -d $GOPATH/bin ] && export PATH="$PATH:$GOPATH/bin"
 
