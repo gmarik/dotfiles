@@ -7,7 +7,9 @@ rails_script ()
   local lwd=`pwd`
 
   target=$1; shift
-  if [ -f $wd/script/rails ]; then
+  if [ -f $wd/bin/rails ]; then
+    cmd="$wd/bin/rails $target $@"
+  elif [ -f $wd/script/rails ]; then
     cmd="$wd/script/rails $target $@"
   elif [ -f $wd/script/$target ]; then
     cmd="$lwd/script/$target $@"
