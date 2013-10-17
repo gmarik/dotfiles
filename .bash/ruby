@@ -2,7 +2,7 @@
 
 rails_script ()
 {
-  wd=$(__basedir)
+  local wd=$(__basedir)
 
   local lwd=`pwd`
 
