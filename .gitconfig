@@ -61,6 +61,7 @@
   # Branching
   b     = branch
   bls   = branch -v # list branches with last commit in
+  bs    = "!git branch | cut -c 3- | selecta | xargs git checkout"
   brm   = branch -d # remove if branch-to-be-removed if fully merged into HEAD
   brmf  = branch -D # force removal
   # bt - branch track configures current branch to "track" same name from origin or specified remote
