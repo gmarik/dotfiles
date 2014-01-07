@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+function App() {
+	brew cask install "${@}" #2> /dev/null
+}
+
+function Brew() {
+	brew install "${@}" #2> /dev/null
+}
+
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
+brew upgrade
+
+# Install GNU core utilities (those that come with OS X are outdated)
+Brew coreutils
+echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+Brew findutils
+# Install Bash 4
+Brew bash
+
+# Install more recent versions of some OS X tools
+brew tap homebrew/dupes
+Brew homebrew/dupes/grep
+
+# Install wget with IRI support
+Brew wget --enable-iri
+
+
+# These two formulae didn’t work well last time I tried them:
+#Brew homebrew/dupes/vim
+#Brew homebrew/dupes/screen
+
+Brew git
+#Brew imagemagick
+Brew rename
+Brew rhino
+Brew tree
+Brew webkit2png
+
+# brew tap homebrew/versions
+# brew install lua52
+
+# Install native apps
+brew tap phinze/homebrew-cask
+brew install brew-cask
+
+
+App dropbox
+App google-chrome
+App google-chrome-canary
+App imagealpha
+App imageoptim
+App iterm2
+App macvim
+App miro-video-converter
+App sublime-text
+App the-unarchiver
+App tor-browser
+App transmission
+App ukelele
+App virtualbox
+App vlc
+
+# Remove outdated versions from the cellar
+brew cleanup

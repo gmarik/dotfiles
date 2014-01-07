@@ -1,0 +1,6 @@
+ 
+export GOPATH=~/.golang
+
+[ -d $GOPATH/bin ] && export PATH="$PATH:$GOPATH/bin"
+
+# vim: set ft=sh:
