@@ -29,8 +29,10 @@ _mategem()
 }
 complete -F _mategem -o dirnames mategem
 
-[ -s ~/.rvm/scripts/rvm ] && source ~/.rvm/scripts/rvm
-[ -d ~/.rbenv ] && export PATH=$PATH:~/.rbenv/bin && eval "$(rbenv init -)"
+# chruby
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+RUBIES+=(~/.rvm/rubies/*)
 
 
 # vim: ft=sh:ts=2
