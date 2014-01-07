@@ -34,5 +34,6 @@ source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 RUBIES+=(~/.rvm/rubies/*)
 
+chruby 2.0.0
 
 # vim: ft=sh:ts=2
