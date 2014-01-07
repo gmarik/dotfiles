@@ -35,6 +35,9 @@ __MACOSX/*
 project.xcworkspace/
 xcuserdata/
 
+# Vim
+
+.netrwhist
 
 # misc
 zeus.json
