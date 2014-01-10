@@ -1,6 +1,7 @@
 # GC Settings
 # http://www.rubyenterpriseedition.com/documentation.html#_garbage_collector_and_object_space 
-export RUBY_HEAP_MIN_SLOTS=1000000            # initial(startup) number of the process heap slots to allocate
+export RUBY_GC_HEAP_INIT_SLOTS=1000000        # initial(startup) number of the process heap slots to allocate
+export RUBY_HEAP_MIN_SLOTS=1000000            # for ruby < 2.1
 export RUBY_HEAP_SLOTS_INCREMENT=1000000      # first number of heap slots to add when allocating new
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1        # increment multiplier to get next number of heap slots to allocate
 export RUBY_HEAP_FREE_MIN=100000              # minimum slots number to be present after GC run, triggers allocation otherwise
