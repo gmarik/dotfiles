@@ -27,7 +27,7 @@ alias unexample="find ./config/ -name '*.example'|xargs basename -s .example | x
 alias Rdm='rake db:migrate'
 alias Rdmr='rake db:migrate:redo'
 
-_() { touch "$(__basedir)/tmp/restart.txt" ; }
+.r() { touch "$(__basedir)/tmp/restart.txt" ; }
 
 Rc () { rails_script "console"  $@ ; }
 Rs () { rails_script "server"   $@ ; }
