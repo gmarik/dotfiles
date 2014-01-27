@@ -1,1 +1,0 @@
-/Users/gmarik/Dropbox/.vim
