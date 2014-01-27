@@ -40,6 +40,7 @@ Brew rename
 Brew rhino
 Brew tree
 Brew webkit2png
+Brew rmtrash
 
 # brew tap homebrew/versions
 # brew install lua52
