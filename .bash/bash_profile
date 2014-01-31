@@ -13,6 +13,8 @@ so ~/.bash/ruby                           #
 so ~/.bash/dotfilesrc                     # my git-dotfiles specific stuff
 so ~/.rubyrc                              # Ruby stuff. Rvm is sourced there aswell
 so ~/.golangrc                            # Golang Stuff
-so ~/.bash/bashrc.local                   # machine specific config. not tracked
+so ~/.bash/*.local                              # machine specific config. not tracked
 
 [ -d ~/bin ] && export PATH=~/bin:$PATH # users' ~/bin/ takes precedence
+
+# vim: ft=sh
