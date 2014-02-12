@@ -28,7 +28,7 @@ do
     run_cmd=${cmd//%/$files}
     echo "Running $run_cmd"
 
-    $run_cmd
+    bash -c "$run_cmd"
     touch $sentinel
   fi
   sleep 0.1
