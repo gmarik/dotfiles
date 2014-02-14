@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+repo_name=$(basename $PWD)
+remote_name=$1
+remote_path="~/.git-repos/$repo_name.git"
+remote_url="$remote_name:~/.git-repos/$repo_name.git"
+
+echo $remote_name $remote_url $repo_name
+
+ssh $remote_name "git init --bare $remote_path"
+git remote add $remote_name "$remote_url"
+git push $remote_name
+
+
