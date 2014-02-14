@@ -146,3 +146,5 @@ alias cap1='cap _1.4.0_'
 
 # ocaml
 alias ocaml='ledit -h ~/.ocaml_history ocaml' # enable readline in interactive ocaml
+
+alias reload='exec bash -l'
