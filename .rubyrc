@@ -31,8 +31,8 @@ _mategem()
 complete -F _mategem -o dirnames mategem
 
 # chruby
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+so /usr/local/share/chruby/chruby.sh
+so /usr/local/share/chruby/auto.sh
 RUBIES+=(~/.rvm/rubies/*)
 
 # chruby 2.0.0
