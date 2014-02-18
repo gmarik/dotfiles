@@ -174,7 +174,7 @@
   sw    = update-index  --skip-worktree 
   nosw  = update-index --no-skip-worktree
 
-  ta    = tag -a
+  ta    ="!f() { tn=$1; shift; git tag -a $tn -m $tn $@; }; f "
 
   # Merge Tool
   mt    = "! [ -f /Applications/MacVim.app/Contents/MacOS/Vim ] && git mergetool -t mvimdiff || git mergetool -t vimdiff"
