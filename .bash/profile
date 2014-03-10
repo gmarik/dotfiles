@@ -7,7 +7,10 @@
 export EDITOR='vim'
 export LESS="--RAW-CONTROL-CHARS --ignore-case"  # colored, same as -R
 export PAGER='less'
-export MANPAGER='col -bx | view - -c ":set ft=man noml noma" -c ":nmap q :q<CR>"'
+
+# common BSD/GNU
+export _MANPAGER='col -bx | view - -c ":set ft=man nomod nolist nonu noma" -c ":nmap q :q<CR>"'
+export MANPAGER="/bin/bash -c '$_MANPAGER'"
 
 export ENV_NAME=$(uname -s|tr 'A-Z' 'a-z')
 #

@@ -8,6 +8,8 @@ alias vim="${vim}"
 export EDITOR="${vim} -g --remote-tab-silent"
 export GIT_EDITOR="${vim} -g -f"
 
+export MANPAGER=$_MANPAGER
+
 export LSCOLORS="ExGxBxDxCxEgEdxbxgxcxd"
 export CLICOLOR=true
 
