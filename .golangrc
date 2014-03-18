@@ -1,6 +1,11 @@
 export GOPATH=~/.golang
-#export GOROOT=
 
 [ -d ~/.golang ] && export PATH=$PATH:~/.golang/bin
+
+golang_setup() {
+  set -e
+  go get github.com/nsf/gocode
+  go get code.google.com/p/go.tools/cmd/godoc
+}
 
 # vim: ft=sh:ts=2
