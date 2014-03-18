@@ -1,6 +1,7 @@
 export GOPATH=~/.golang
+export GOROOT=/usr/local/go
 
-[ -d ~/.golang ] && export PATH=$PATH:~/.golang/bin
+export PATH=$PATH:$GOROOT/bin/
 
 golang_setup() {
   set -e
