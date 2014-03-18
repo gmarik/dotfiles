@@ -1,0 +1,7 @@
+RUBIES+=(~/.rbenv/versions/*)
+
+chruby 2.1.1
+
+export GOROOT=/usr/local/Cellar/go/1.2.1/libexec
+
+# vim: set ft=sh:
