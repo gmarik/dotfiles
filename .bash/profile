@@ -9,7 +9,7 @@ export LESS="--RAW-CONTROL-CHARS --ignore-case"  # colored, same as -R
 export PAGER='less'
 
 # common BSD/GNU
-export _MANPAGER='col -bx | view - -c ":set ft=man nomod nolist nonu noma" -c ":nmap q :q<CR>"'
+export _MANPAGER='col -bx | view - -c ":set ls=0 ft=man nomod nolist nonu noma" -c ":nmap q :q<CR>"'
 export MANPAGER="/bin/bash -c '$_MANPAGER'"
 
 export ENV_NAME=$(uname -s|tr 'A-Z' 'a-z')
