@@ -7,6 +7,11 @@ golang_setup() {
   set -e
   go get github.com/nsf/gocode
   go get code.google.com/p/go.tools/cmd/godoc
+
+  # autoremove unused imports and delegate to format
+  # let g:gofmt_command='goimports' in vim
+  go get code.google.com/p/go.tools/cmd/goimports
+
 }
 
 # vim: ft=sh:ts=2
