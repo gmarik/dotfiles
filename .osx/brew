@@ -40,7 +40,7 @@ Brew rename
 Brew rhino
 Brew tree
 Brew webkit2png
-Brew rmtrash
+Brew pstree
 
 # brew tap homebrew/versions
 # brew install lua52
@@ -58,11 +58,11 @@ App imageoptim
 App iterm2
 App macvim
 App miro-video-converter
-App sublime-text
+# App sublime-text
 App the-unarchiver
 App tor-browser
 App transmission
-App ukelele
+# App ukelele
 App virtualbox
 App vlc
 
