@@ -2,8 +2,10 @@
 # 
 # Some OS X specific definitions
 
-vim='/Applications/MacVim.app/Contents/MacOS/Vim -n'
-alias vim="${vim}"
+if [ -f /Applications/MacVim.app/Contents/MacOS/Vim ] 
+  then vim='/Applications/MacVim.app/Contents/MacOS/Vim -n'
+  alias vim="${vim}"
+fi
 
 export EDITOR="${vim} -g --remote-tab-silent"
 export GIT_EDITOR="${vim} -g -f"
