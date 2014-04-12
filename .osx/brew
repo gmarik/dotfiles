@@ -20,9 +20,11 @@ Brew bash
 Brew bash_completion
 
 Brew git
+Brew hg
 
 Brew ruby-install
 Brew chruby
+Brew go
 
 Brew wget
 
@@ -48,6 +50,10 @@ Brew webkit2png
 brew tap phinze/homebrew-cask
 brew install brew-cask
 
+App sequel-pro
+
+App slate       # OSS window manager
+
 App dropbox
 App google-chrome
 App google-chrome-canary
@@ -64,5 +70,8 @@ App transmission
 App virtualbox
 App vlc
 
+
 # Remove outdated versions from the cellar
 brew cleanup
+
+xcode-select --install
