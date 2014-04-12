@@ -14,41 +14,39 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
+#
+# Bash 4
+Brew bash
+Brew bash_completion
+
+Brew git
+
+Brew ruby-install
+Brew chruby
+
+Brew wget
+
+Brew homebrew/dupes/grep
+Brew rename
+Brew pstree
+Brew tree
+Brew rmtrash
+
+Brew tmux
+
 # Install GNU core utilities (those that come with OS X are outdated)
 Brew coreutils
 echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 Brew findutils
-#
-# Install Bash 4
-Brew bash
-Brew rmtrash
 
-Brew homebrew/dupes/grep
-
-# Install wget with IRI support
-Brew wget --enable-iri
-
-
-# These two formulae didn’t work well last time I tried them:
-#Brew homebrew/dupes/vim
-#Brew homebrew/dupes/screen
-
-Brew git
-#Brew imagemagick
-Brew rename
+Brew imagemagick
 Brew rhino
-Brew tree
 Brew webkit2png
-Brew pstree
-
-# brew tap homebrew/versions
-# brew install lua52
 
 # Install native apps
 brew tap phinze/homebrew-cask
 brew install brew-cask
-
 
 App dropbox
 App google-chrome
