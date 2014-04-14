@@ -46,7 +46,11 @@
   tool = vimdiff
 
 [mergetool "mvimdiff"]
-  cmd="/Applications/MacVim.app/Contents/MacOS/Vim -d -g -c 'wincmd J'  $MERGED $LOCAL $BASE $REMOTE"
+  cmd="~/Applications/MacVim.app/Contents/MacOS/Vim -d -g -c 'wincmd J'  $MERGED $LOCAL $BASE $REMOTE"
+  keepbackup=false
+
+[mergetool "p4merge"]
+  cmd="~/Applications/p4merge.app/Contents/Resources/launchp4merge $BASE $LOCAL $REMOTE $MERGED"
   keepbackup=false
 
 [alias]
@@ -177,7 +181,8 @@
   ta    ="!f() { tn=$1; shift; git tag -a $tn -m $tn $@; }; f "
 
   # Merge Tool
-  mt    = "! [ -f /Applications/MacVim.app/Contents/MacOS/Vim ] && git mergetool -t mvimdiff || git mergetool -t vimdiff"
+  mt    = "! [ -d ~/Applications/p4merge.app ] && git mtt p4merge || [ -d ~/Applications/MacVim.app ] && git mtt mvimdiff || git mtt vimdiff"
+  mtt   = mergetool -t 
 
   # Show current `"user" <em@a.il>` configured
   w     = "! echo \"$(git config user.name) <$(git config user.email)> \"" 
