@@ -26,6 +26,8 @@ Brew ruby-install
 Brew chruby
 Brew go
 
+Brew p4merge
+
 Brew wget
 
 Brew homebrew/dupes/grep
