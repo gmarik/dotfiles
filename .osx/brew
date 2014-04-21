@@ -25,6 +25,7 @@ Brew hg
 Brew ruby-install
 Brew chruby
 Brew go
+Brew socat
 
 App iterm2
 App macvim
