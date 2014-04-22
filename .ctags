@@ -1,0 +1,15 @@
+--recurse=yes
+
+--exclude=.git/
+--exclude=.hg
+
+--exclude=log/
+--exclude=tmp/
+--exclude=vendor/
+--exclude=build/
+--exclude=libs/
+
+
+--languages=-html
+--languages=-javascript
+--languages=-sql
