@@ -41,10 +41,12 @@ Brew dash
 Brew tmux
 
 Brew wget
+Brew ctags
 
 # bash4
 Brew bash
 Brew bash_completion
+
 
 Brew homebrew/dupes/grep
 Brew rename
