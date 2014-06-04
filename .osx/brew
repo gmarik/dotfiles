@@ -17,7 +17,7 @@ brew upgrade
 #
 # Bash 4
 Brew bash
-Brew bash_completion
+Brew bash-completion
 
 Brew git
 Brew hg
