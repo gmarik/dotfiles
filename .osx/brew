@@ -18,6 +18,7 @@ brew upgrade
 # Bash 4
 Brew bash
 Brew bash-completion
+Brew ctags
 
 Brew git
 Brew hg
