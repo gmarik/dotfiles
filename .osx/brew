@@ -21,6 +21,7 @@ Brew bash-completion
 Brew ctags
 
 Brew git
+Brew hub
 Brew hg
 
 Brew ruby-install

@@ -204,6 +204,10 @@
   # run command on modified files
   x = "!f() { git status --short --untracked-files=no | cut -d' ' -f3 | xargs $1; }; f"
 
+  ## Hub
+  hpr = "!hub pull-request"
+  hbr = "!hub browse"
+  h   = "!hub"
 
 # read from given uri
 # push to writable one
