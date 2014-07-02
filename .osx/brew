@@ -39,6 +39,7 @@ Brew tree
 Brew rmtrash
 
 Brew tmux
+Brew reattach-to-user-namespace
 
 # Install GNU core utilities (those that come with OS X are outdated)
 Brew coreutils
@@ -79,3 +80,4 @@ App vlc
 brew cleanup
 
 xcode-select --install
+
