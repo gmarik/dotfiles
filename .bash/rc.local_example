@@ -1,7 +1,9 @@
-RUBIES+=(~/.rbenv/versions/*)
+[ -d ~/.rbenv ] && RUBIES+=(~/.rbenv/versions/*)
 
+# default ruby
 chruby 2.1.1
 
-export GOROOT=/usr/local/Cellar/go/1.2.1/libexec
+# OPAM configuration
+. /Users/gmarik/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
-# vim: set ft=sh:
+# vi: set ft=sh

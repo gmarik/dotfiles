@@ -10,9 +10,12 @@ function Brew() {
 
 # Make sure we’re using the latest Homebrew
 brew update
+# # Upgrade any already-installed formulae
+# brew upgrade
 
-# Upgrade any already-installed formulae
-brew upgrade
+# Install native apps
+brew tap phinze/homebrew-cask
+brew install brew-cask
 
 #
 # Bash 4
@@ -27,10 +30,28 @@ Brew hg
 Brew ruby-install
 Brew chruby
 Brew go
+Brew socat
 
+App iterm2
+App macvim
+App sequel-pro
+
+App virtualbox
+
+# Merge gui
 Brew p4merge
+Brew dash
+
+# Utils
+Brew tmux
 
 Brew wget
+Brew ctags
+
+# bash4
+Brew bash
+Brew bash_completion
+
 
 Brew homebrew/dupes/grep
 Brew rename
@@ -42,42 +63,35 @@ Brew tmux
 Brew reattach-to-user-namespace
 
 # Install GNU core utilities (those that come with OS X are outdated)
+
 Brew coreutils
-echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
-# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 Brew findutils
+
+# OSS window manager
+App slate
+
+App google-chrome
+App google-chrome-canary
 
 Brew imagemagick
 Brew rhino
 Brew webkit2png
 
-# Install native apps
-brew tap phinze/homebrew-cask
-brew install brew-cask
-
-App sequel-pro
-
-App slate       # OSS window manager
-
-App dropbox
-App google-chrome
-App google-chrome-canary
 App imagealpha
 App imageoptim
-App iterm2
-App macvim
-App miro-video-converter
-# App sublime-text
 App the-unarchiver
-App tor-browser
-App transmission
-# App ukelele
-App virtualbox
+
+App miro-video-converter
 App vlc
 
+App tor-browser
+App transmission
+
+# App dropbox
 
 # Remove outdated versions from the cellar
 brew cleanup
 
+# command-line tools
 xcode-select --install
 
