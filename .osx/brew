@@ -17,12 +17,7 @@ brew update
 brew tap phinze/homebrew-cask
 brew install brew-cask
 
-#
-# Bash 4
-Brew bash
-Brew bash-completion
-Brew ctags
-
+# Programming
 Brew git
 Brew hub
 Brew hg
@@ -36,22 +31,16 @@ App iterm2
 App macvim
 App sequel-pro
 
-App virtualbox
-
-# Merge gui
-Brew p4merge
-Brew dash
-
-# Utils
-Brew tmux
-
-Brew wget
-Brew ctags
-
+# CLI
+#
 # bash4
 Brew bash
 Brew bash_completion
 
+Brew wget
+Brew ctags
+Brew tmux
+Brew reattach-to-user-namespace
 
 Brew homebrew/dupes/grep
 Brew rename
@@ -59,13 +48,15 @@ Brew pstree
 Brew tree
 Brew rmtrash
 
-Brew tmux
-Brew reattach-to-user-namespace
 
 # Install GNU core utilities (those that come with OS X are outdated)
 
 Brew coreutils
 Brew findutils
+
+# GUI
+App virtualbox
+Brew dash
 
 # OSS window manager
 App slate
