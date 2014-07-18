@@ -30,6 +30,7 @@ Brew socat
 App iterm2
 App macvim
 App sequel-pro
+App p4merge
 
 # CLI
 #
