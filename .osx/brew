@@ -42,6 +42,7 @@ Brew wget
 Brew ctags
 Brew tmux
 Brew reattach-to-user-namespace
+Brew jq # json tool and formatter
 
 Brew homebrew/dupes/grep
 Brew rename
