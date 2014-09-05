@@ -30,11 +30,4 @@ _mategem()
 }
 complete -F _mategem -o dirnames mategem
 
-# chruby
-so /usr/local/share/chruby/chruby.sh
-so /usr/local/share/chruby/auto.sh
-RUBIES+=(~/.rvm/rubies/*)
-
-# chruby 2.0.0
-
 # vim: ft=sh:ts=2
