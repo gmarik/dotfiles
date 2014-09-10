@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+comm -12 <(git branch -a --no-merged ${2:-'master'} ) <(git branch -a --merged ${1:-'staging'} )
