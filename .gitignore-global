@@ -21,6 +21,10 @@ target/
 .generators
 .rakeTasks
 
+# Python
+__pycache__/
+*.py[cod]
+
 # OSX
 *.DS_Store
 __MACOSX/*
