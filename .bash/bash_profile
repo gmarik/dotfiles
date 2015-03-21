@@ -1,6 +1,6 @@
 # http://gmarik.info/blog/2010/05/02/tracking-dotfiles-with-git 
 
-so() { [ -s $1 ] && source $1; }
+so() { for f in $@; do [ -s $1 ] && source "$f"; done; }
 
 so ~/.bash/functions                      #
 so ~/.bash/git                            #
@@ -13,7 +13,7 @@ so ~/.bash/ruby                           #
 so ~/.bash/dotfilesrc                     # my git-dotfiles specific stuff
 so ~/.rubyrc                              # Ruby stuff. Rvm is sourced there aswell
 so ~/.golangrc                            # Golang Stuff
-so ~/.bash/*.local                              # machine specific config. not tracked
+so ~/.bash/*.local                        # machine specific config. not tracked
 
 [ -d ~/bin ] && export PATH=~/bin:$PATH # users' ~/bin/ takes precedence
 

@@ -102,6 +102,10 @@
   cim   = commit -m
   cip   = commit -am 'WIP!'
 
+  # change author of latest commit
+  # assumes properly configured author to be now set in the local config
+  ciu   ="!git commit --amend --author=\"`git config --local --get user.name` <`git config --local --get user.email`>\""
+
   chp   = cherry-pick 
 
   ctags = "!.git/hooks/ctags"
@@ -151,6 +155,9 @@
   # interactive rebase mostly for squashing/rearranging commits
   # operates on last 2 if not specified otherwise
   rih   = "!f() { git rebase -i HEAD~${1:-'2'}; }; f "
+
+  # rebase up to the very first commit; special case
+  rir   = rebase --interactive --root
 
   # Reset
   rst   = reset
