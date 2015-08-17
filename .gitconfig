@@ -114,8 +114,8 @@
   d     = diff
   dc    = diff --cached
   du    = diff @{upstream}
-  ds    = diff --stat=120,130 -M -C 
-  dy    = diff --summary -M -C
+  dt    = diff --stat=120,130 -M -C
+  ds    = diff --name-status -M -C
 
   # Edit files
   em    = "!${EDITOR:-vim} $(git ls-files --modified)"
