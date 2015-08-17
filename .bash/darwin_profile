@@ -18,7 +18,7 @@ export CLICOLOR=true
 
 # export BREW_HOME=`brew --prefix`
 export BREW_HOME=/usr/local/
-export PATH=$BREW_HOME/bin:$BREW_HOME/sbin/:$PATH:/usr/local/mysql/bin/
+export PATH=$BREW_HOME/bin:$BREW_HOME/sbin:$PATH:/usr/local/mysql/bin
 
 # Bash completion
 [ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
