@@ -25,9 +25,6 @@ export PATH=$BREW_HOME/bin:$BREW_HOME/sbin:$PATH:/usr/local/mysql/bin
 [ -f $BREW_HOME/etc/bash_completion ] && source $BREW_HOME/etc/bash_completion
 
 export PATH=~/bin/osx:$PATH
-# required for dynamic libraries to be found
-export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/mysql/lib
-
 
 # alias
 alias ls='ls -h'
