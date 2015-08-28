@@ -3,15 +3,17 @@
 so() { for f in $@; do [ -s $1 ] && source "$f"; done; }
 
 so ~/.bash/functions                      #
-so ~/.bash/git                            #
 so ~/.bash/colors                         #
 so ~/.bash/profile                        # main configuration
 so ~/.bash/${ENV_NAME}_profile            # configuration per OS linux/OSX
 so ~/.bash/common                         # common stuff or overriding
-so ~/.bash/colors                         #
-so ~/.bash/ruby                           #
+
+so ~/.bash/git                            #
 so ~/.bash/dotfilesrc                     # my git-dotfiles specific stuff
-so ~/.rubyrc                              # Ruby stuff. Rvm is sourced there aswell
+so ~/.bash/python                         #
+so ~/.bash/ruby                           #
+so ~/.rubyrc                              # Ruby stuff.
+so ~/.bash/golang                         # Golang Stuff
 so ~/.golangrc                            # Golang Stuff
 so ~/.bash/*.local                        # machine specific config. not tracked
 

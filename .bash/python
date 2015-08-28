@@ -1,0 +1,7 @@
+#
+# Python
+#
+# vim: set ft=sh:
+
+test -f ~/.pythonrc && export PYTHONSTARTUP=~/.pythonrc
+
