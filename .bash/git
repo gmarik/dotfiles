@@ -1,7 +1,7 @@
 # automatically create aliases from git config
 galias () {
   # TODO: optimize it
-  local aliases=`git config --global --get-regexp 'alias.*'|cut -f1 -d' '|cut -f2 -d'.'`
+  local aliases=$(git config --global --get-regexp 'alias.*'|cut -f1 -d' '|cut -f2 -d'.')
   for a in ${aliases}; do 
     local _alias=${1:-:}${a}
     local cmd=`git config alias.$a|cut -f1 -d ' '`
