@@ -1,7 +1,7 @@
 # automatically create aliases from git config
 galias () {
   # TODO: optimize it
-  aliases=`git config --global --get-regexp 'alias.*'|cut -f1 -d' '|cut -f2 -d'.'`
+  local aliases=$(git config --global --get-regexp 'alias.*'|cut -f1 -d' '|cut -f2 -d'.')
   for a in ${aliases}; do 
     local _alias=${1:-:}${a}
     local cmd=`git config alias.$a|cut -f1 -d ' '`
@@ -16,7 +16,7 @@ galias () {
 # depends on `__gitdir` from "bash-completion" package
 _git_status_stats() {
   if [ "$(type -t __gitdir)" == "function" -a -n "$(__gitdir)" ]; then
-    stats=$(git status --short|cut -c1-2|sort|uniq -c|awk '{print $2"/"$1 }'|xargs)
+    local stats=$(git status --short|cut -c1-2|sort|uniq -c|awk '{print $2"/"$1 }'|xargs)
     if [ -n "$stats" ]; then
       printf "$1" "$stats"
     fi

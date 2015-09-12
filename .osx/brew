@@ -42,13 +42,14 @@ Brew wget
 Brew ctags
 Brew tmux
 Brew reattach-to-user-namespace
-Brew jq # json tool and formatter
+Brew jq                                 # json tool and formatter
 
-Brew homebrew/dupes/grep
+Brew homebrew/dupes/grep                # GNU grep instead of BSD one
 Brew rename
+Brew mmv                                # mass mv/link/cp/append http://manpages.ubuntu.com/manpages/precise/man1/mmv.1.html
 Brew pstree
 Brew tree
-Brew rmtrash
+Brew rmtrash                            # aliases rm to delete to OSX's trash
 
 
 # Install GNU core utilities (those that come with OS X are outdated)
@@ -60,8 +61,7 @@ Brew findutils
 App virtualbox
 Brew dash
 
-# OSS window manager
-App slate
+App slate                              # OSX window manager
 
 App google-chrome
 App google-chrome-canary
