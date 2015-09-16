@@ -41,17 +41,41 @@
 
 ; [apply]
 ;   whitespace = fix
-
-[diff]
+;
+[merge]
   tool = vimdiff
+  guitool = p4merge
 
-[mergetool "mvimdiff"]
-  cmd="~/Applications/MacVim.app/Contents/MacOS/Vim -d -g -c 'wincmd J'  $MERGED $LOCAL $BASE $REMOTE"
+[mergetool]
+  prompt = false
+  tool = vimdiff
+  guitool = p4merge
+
+[mergetool "mvim"]
+  cmd="~/Applications/MacVim.app/Contents/MacOS/Vim -d -g -c 'wincmd J' $MERGED $LOCAL $BASE $REMOTE"
   keepbackup=false
 
 [mergetool "p4merge"]
   cmd="~/Applications/p4merge.app/Contents/Resources/launchp4merge $BASE $LOCAL $REMOTE $MERGED"
   keepbackup=false
+  keepTemporaries = false
+
+[diff]
+  tool = vimdiff
+  guitool = p4merge
+
+[difftool]
+  prompt = false
+
+[difftool "mvim"]
+  # TODO: doesn't work
+  cmd="~/Applications/MacVim.app/Contents/MacOS/Vim -d -g -c 'wincmd J' $LOCAL $REMOTE"
+
+[difftool "p4merge"]
+  cmd="~/Applications/p4merge.app/Contents/Resources/launchp4merge $LOCAL $REMOTE"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
 
 [alias]
 
