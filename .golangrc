@@ -1,6 +1,6 @@
 export GOPATH=~/.golang
 
-export PATH=$PATH:$GOPATH/bin/
+export PATH=$PATH:$GOPATH/bin
 
 golang_setup() {
   set -e
