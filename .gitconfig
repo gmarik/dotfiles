@@ -82,11 +82,14 @@
 
   # Checkout
   co    = checkout
-  cp    = checkout - # previous one
+  co-   = checkout - # previous one
   cob   = checkout -b
   com   = "!f() { git fetch; git checkout -b master origin/master; }; f"
   cot   = "!f() { git fetch; git checkout -b ${1##*/} $1; }; f " 
   con   = "!f() { git fetch; git checkout -b $1 origin/master }; f "
+
+  # checkout a github PR
+  copr  = "!f() { local b=pull/$1; git fetch origin $b/head:$b && git checkout $b; }; f"
 
   # Add and Commit
   ca    = "!f() { git add $1; git ci -v $1; }; f"
