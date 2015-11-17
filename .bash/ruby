@@ -51,8 +51,3 @@ Rrs() { DB_ENV=staging Rr    ; }
 Rrp() { DB_ENV=production Rr ; }
 
 
-# chruby
-so /usr/local/share/chruby/chruby.sh
-so /usr/local/share/chruby/auto.sh
-
-RUBIES+=(~/.rvm/rubies/*)

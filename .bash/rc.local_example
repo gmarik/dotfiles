@@ -1,7 +1,12 @@
 [ -d ~/.rbenv ] && RUBIES+=(~/.rbenv/versions/*)
 
+
+# chruby
+so /usr/local/share/chruby/chruby.sh
+so /usr/local/share/chruby/auto.sh
+
 # default ruby
-chruby 2.1.1
+chruby 2
 
 # OPAM configuration
 . /Users/gmarik/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
