@@ -1,6 +1,10 @@
 # vim: ft=sh
 RCDIR=/etc/rc.d/
 
+title() {
+  export PROMPT_COMMAND="echo -ne \"\033]0;${1:?argument_required}\007\""
+}
+
 _rc_service()
 {
   COMPREPLY=()
