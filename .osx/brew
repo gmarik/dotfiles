@@ -69,10 +69,14 @@ App google-chrome-canary
 Brew imagemagick
 Brew rhino
 Brew webkit2png
+# Howto video->gif https://gist.github.com/dergachev/4627207
+Brew gifsicle
 
 App imagealpha
 App imageoptim
 App the-unarchiver
+
+App keycastr
 
 App miro-video-converter
 App vlc
