@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Generates public key from provided private
+ssh-keygen -y -f ${1:?private_filepath_required}
