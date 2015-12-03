@@ -15,6 +15,8 @@ brew update
 
 # Install native apps
 brew tap phinze/homebrew-cask
+brew tap homebrew/versions
+
 brew install brew-cask
 
 # Programming
@@ -36,7 +38,7 @@ App p4merge
 #
 # bash4
 Brew bash
-Brew bash_completion
+Brew bash_completion2
 
 Brew wget
 Brew ctags
@@ -91,4 +93,3 @@ brew cleanup
 
 # command-line tools
 xcode-select --install
-
