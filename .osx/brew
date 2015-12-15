@@ -42,9 +42,12 @@ Brew bash_completion2
 
 Brew wget
 Brew ctags
+
 Brew tmux
 Brew reattach-to-user-namespace
+
 Brew jq                                 # json tool and formatter
+Brew html-xml-utile
 
 Brew homebrew/dupes/grep                # GNU grep instead of BSD one
 Brew rename
@@ -53,6 +56,7 @@ Brew pstree
 Brew tree
 Brew rmtrash                            # aliases rm to delete to OSX's trash
 
+Brew lynx
 
 # Install GNU core utilities (those that come with OS X are outdated)
 
