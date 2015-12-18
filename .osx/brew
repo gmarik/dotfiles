@@ -47,7 +47,7 @@ Brew tmux
 Brew reattach-to-user-namespace
 
 Brew jq                                 # json tool and formatter
-Brew html-xml-utile
+Brew html-xml-utils
 
 Brew homebrew/dupes/grep                # GNU grep instead of BSD one
 Brew rename
@@ -58,8 +58,13 @@ Brew rmtrash                            # aliases rm to delete to OSX's trash
 
 Brew lynx
 
-# Install GNU core utilities (those that come with OS X are outdated)
+Brew imagemagick
+Brew rhino
+Brew webkit2png
+# Howto video->gif https://gist.github.com/dergachev/4627207
+Brew gifsicle
 
+# Install GNU core utilities (those that come with OS X are outdated)
 Brew coreutils
 Brew findutils
 
@@ -72,16 +77,11 @@ App slate                              # OSX window manager
 App google-chrome
 App google-chrome-canary
 
-Brew imagemagick
-Brew rhino
-Brew webkit2png
-# Howto video->gif https://gist.github.com/dergachev/4627207
-Brew gifsicle
-
 App imagealpha
 App imageoptim
 App the-unarchiver
 
+App licecap
 App keycastr
 
 App miro-video-converter
