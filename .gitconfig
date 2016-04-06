@@ -56,7 +56,7 @@
   keepbackup=false
 
 [mergetool "p4merge"]
-  cmd="~/Applications/p4merge.app/Contents/Resources/launchp4merge $BASE $LOCAL $REMOTE $MERGED"
+  cmd="~/Applications/p4merge.app/Contents/MacOS/p4merge $BASE $LOCAL $REMOTE $MERGED"
   keepbackup=false
   keepTemporaries = false
 
