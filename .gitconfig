@@ -230,7 +230,7 @@
   ribbon = tag --force _ribbon origin/master
   catchup = log --patch --reverse --topo-order _ribbon..origin/master
 
-  scrum = "!git ll --since='yesterday' --author=\"`git config user.name`\""
+  sup = "!git ll --since=$([ $(date +%w) -eq 1 ] && date -v-3d +%F || date -v-1d +%F) --author=\"`git config user.name`\""
 
   #  ticket = "!f() { git checkout -b `echo $1|tr 'A-Z' 'a-z'` origin/master }; f "
   #
