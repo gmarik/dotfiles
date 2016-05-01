@@ -3,6 +3,8 @@
 TAGS
 tags
 
+*.orig
+
 
 # IntelliJ IDEA
 *.iml
