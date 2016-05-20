@@ -68,6 +68,8 @@ Brew gifsicle
 Brew coreutils
 Brew findutils
 
+Brew fzf
+
 # GUI
 App virtualbox
 Brew dash
