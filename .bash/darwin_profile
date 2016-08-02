@@ -6,6 +6,10 @@ if [ -f ~/Applications/MacVim.app/Contents/MacOS/Vim ]
 then
   vim="$HOME/Applications/MacVim.app/Contents/MacOS/Vim -n"
   alias vim="${vim}"
+elif [ -f /Applications/MacVim.app/Contents/MacOS/Vim ]
+then
+  vim="/Applications/MacVim.app/Contents/MacOS/Vim -n"
+  alias vim="${vim}"
 fi
 
 export EDITOR="${vim} -g --remote-tab-silent"
