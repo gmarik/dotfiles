@@ -106,6 +106,7 @@
 
   # Checkout
   co    = checkout
+  zco    = "!f() { git checkout $(git branch|grep -v '^*'|fzf|awk '{[ptint $1}'); }; f"
   co-   = checkout - # previous one
   cob   = checkout -b
   com   = "!f() { git fetch; git checkout -b master origin/master; }; f"
