@@ -157,7 +157,7 @@
 
   # Log
   l     = log
-  ls    = log --stat=120,130
+  ls    = log --stat
   lp    = log --patch -m -c # show merges and compressed diff format
   lpw   = log --patch --word-diff
   ll    = log  --abbrev-commit --pretty=tformat:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
