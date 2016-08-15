@@ -45,3 +45,9 @@ xcuserdata/
 
 # misc
 zeus.json
+
+# Golang
+vendor/pkg
+
+# merge conflict
+*.orig
