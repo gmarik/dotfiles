@@ -3,4 +3,9 @@ export GOPATH=~/.golang
 
 [ -d $GOPATH/bin ] && export PATH="$PATH:$GOPATH/bin"
 
+# go get deps recursively
+gogetr() {
+  go list -f '{{range .Deps}}{{println .}}{{end}}' $1|xargs go get
+}
+
 # vim: set ft=sh:
