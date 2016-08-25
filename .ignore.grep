@@ -1,0 +1,15 @@
+TAGS
+tags
+
+*.class
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OSX
+*.DS_Store
+__MACOSX/*
+
+.git
+.svn

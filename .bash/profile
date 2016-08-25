@@ -66,13 +66,15 @@ complete -o default -o nospace -F _git G # allow git-completion to work with ali
 #
 # Grep
 #
-export GREP_OPTIONS='--color=auto --exclude=tags --exclude=TAGS --exclude-dir=.git --exclude-dir=.svn --exclude-dir=log --exclude-dir=tmp'
+alias ?="ggrep --color=auto --exclude-from=$HOME/.ignore.grep"
+# recursively search case insensitively, print filenames and line numbers with matches
+alias ??='? -Rin'
+# list files having matches
+alias ??l='? -Ril'
 
-alias ?='\grep -i'
-# alias ??='? -nR'
-alias ??='f () { ? -nr "$1" ${2:-.}; }; f '
+# Find
+alias ?ff='f () { find ${2:-.} -type f -iname "*$1*"; }; f '
 alias ?f='f () { find ${2:-.} -iname "*$1*"; }; f '
-alias ?E='f () { A=($@); A[1]=${A[1]:-./}; ?? ${A[@]} |E - ; }; f ' # grep results into editor
 
 #
 # Less coloring
