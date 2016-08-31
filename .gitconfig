@@ -52,11 +52,11 @@
   guitool = p4merge
 
 [mergetool "mvim"]
-  cmd="~/Applications/MacVim.app/Contents/MacOS/Vim -d -g -c 'wincmd J' $MERGED $LOCAL $BASE $REMOTE"
+  cmd="/Applications/MacVim.app/Contents/MacOS/Vim -d -g -c 'wincmd J' $MERGED $LOCAL $BASE $REMOTE"
   keepbackup=false
 
 [mergetool "p4merge"]
-  cmd="~/Applications/p4merge.app/Contents/MacOS/p4merge $BASE $LOCAL $REMOTE $MERGED"
+  cmd="/Applications/p4merge.app/Contents/MacOS/p4merge $BASE $LOCAL $REMOTE $MERGED"
   keepbackup=false
   keepTemporaries = false
 
@@ -173,6 +173,10 @@
   pu    = pull
   pr    = pull --rebase
 
+  # patch
+  # outputs to stdout instead of a-file-file-commit. Handy for dumping commit log into a file
+  fps   = format-patch --stdout
+
   # Rebase
   r     = rebase
   ra    = rebase --abort
@@ -185,16 +189,18 @@
   rih   = "!f() { git rebase -i HEAD~${1:-'2'}; }; f "
 
   # rebase up to the very first commit; special case
-  rir   = rebase --interactive --root
+  riroot   = rebase --interactive --root
 
   # Reset
+  # resets staged chages
   rst   = reset
+
+  # resets last commit
+  rstl   = reset HEAD^
+
   # reset to @{upstream} with confirmation
   roh   = "! git --no-pager ll -10 @{upstream} && read -p '^C to stop, anykey to continue' Z && git rst --hard @{upstream}"
 
-  # reset to prev commit
-  # used mostly to reset WIP commits(used as stash)
-  rl   = reset @{1}
 
   # Status
   # don't show untracked files
@@ -216,8 +222,8 @@
   ta    ="!f() { tn=$1; shift; git tag -a $tn -m $tn $@; }; f "
 
   # Merge Tool
-  mt    = "! [ -d ~/Applications/p4merge.app ] && git mtt p4merge || [ -d ~/Applications/MacVim.app ] && git mtt mvimdiff || git mtt vimdiff"
-  mtt   = mergetool -t 
+  mt    = "! [ -d /Applications/p4merge.app ] && git mtt p4merge || [ -d /Applications/MacVim.app ] && git mtt mvimdiff || git mtt vimdiff"
+  mtt   = mergetool -t
 
   # Show current `"user" <em@a.il>` configured
   w     = "! echo \"$(git config user.name) <$(git config user.email)> \"" 
