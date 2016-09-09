@@ -91,29 +91,33 @@
   # Branching
   b     = branch
   bls   = branch -v # list branches with last commit in
-  bs    = "!git branch | cut -c 3- | selecta | xargs git checkout"
+
   brm   = branch -d # remove if branch-to-be-removed if fully merged into HEAD
   brmf  = branch -D # force removal
+
   # bt - branch track configures current branch to "track" same name from origin or specified remote
   bt    = "!f() { B=$(git symbolic-ref HEAD|cut -f3 -d/) && git config branch.$B.remote ${1:-origin} && git config branch.$B.merge refs/heads/$B; }; f"
+  # rename branch
   bmv   = branch -m
 
   # Config
   cg    = config --global
   clg   = config --global --list
-  c     = config 
+  c     = config
   cl    = config --list
   ce    = config --edit
   ceg   = config --global --edit
 
   # Checkout
   co    = checkout
-  zco    = "!f() { git checkout $(git bls|grep -v '^*'|fzf|awk '{print $1}'); }; f"
-  co-   = checkout - # previous one
-  cob   = checkout -b
-  com   = "!f() { git fetch; git checkout -b master origin/master; }; f"
-  cot   = "!f() { git fetch; git checkout -b ${1##*/} $1; }; f " 
+  co-   = checkout -                                                                # previous one
+  cob   = checkout -b                                                               # checkout into a new branch
+  com   = "!f() { git fetch; git checkout -b master origin/master; }; f"            # checkout master branch
+  cot   = "!f() { git fetch; git checkout -b ${1##*/} $1; }; f "                    # 
   con   = "!f() { git fetch; git checkout -b $1 origin/master }; f "
+
+  # fzf checkout
+  zco    = "!f() { git checkout $(git bls|grep -v '^*'|fzf|awk '{print $1}'); }; f"
 
   # checkout a github PR
   copr  = "!f() { local b=pull/$1; git fetch origin $b/head:$b && git checkout $b; }; f"
@@ -122,13 +126,18 @@
   ca    = "!f() { git add $1; git ci -v $1; }; f"
 
   # Commit
+  # commit all using previous commit message as a template
   cia   = commit -a -e -C HEAD -v --reset-author --untracked-files=no
+
+  # commit staged using prev commit message as a template
   ci    = commit    -e -C HEAD -v --reset-author --untracked-files=no
 
+  # commit using branch name as an initial msg
   ciab  = !B=$(git symbolic-ref HEAD 2>/dev/null) && git commit -v -a --edit -m "${B##refs/heads/}:" --untracked-files=no
+
   cii   = commit --interactive
-  
-  cid   = commit --amend -v                                            # edit last commit's message
+
+  cid   = commit --amend -v                                                       # edit last commit's message
   cim   = commit -m
   cip   = commit -am 'WIP!'
 
@@ -136,7 +145,7 @@
   # assumes properly configured author to be now set in the local config
   ciu   ="!git commit --amend --author=\"`git config --local --get user.name` <`git config --local --get user.email`>\""
 
-  chp   = cherry-pick 
+  chp   = cherry-pick
 
   ctags = "!.git/hooks/ctags"
 
