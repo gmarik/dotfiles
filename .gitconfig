@@ -76,6 +76,8 @@
   keepTemporaries = false
   trustExitCode = false
   keepBackup = false
+[format]
+  # pretty=%C(bold yellow)%h%Creset %s %C(bold blue)[%an]%Creset %Cblue{%G?}%Creset %Cgreen(%cr)%Creset
 
 [alias]
 
@@ -198,15 +200,18 @@
   # resets last commit
   rstl   = reset HEAD^
 
+  # select hunks to unstage|reset
+  rstp   = reset --patch
+
   # reset to @{upstream} with confirmation
   roh   = "! git --no-pager ll -10 @{upstream} && read -p '^C to stop, anykey to continue' Z && git rst --hard @{upstream}"
 
 
   # Status
   # don't show untracked files
-  st    = status --short --branch --untracked-files=no 
+  st    = status --short --branch --untracked-files=no
   # show all
-  sta   = status --short --branch --untracked-files=normal 
+  sta   = status --short --branch --untracked-files=normal
 
   # Svn
   sv    = svn
