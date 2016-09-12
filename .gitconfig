@@ -77,7 +77,10 @@
   trustExitCode = false
   keepBackup = false
 [format]
-  # pretty=%C(bold yellow)%h%Creset %s %C(bold blue)[%an]%Creset %Cblue{%G?}%Creset %Cgreen(%cr)%Creset
+  #
+[pretty]
+  # ll=tformat:%C(bold yellow)%h%Creset %s %C(bold blue)[%an]%Creset %Cblue{%G?}%Creset %Cgreen(%cr)%Creset
+  ll=tformat:%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset
 
 [alias]
 
@@ -171,7 +174,7 @@
   ls    = log --stat
   lp    = log --patch -m -c # show merges and compressed diff format
   lpw   = log --patch --word-diff
-  ll    = log  --abbrev-commit --pretty=tformat:'%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset'
+  ll    = log  --abbrev-commit --pretty=ll
   l1    = !"git --no-pager ll -10"
   lg    = !git ll --graph
   lu    = log @{upstream}.. --stat --no-merges
