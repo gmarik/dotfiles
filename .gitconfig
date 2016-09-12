@@ -8,6 +8,10 @@
   name  = gmarik
   email = gmarik@gmail.com
 
+[include]
+  path = ~/.gitconfig-local
+  path = ~/.gitconfig-private
+
 [init]
   templatedir = ~/.gitfiles/templates/
 
@@ -306,7 +310,3 @@
 
 [url "~/Dropbox/.gitrepos/"]
   insteadOf = "dx:"
-
-[include]
-  path = ~/.gitconfig-local
-  path = ~/.gitconfig-private
