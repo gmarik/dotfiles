@@ -121,7 +121,7 @@
   cob   = checkout -b                                                               # checkout into a new branch
   com   = "!f() { git fetch; git checkout -b master origin/master; }; f"            # checkout master branch
   cot   = "!f() { git fetch; git checkout -b ${1##*/} $1; }; f "                    # 
-  con   = "!f() { git fetch; git checkout -b $1 origin/master }; f "
+  con   = "!f() { git fetch; git checkout -b $1 origin/master }; f "                # new branch off master
 
   # fzf checkout
   zco    = "!f() { git checkout $(git bls|grep -v '^*'|fzf|awk '{print $1}'); }; f"
@@ -158,10 +158,10 @@
 
   # Diff
   d     = diff
-  dc    = diff --cached
+  ds    = diff --staged
   du    = diff @{upstream}
   dt    = diff --stat=120,130 -M -C
-  ds    = diff --name-status -M -C
+  dls   = diff --name-status -M -C
 
   # Edit files
   em    = "!${EDITOR:-vim} $(git ls-files --modified)"
@@ -175,10 +175,11 @@
 
   # Log
   l     = log
+  ll    = log --abbrev-commit --pretty=ll                        # compact log
+  lt    = log --name-status   --pretty                           # terse log with filenames
   ls    = log --stat
-  lp    = log --patch -m -c # show merges and compressed diff format
+  lp    = log --patch -m -c                                      # show merges and compressed diff format
   lpw   = log --patch --word-diff
-  ll    = log  --abbrev-commit --pretty=ll
   l1    = !"git --no-pager ll -10"
   lg    = !git ll --graph
   lu    = log @{upstream}.. --stat --no-merges
