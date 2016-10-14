@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# take default config
+# which is probably overriden by ~/.gitconfig-local
+U=$(git config user.name)
+E=$(git config user.email)
+
+git config --local user.email "$E"
+git config --local user.name "$U"
