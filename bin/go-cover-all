@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# vim: set ft=sh:
+
+set -e
+set -x
+
+cleanup() {
+  rm -f .build/.*.cover
+  rm -f .build/*.cover
+  rm -f .build/*-coverage.html
+}
+
+# generate 0% coverge for everything: to be overriden by a real coverage
+# enables coverage report include completely uncovered files
+gen_zero_coverage() {
+  go list -f '{{$path := .ImportPath}}{{range $idx, $f := .GoFiles}}{{ printf "%s/%s:0.0,0.0 0 0\n" $path $f}}{{end}}' $@
+}
+
+write_coverage_reports() {
+  # get actual covers
+  for pkg in "$@"; do
+    cname=".build/.$(echo $pkg|tr / -).cover"
+    go test -covermode=count -coverprofile "$cname" "$pkg"
+  done
+}
+
+merge_coverage_reports() {
+  grep -v -h '^mode:' .build/.*.cover
+}
+
+
+main() {
+  # pkgs to cover
+  PKGS="${PKGS:-$(go list ./...|grep -v vendor)}"
+
+  # pkgs to include in report (including with no cover at all)
+  ALLPKGS="${ALLPKGS:-$(go list ./...|grep -v vendor)}"
+
+  basename="$(basename $PWD)"
+  fullcoverage=".build/$basename.cover"
+  htmlreport=".build/$basename-coverage.html"
+
+  cleanup
+
+  write_coverage_reports $PKGS
+
+  # generate aggregated coverage
+  (
+    echo "mode: count"
+    merge_coverage_reports
+    gen_zero_coverage $ALLPKGS
+  ) > $fullcoverage
+
+  go tool cover -html=$fullcoverage -o $htmlreport
+}

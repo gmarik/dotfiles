@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# from: https://dominik.honnef.co/posts/2014/12/go-tools/
+
+set -e
+
+#
+# Linter
+#
+
+# go vet - checks for programming errors(comes bundled with Go)
+
+# Gosimple is a linter for Go source code that specialises on simplifying code
+go get honnef.co/go/simple/cmd/gosimple
+
+#
+# Style
+#
+# checks for style violations
+go get github.com/golang/lint/golint
+
+#
+# Errors
+#
+# checks for not handling errors
+go get github.com/kisielk/errcheck
+
+#
+# Benchmarks
+#
+# benchmarks comparison
+go get golang.org/x/tools/cmd/benchcmp
+go get github.com/ajstarks/svgo/benchviz
+
+#
+# Code comprehension
+#
+go get github.com/hirokidaichi/goviz
+go get github.com/kisielk/godepgraph
+
+#
+# Refactoring
+#
+go get golang.org/x/tools/cmd/gorename
