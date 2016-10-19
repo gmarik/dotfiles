@@ -233,10 +233,8 @@ au! BufWritePost      {*.snippet,*.snippets}                          call Reloa
 filetype off
 runtime macros/matchit.vim
 set rtp+=~/.vim/vendor/snipmate.snippets/
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/vendor/vundle.vim/
 call vundle#rc()
-
-Plugin 'gmarik/vundle' " let Vundle manage Vundle
 
 " Colorscheme
 Plugin 'gmarik/ingretu'
