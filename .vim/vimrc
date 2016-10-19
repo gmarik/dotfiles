@@ -232,6 +232,7 @@ au! BufWritePost      {*.snippet,*.snippets}                          call Reloa
 " Scripts and Plugins " {{{
 filetype off
 runtime macros/matchit.vim
+set rtp+=~/.vim/vendor/snipmate.snippets/
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -281,8 +282,7 @@ Plugin 'mxw/vim-jsx'
 
 " Snippets
 Plugin 'gmarik/snipmate.vim'
-Plugin 'gmarik/snipmate.snippets'
-nnoremap <leader>so :Explore ~/.vim/bundle/snipmate.snippets/snippets/<CR>
+nnoremap <leader>so :Explore ~/.vim/vendor/snipmate.snippets/snippets/<CR>
 
 
 
