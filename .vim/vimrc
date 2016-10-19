@@ -245,6 +245,8 @@ if has("gui_running")
 endif
 
 " Programming
+Plugin 'majutsushi/tagbar'
+
 " Python
 Plugin 'davidhalter/jedi-vim'
 Plugin 'klen/python-mode'
