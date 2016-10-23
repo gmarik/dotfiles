@@ -216,7 +216,8 @@ map <leader>2h :runtime! syntax/2html.vim<CR>
 " " }}}
 
 " AutoCommands " {{{
-au BufRead,BufNewFile {*.go}                                          setl ft=go tabstop=2 softtabstop=2 noexpandtab smarttab
+"
+au BufRead,BufNewFile {*.go}                                          setl ft=go
 au BufRead,BufNewFile {*.coffee}                                      setl ft=coffee tabstop=2 softtabstop=2 expandtab smarttab
 au BufRead,BufNewFile {Gemfile,Rakefile,*.rake,config.ru,*.rabl}      setl ft=ruby tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
 au BufRead,BufNewFile {*.local}                                       setl ft=sh
@@ -258,10 +259,36 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_build_constraints = 1
 
+augroup go
+" clear everything
+autocmd!
 
-nnoremap <leader>gt :GoTest<CR>
-nnoremap <leader>gv :GoVet<CR>
-nnoremap <leader>gl :GoLint<CR>
+" set visuals
+au BufRead,BufNewFile go setl tabstop=2 softtabstop=2 noexpandtab smarttab
+" TODO: not working
+au BufWritePost go if get(g:,'auto_test') | exec ':GoTest'<CR> | endif
+
+" bindings
+au FileType go nmap <localleader>t :GoTest<CR>
+au FileType go nmap <localleader>tf :GoTestFunc<CR>
+au FileType go nmap <localleader>r :GoRun<CR>
+au FileType go nmap <localleader>e :GoErrCheck<CR>
+au FileType go nmap <localleader>v :GoVet<CR>
+au FileType go nmap <localleader>l :GoLint<CR>
+au FileType go nmap <localleader>ll :GoMetaLinter<CR>
+au FileType go nmap <localleader>i :GoImports<CR>
+au FileType go nmap <localleader>d :GoDecls<CR>
+au FileType go nmap <localleader>dd :GoDeclsDir<CR>
+
+au FileType go nmap <localleader>gr :exec ':CtrlP '.system('go env GOROOT')[:-2].'/src/'<CR>
+au FileType go nmap <localleader>gp :exec ':CtrlP '.system('go env GOPATH')[:-2].'/src/'<CR>
+
+" commands
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AT GoAutoTypeInfoToggle<bang> <args>
+autocmd Filetype go command! -bang TT let g:auto_test = 1 - get(g:, 'auto_test')
+
+augroup END
 
 " goes to the definition under cursor in a new split
 " TODO: doesn't work
@@ -334,7 +361,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'vim-scripts/lastpos.vim'
 
 Plugin 'Lokaltog/vim-easymotion'
-let g:EasyMotion_leader_key='<LocalLeader>'
+let g:EasyMotion_leader_key='<LocalLeader><LocalLeader>'
 
 Plugin 'ZoomWin'
 noremap <leader>o :ZoomWin<CR>
