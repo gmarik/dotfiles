@@ -1,3 +1,3 @@
 #!/bin/bash
 
-grep -R $@ $(go env GOPATH)/src
+grep --color --exclude-dir=pkg -nR "$@" $(go env GOPATH)/src
