@@ -121,7 +121,7 @@
   con   = "!f() { git fetch; git checkout -b $1 origin/master }; f "                # new branch off master
 
   # fzf checkout
-  zco    = "!f() { git checkout $(git bls|grep -v '^*'|fzf|awk '{print $1}'); }; f"
+  zco    = "!f() { git checkout $(git bls \"$@\"|grep -v '^*'|fzf|awk '{print $1}'); }; f"
 
   # checkout a github PR
   copr  = "!f() { local b=pull/$1; git fetch origin $b/head:$b && git checkout $b; }; f"
