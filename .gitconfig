@@ -82,6 +82,7 @@
   # ll=tformat:%C(bold yellow)%h%Creset %s %C(bold blue)[%an]%Creset %Cblue{%G?}%Creset %Cgreen(%cr)%Creset
   log=fuller
   ll=tformat:%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset
+  lh=tformat:%C(red)%d%Creset %C(yellow)%h%Creset %Cgreen(%cr)%Creset %s %C(bold blue) %an %Creset
 
 [alias]
 
