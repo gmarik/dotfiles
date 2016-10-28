@@ -12,7 +12,7 @@ then
   alias vim="${vim}"
 fi
 
-export EDITOR="${vim} -g --remote-tab-silent"
+export EDITOR="${vim} -g"
 export GIT_EDITOR="${vim} -g -f"
 
 export MANPAGER=$_MANPAGER
