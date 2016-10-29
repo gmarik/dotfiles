@@ -133,7 +133,7 @@
   cia   = commit -a -e -C HEAD -v --reset-author --untracked-files=no
 
   # commit staged using prev commit message as a template
-  ci    = commit    -e -C HEAD -v --reset-author --untracked-files=no
+  ci    = commit -v --untracked-files=no
 
   # commit using branch name as an initial msg
   ciab  = !B=$(git symbolic-ref HEAD 2>/dev/null) && git commit -v -a --edit -m "${B##refs/heads/}:" --untracked-files=no
