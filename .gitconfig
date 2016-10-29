@@ -80,7 +80,9 @@
   #
 [pretty]
   # ll=tformat:%C(bold yellow)%h%Creset %s %C(bold blue)[%an]%Creset %Cblue{%G?}%Creset %Cgreen(%cr)%Creset
+  log=fuller
   ll=tformat:%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset
+  lh=tformat:%C(red)%d%Creset %C(yellow)%h%Creset %Cgreen(%cr)%Creset %s %C(bold blue) %an %Creset
 
 [alias]
 
@@ -120,7 +122,7 @@
   con   = "!f() { git fetch; git checkout -b $1 origin/master }; f "                # new branch off master
 
   # fzf checkout
-  zco    = "!f() { git checkout $(git bls|grep -v '^*'|fzf|awk '{print $1}'); }; f"
+  zco    = "!f() { git checkout $(git bls \"$@\"|grep -v '^*'|fzf|awk '{print $1}'); }; f"
 
   # checkout a github PR
   copr  = "!f() { local b=pull/$1; git fetch origin $b/head:$b && git checkout $b; }; f"
@@ -170,19 +172,19 @@
   k     = "!gitk &"
 
   # Log
-  l     = log
-  ll    = log --abbrev-commit --pretty=ll                        # compact log
-  lt    = log --name-status   --pretty                           # terse log with filenames
-  ls    = log --stat
-  lp    = log --patch -m -c                                      # show merges and compressed diff format
-  lpw   = log --patch --word-diff
+  ll    = log --pretty=ll  --abbrev-commit                                    # compact log
+  l     = log --pretty=log
+  lt    = log --pretty=log --name-status                                      # terse log with filenames
+  ls    = log --pretty=log --stat
+  lp    = log --pretty=log --patch -m -c                                      # show merges and compressed diff format
+  lpw   = log --pretty=log --patch --word-diff
   l1    = !"git --no-pager ll -10"
   lg    = !git ll --graph
   lu    = log @{upstream}.. --stat --no-merges
   llu    = !git ll @{upstream}..
 
   # Push
-  po    = push origin HEAD
+  po    = push --set-upstream origin HEAD
 
   # Pull
   pu    = pull
