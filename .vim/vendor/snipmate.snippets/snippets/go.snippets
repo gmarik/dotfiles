@@ -187,29 +187,36 @@ snippet Tt
 	}
 
 snippet Tfn
-	func Test${1:name  }(t *testing.T) {
+	func Test${1:name}(t *testing.T) {
 		${2}
 	}
 
 snippet Tbm
-	func Benchmark${1:name  }(t *testing.T) {
+	func Benchmark${1:name}(t *testing.T) {
 		${2}
 	}
 
 snippet Tif
-	exp := ${1:hello}
+	var (
+		exp := ${1:hello}
+		got := "got"
+	)
+
 	if exp != got {
 		t.Errorf("\nExp: %v\nGot: %v", exp, got)
 	}
 
 snippet Tifr
-	exp := ${1:hello}
+	var (
+		exp = ${1:hello}
+		got = "got"
+	)
+
 	if !reflect.DeepEqual(exp, got) {
 		t.Errorf("\nExp: %v\nGot: %v", exp, got)
 	}
 
 snippet Tcas
-
 	tcases := []struct {
 		exp ${1:type1}
 		in ${2:type2}
@@ -234,25 +241,13 @@ snippet Tcas
 	}
 
 snippet Isort
+	type sortT struct { m []T }
 
-	type sortable struct {
-		m []T
-	}
-
-	func (s *sortable) Len() int {
-		return len(s.m)
-	}
-
-	func (s *sortable) Swap(i, j int) {
-		s.m[i], s.m[j] = s.m[j], s.m[i]
-	}
-
-	func (s *sortable) Less(i, j int) bool {
-		return T(s.m[i]) < T(s.m[j])
-	}
+	func (s *sortT) Len() int { return len(s.m) }
+	func (s *sortT) Swap(i, j int) { s.m[i], s.m[j] = s.m[j], s.m[i] }
+	func (s *sortT) Less(i, j int) bool { return T(s.m[i]) < T(s.m[j]) }
 
 snippet Iomap
-
 	ordered := make([]int, 0, len(sourceMap))
 	for r, _ := range sourceMap {
 		ordered = append(ordered, r)
