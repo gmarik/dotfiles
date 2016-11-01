@@ -5,25 +5,39 @@
 set -e
 
 #
-# Linter
+# Linters
 #
 
 # go vet - checks for programming errors(comes bundled with Go)
 
-# Gosimple is a linter for Go source code that specialises on simplifying code
-go get honnef.co/go/simple/cmd/gosimple
+# ## Metalinter: supported linters
+# go vet - Reports potential errors that otherwise compile.
+# go vet --shadow - Reports variables that may have been unintentionally shadowed.
+# gotype - Syntactic and semantic analysis similar to the Go compiler.
+# deadcode - Finds unused code.
+# gocyclo - Computes the cyclomatic complexity of functions.
+# golint - Google's (mostly stylistic) linter.
+# varcheck - Find unused global variables and constants.
+# structcheck - Find unused struct fields.
+# aligncheck - Warn about un-optimally aligned structures.
+# errcheck - Check that error return values are used.
+# dupl - Reports potentially duplicated code.
+# ineffassign - Detect when assignments to existing variables are not used.
+# interfacer - Suggest narrower interfaces that can be used.
+# unconvert - Detect redundant type conversions.
+# goconst - Finds repeated strings that could be replaced by a constant.
+# gosimple - Report simplifications in code.
+# staticcheck - Check inputs to functions for correctness
 
-#
-# Style
-#
-# checks for style violations
-go get github.com/golang/lint/golint
-
-#
-# Errors
-#
-# checks for not handling errors
-go get github.com/kisielk/errcheck
+# ## Disabled by default (enable with --enable=<linter>):
+# testify - Show location of failed testify assertions.
+# test - Show location of test failures from the stdlib testing module.
+# gofmt -s - Checks if the code is properly formatted and could not be further simplified.
+# goimports - Checks missing or unreferenced package imports.
+# lll - Report long lines (see --line-length=N).
+# misspell - Finds commonly misspelled English words.
+# unused - Find unused variables.
+go get github.com/alecthomas/gometalinter
 
 #
 # Benchmarks
