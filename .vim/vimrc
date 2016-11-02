@@ -136,11 +136,19 @@ endif
 nnoremap <leader>c mz"dyy"dp`z
 vnoremap <leader>c "dymz"dP`z
 
+" quick nav
 nnoremap <leader>rs :source ~/.vimrc<CR>
 nnoremap <leader>rt :tabnew ~/.vim/vimrc<CR>
 nnoremap <leader>re :e ~/.vim/vimrc<CR>
 nnoremap <leader>rd :e ~/.vim/ <CR>
 nnoremap <leader>rc :silent ! cd ~/.vim/ && git commit ~/.vim/vimrc -v <CR>
+
+" Disable Esc: future is inescapeable
+inoremap <Esc> <NOP>
+nnoremap <Esc> <NOP>
+" use Ctrl-C or below ones instead
+inoremap <leader><localleader> <C-C>
+inoremap <leader><leader> <C-C>
 
 " Tabs
 nnoremap <M-h> :tabprev<CR>
