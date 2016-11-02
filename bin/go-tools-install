@@ -4,6 +4,11 @@
 
 set -e
 
+goget() {
+  echo "Getting '$*'"
+  go get $@
+}
+
 #
 # Linters
 #
@@ -43,16 +48,17 @@ go get github.com/alecthomas/gometalinter
 # Benchmarks
 #
 # benchmarks comparison
-go get golang.org/x/tools/cmd/benchcmp
-go get github.com/ajstarks/svgo/benchviz
+goget golang.org/x/tools/cmd/benchcmp # https://godoc.org/golang.org/x/tools/cmd/benchcmp
+goget rsc.io/benchstat                # https://godoc.org/rsc.io/benchstat
+goget github.com/ajstarks/svgo/benchviz
 
 #
 # Code comprehension
 #
-go get github.com/hirokidaichi/goviz
-go get github.com/kisielk/godepgraph
+goget github.com/hirokidaichi/goviz
+goget github.com/kisielk/godepgraph
 
 #
 # Refactoring
 #
-go get golang.org/x/tools/cmd/gorename
+goget golang.org/x/tools/cmd/gorename
