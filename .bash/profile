@@ -66,8 +66,9 @@ complete -o default -o nospace -F _git G # allow git-completion to work with ali
 #
 # Grep
 #
-alias ?="ggrep --color=auto --exclude-from=$HOME/.ignore.grep"
-# recursively search case insensitively, print filenames and line numbers with matches
+export GREP_DIR_IGNORES=".git/,.svn/,__MACOSX"
+alias ?="ggrep --color=auto --exclude-dir={$GREP_DIR_IGNORES} --exclude-from=$HOME/.ignore.grep"
+# recursivly search case insensitively, print filenames and line numbers with matches
 alias ??='? -Rin'
 # list files having matches
 alias ??l='? -Ril'
