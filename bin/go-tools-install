@@ -42,7 +42,10 @@ goget() {
 # lll - Report long lines (see --line-length=N).
 # misspell - Finds commonly misspelled English words.
 # unused - Find unused variables.
-go get github.com/alecthomas/gometalinter
+goget github.com/alecthomas/gometalinter
+
+# Detect ineffectual assignments in Go code.
+goget github.com/gordonklaus/ineffassign
 
 #
 # Benchmarks
