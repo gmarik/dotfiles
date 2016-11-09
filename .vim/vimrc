@@ -402,7 +402,7 @@ let g:ctrlp_extensions = ['tag', 'buffertag', 'dir', 'rtscript',
 
 nnoremap <leader>0  :CtrlPClearAllCaches<CR>
 nnoremap <leader>`  :CtrlPUndo<CR>
-nnoremap <leader>1  :CtrlPTag
+nnoremap <leader>1  :CtrlPTag<CR>
 nnoremap <leader>2  :exec ':CtrlP '.expand('%:h:p')<CR>
 nnoremap <leader>22 :CtrlP<CR>
 nnoremap <leader>3  :CtrlPBuffer<CR>
@@ -411,7 +411,6 @@ nnoremap <leader>44 :CtrlPDir<CR>
 nnoremap <leader>6  :CtrlPMRU<CR>
 nnoremap <leader>7  :CtrlPLine<CR>
 nnoremap <leader>8  :CtrlPChange<CR>
-nnoremap <leader>9  :CtrlPChange<CR>
 nnoremap <leader>h  :CtrlPRTS<CR>
 
 
