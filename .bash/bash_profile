@@ -18,5 +18,6 @@ so ~/.golangrc                            # Golang Stuff
 so ~/.bash/*.local                        # machine specific config. not tracked
 
 [ -d ~/bin ] && export PATH=~/bin:$PATH # users' ~/bin/ takes precedence
+[ -d ~/.local/bin ] && export PATH=~/.local/bin:$PATH # untracked local stuff
 
 # vim: ft=sh
