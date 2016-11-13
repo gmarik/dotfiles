@@ -65,3 +65,9 @@ goget github.com/kisielk/godepgraph
 # Refactoring
 #
 goget golang.org/x/tools/cmd/gorename
+
+#
+# Tools
+#
+
+goget -u github.com/cweill/gotests/...
