@@ -306,6 +306,9 @@ augroup END
 nnoremap <C-W>gd <C-W>^zz
 
 
+" HDL
+Plugin 'suoto/vim-hdl'
+
 " Scala
 Plugin 'derekwyatt/vim-scala'
 
