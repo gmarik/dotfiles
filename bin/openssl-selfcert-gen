@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# generates self-signed certificate without any prompts
+openssl req -x509 -days 10000 -nodes -newkey rsa:2048 \
+  -keyout www.example.com.self.key \
+  -out www.example.com.self.cert.pem \
+  -subj '/C=XX/ST=XXXX/L=XXXX/O=XXXX/OU=XXXX/CN=www.example.com/emailAddress=postmaster@example.com'
