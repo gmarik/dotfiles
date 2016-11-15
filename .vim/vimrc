@@ -177,13 +177,19 @@ map <leader>EE :Vexplore!<CR><C-W>=
 " toggle search highlighting
 nnoremap <silent> <space> :let &hls=1-&hls<cr>
 
-" Make Control-direction switch between windows (like C-W h, etc)
-nmap <silent> <C-k> <C-W><C-k>
-nmap <silent> <C-j> <C-W><C-j>
-nmap <silent> <C-h> <C-W><C-h>
-nmap <silent> <C-l> <C-W><C-l>
+" " Make Control-direction switch between windows (like C-W h, etc)
+" nmap <silent> <C-k> <C-W><C-k>
+" nmap <silent> <C-j> <C-W><C-j>
+" nmap <silent> <C-h> <C-W><C-h>
+" nmap <silent> <C-l> <C-W><C-l>
 
-  " vertical paragraph-movement
+inoremap <silent> <C-k> <Up>
+inoremap <silent> <C-j> <Down>
+inoremap <silent> <C-h> <Left>
+inoremap <silent> <C-l> <Right>
+
+
+" vertical paragraph-movement
 nmap <C-K> {
 nmap <C-J> }
 
