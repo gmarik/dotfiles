@@ -48,6 +48,11 @@ goget github.com/alecthomas/gometalinter
 goget github.com/gordonklaus/ineffassign
 
 #
+# Tests
+#
+goget -u github.com/cweill/gotests/...
+
+#
 # Benchmarks
 #
 # benchmarks comparison
@@ -67,7 +72,10 @@ goget github.com/kisielk/godepgraph
 goget golang.org/x/tools/cmd/gorename
 
 #
-# Tools
-#
+# Repl
+# 
+goget -u github.com/shurcooL/goexec
+goget -u github.com/sno6/gommand
+goget -u npf.io/gorram
 
-goget -u github.com/cweill/gotests/...
+goget -u github.com/motemen/gore
