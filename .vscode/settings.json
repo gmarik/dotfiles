@@ -1,4 +1,5 @@
 {
+
 // Overwrite settings by placing them into your settings file.
 // See http://go.microsoft.com/fwlink/?LinkId=808995 for the most commonly used settings.
 
@@ -774,6 +775,75 @@
 
     // Enable crash reports to be sent to Microsoft.
 	// This option requires restart to take effect.
-    "telemetry.enableCrashReporter": true
+    "telemetry.enableCrashReporter": true,
+
+
+// Go configuration
+
+    // Run 'go build'/'go test -c' on save.
+    "go.buildOnSave": true,
+
+    // Flags to `go build`/`go test` used during build-on-save or running tests. (e.g. ['-ldflags="-s"'])
+    "go.buildFlags": [],
+
+    // Run Lint tool on save.
+    "go.lintOnSave": true,
+
+    // Specifies Lint tool name.
+    "go.lintTool": "golint",
+
+    // Flags to pass to Lint tool (e.g. ['-min_confidenc=.8'])
+    "go.lintFlags": [],
+
+    // Run 'go tool vet' on save.
+    "go.vetOnSave": true,
+
+    // Flags to pass to `go tool vet` (e.g. ['-all', '-shadow'])
+    "go.vetFlags": [],
+
+    // Pick 'gofmt', 'goimports' or 'goreturns' to run on format.
+    "go.formatTool": "gofmt",
+
+    // Flags to pass to format tool (e.g. ['-s'])
+    "go.formatFlags": [],
+
+    // Run the formatting tools with the -d flag
+    "go.useDiffForFormatting": true,
+
+    // Complete functions with their parameter signature
+    "go.useCodeSnippetsOnFunctionSuggest": false,
+
+    // Specifies the GOPATH to use when no environment variable is set.
+    "go.gopath": "${home}/.golang",
+
+    // Specifies the GOROOT to use when no environment variable is set.
+    "go.goroot": null,
+
+    // Runs formatting tool on save.
+    "go.formatOnSave": true,
+
+    // Run 'go test -coverprofile' on save
+    "go.coverOnSave": false,
+
+    // Specifies the timeout for go test in ParseDuration format.
+    "go.testTimeout": "10s",
+
+    // Enable gocode's autobuild feature
+    "go.gocodeAutoBuild": true,
+
+    // The Go build tags to use for all commands that support a `-tags '...'` argument
+    "go.buildTags": "",
+
+    // Environment variables that will passed to the process that runs the Go tests
+    "go.testEnvVars": {},
+
+    // Autocomplete members from unimported packages.
+    "go.autocompleteUnimportedPackages": true,
+
+
+// amVim configuration
+
+    // Set to `false` to disable `Ctrl+<key>` keybindings.
+    "amVim.bindCtrlCommands": true
 
 }
