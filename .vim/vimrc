@@ -120,9 +120,10 @@ if has('gui_running')
   " :set guifont=* " to launch a GUI dialog
   if has('mac')
     if has('macligatures')
-      set antialias macligatures guifont=Fira\ Code\ Light:h13 " -> <=
+      set antialias guifont=Fira\ Code\ Light:h13 macligatures " -> <=
     else
-      set noantialias guifont=Andale\ Mono:h14
+      set noantialias guifont=Andale\ Mono:h14 linespace=0
+      set antialias guifont=Go\ Mono:h13 linespace=1
     end
   set fuoptions=maxvert,maxhorz ",background:#00AAaaaa
   else
