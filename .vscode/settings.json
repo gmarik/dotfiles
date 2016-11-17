@@ -21,7 +21,7 @@
     "editor.lineHeight": 0,
 
     // Controls the display of line numbers. Possible values are 'on', 'off', and 'relative'. 'relative' shows the line count from the current cursor position.
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "relative",
 
     // Columns at which to show vertical rulers
     "editor.rulers": [],
@@ -817,7 +817,7 @@
     "go.useCodeSnippetsOnFunctionSuggest": false,
 
     // Specifies the GOPATH to use when no environment variable is set.
-    "go.gopath": "${home}/.golang",
+    "go.gopath": "${env.HOME}/.golang",
 
     // Specifies the GOROOT to use when no environment variable is set.
     "go.goroot": null,
