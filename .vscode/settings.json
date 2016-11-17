@@ -3,10 +3,13 @@
 // Overwrite settings by placing them into your settings file.
 // See http://go.microsoft.com/fwlink/?LinkId=808995 for the most commonly used settings.
 
+// Tips & Tricks: https://github.com/Microsoft/vscode-tips-and-tricks
+// env vars: https://code.visualstudio.com/Docs/editor/debugging#_variable-substitution
+
 // Editor
 
     // Controls the font family.
-    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "Go Mono, Menlo, Monaco, 'Courier New', monospace",
 
     // Controls the font weight.
     "editor.fontWeight": "normal",
