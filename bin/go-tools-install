@@ -63,7 +63,11 @@ goget github.com/ajstarks/svgo/benchviz
 #
 # Code comprehension
 #
+# goviz -i github.com/hashicorp/serf | dot -Tpng -o hoge.png
 goget github.com/hirokidaichi/goviz
+
+# GOPATH=$GOPATH:$PWD/vendor godepgraph -s ./path/to/pkg |dot -Tsvg -o out.svg
+# open -a Safari out.svg
 goget github.com/kisielk/godepgraph
 
 #
