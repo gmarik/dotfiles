@@ -1,5 +1,5 @@
 # http://thume.ca/howto/2012/11/19/using-slate/
-config defaultToCurrentScreen true
+bonfig defaultToCurrentScreen true
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
@@ -44,16 +44,24 @@ alias bottomright corner bottom-right resize: ${ssx}/2;${ssy}/2
 alias center  screenOriginX+screenSizeX/2-windowSizeX/2;screenOriginY+screenSizeY/2-windowSizeY/2 windowSizeX;windowSizeY
 
 
+default three count:3
 default two count:2
 default one count:1
+
+layout three 'Xcode'     move ${fullscreen} 1
+layout three 'Terminal'  move ${fullscreen} 2
+layout three 'MacVim'	   move ${fullscreen} 0
+layout three 'Code'	   move ${fullscreen} 0
 
 layout two 'Xcode'	     move ${fullscreen} 0
 layout two 'Terminal'    move ${rightGs}  0
 layout two 'MacVim'	     move ${leftGs}   0
+layout two 'Code'	     move ${leftGs}   0
 
 layout one 'Xcode'	     move ${fullscreen} 1
 layout one 'Terminal'    move ${rightGs}  1
 layout one 'MacVim'	     move ${leftGs}   1
+layout one 'Code'	     move ${leftGs}   1
 
 #
 # Resize Bindings
