@@ -108,7 +108,7 @@
     "editor.mouseWheelZoom": false,
 
     // Controls the cursor style, accepted values are 'block', 'line' and 'underline'
-    "editor.cursorStyle": "line",
+    "editor.cursorStyle": "block",
 
     // Enables font ligatures
     "editor.fontLigatures": false,
