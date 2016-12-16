@@ -1,10 +1,11 @@
 *.local
+.vaultplainpass
 
 TAGS
 tags
 
+# merge conflict
 *.orig
-
 
 # IntelliJ IDEA
 *.iml
@@ -42,7 +43,6 @@ project.xcworkspace/
 xcuserdata/
 
 # Vim
-
 .netrwhist
 
 # misc
@@ -50,6 +50,3 @@ zeus.json
 
 # Golang
 vendor/pkg
-
-# merge conflict
-*.orig
