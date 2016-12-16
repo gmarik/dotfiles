@@ -376,7 +376,7 @@ com! ONRRB :au! BufWritePost <buffer> :RRB
 com! NORRB :au! BufWritePost <buffer>
 
 
-Plugin 'bogado/file-line'
+" Plugin 'bogado/file-line'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'vim-scripts/lastpos.vim'
 
