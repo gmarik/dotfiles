@@ -102,6 +102,8 @@ bind j:${leader}  push down  bar-resize:screenSizeY/2
 # 
 bind 1:${leader}      throw 0 resize
 bind 2:${leader}      throw 1 resize
+bind 3:${leader}      throw 2 resize
+bind 4:${leader}      throw 3 resize
 # bind 3:ctrl;alt         throw 2 resize
 # bind right:ctrl;alt;cmd throw right resize
 # bind left:ctrl;alt;cmd  throw left  resize
