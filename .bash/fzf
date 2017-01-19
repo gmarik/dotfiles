@@ -1,0 +1,19 @@
+# vim: set ft=sh:
+
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='~~'
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='+c -x'
+
+# Use ag instead of the default find command for listing candidates.
+# - The first argument to the function is the base path to start traversal
+# - Note that ag only lists files not directories
+# - See the source code (completion.{bash,zsh}) for the details.
+# _fzf_compgen_path() {
+#   find -g "" "$1"
+# }
+
+if [[ -n -z "$(which fzf)" ]]; then
+  complete -F _fzf_file_completion -o default -o bashdefault
+fi
