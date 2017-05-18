@@ -30,7 +30,7 @@
     "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
 
     // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
 
     // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
     "editor.insertSpaces": true,
@@ -43,9 +43,6 @@
 
     // Controls if the editor will scroll beyond the last line
     "editor.scrollBeyondLastLine": true,
-
-    // Controls after how many characters the editor will wrap to the next line. Setting this to 0 turns on viewport width wrapping (word wrapping). Setting this to -1 forces the editor to never wrap.
-    "editor.wrappingColumn": 300,
 
     // Controls if lines should wrap. The lines will wrap at min(editor.wrappingColumn, viewportWidthInColumns).
     "editor.wordWrap": false,
@@ -817,7 +814,7 @@
     "go.useCodeSnippetsOnFunctionSuggest": false,
 
     // Specifies the GOPATH to use when no environment variable is set.
-    "go.gopath": "${env.HOME}/.golang",
+    "go.gopath": "/Users/mh/.golang",
 
     // Specifies the GOROOT to use when no environment variable is set.
     "go.goroot": null,
@@ -843,10 +840,15 @@
     // Autocomplete members from unimported packages.
     "go.autocompleteUnimportedPackages": true,
 
+    "[go]":  {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2 
+    },
 
 // amVim configuration
 
     // Set to `false` to disable `Ctrl+<key>` keybindings.
-    "amVim.bindCtrlCommands": true
+    "amVim.bindCtrlCommands": true,
+
 
 }
