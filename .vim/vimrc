@@ -296,6 +296,7 @@ au FileType go nmap <localleader>v :GoVet<CR>
 au FileType go nmap <localleader>l :GoLint<CR>
 au FileType go nmap <localleader>ll :GoMetaLinter<CR>
 au FileType go nmap <localleader>i :GoImports<CR>
+au FileType go nmap <localleader>ii :GoImport<TAB>
 au FileType go nmap <localleader>d :GoDecls<CR>
 au FileType go nmap <localleader>dd :GoDeclsDir<CR>
 
