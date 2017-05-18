@@ -311,5 +311,5 @@
   insteadOf = "dx:"
 
 [include]
-  path = ~/.gitconfig-local
-  path = ~/.gitconfig-private
+  path = ~/.local/gitconfig-local
+  path = ~/.local/gitconfig-private

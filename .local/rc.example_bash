@@ -1,0 +1,5 @@
+# chruby
+[ -d ~/.rbenv ] && RUBIES+=(~/.rbenv/versions/*)
+
+# source /usr/local/share/chruby/chruby.sh
+# chruby 2

@@ -15,7 +15,7 @@ so ~/.bash/ruby                           #
 so ~/.rubyrc                              # Ruby stuff.
 so ~/.bash/golang                         # Golang Stuff
 so ~/.golangrc                            # Golang Stuff
-so ~/.bash/*.local                        # machine specific config. not tracked
+so ~/.local/*.bash                        # machine specific config. not tracked
 
 [ -d ~/bin ] && export PATH=~/bin:$PATH # users' ~/bin/ takes precedence
 [ -d ~/.local/bin ] && export PATH=~/.local/bin:$PATH # untracked local stuff
