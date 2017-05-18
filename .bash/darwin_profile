@@ -47,7 +47,7 @@ alias rmasl='sudo rm -rf /private/var/log/asl/*.asl'
 
 # posgres
 # use readline instead libedit
-alias psql='LD_PRELOAD=/usr/local/lib/libreadline.6.dylib \psql'
+# alias psql='LD_PRELOAD=/usr/local/lib/libreadline.6.dylib \psql'
 
 #flush DNS cache
 alias dnsflush='dscacheutil -flushcache'
