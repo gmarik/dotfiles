@@ -65,6 +65,7 @@ Brew tree
 
 Brew tmux
 Brew reattach-to-user-namespace
+Brew entr                               # fs watcher entrproject.org
 
 Brew jq                                 # json tool and formatter
 Brew html-xml-utils
@@ -91,6 +92,9 @@ Brew homebrew/fuse/encfs
 # GUI
 App virtualbox
 App Dash                               # Documentation
+App Slack
+
+App visual-studio-code
 
 App Caskroom/cask/tunnelblick
 
