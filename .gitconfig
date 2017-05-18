@@ -4,9 +4,6 @@
   excludesfile = ~/.gitignore-global
   quotepath = false
 
-[user]
-  name  = gmarik
-  email = gmarik@gmail.com
 
 [init]
   templatedir = ~/.gitfiles/templates/
