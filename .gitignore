@@ -1,7 +1,8 @@
 # ignore all by default
 /*
+.vim/bundle
 
-# do not ignore: 
+# do not ignore:
 !.bash/
 !.vim/
 !.ruby/
