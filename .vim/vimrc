@@ -122,7 +122,7 @@ if has('gui_running')
   " :set guifont=* " to launch a GUI dialog
   if has('mac')
     if has('macligatures')
-      set antialias macligatures guifont=Fira\ Code\ Light:h13 " -> <=
+      set antialias guifont=Fira\ Code\ Light:h13 macligatures " -> <=
     else
       set noantialias linespace=0 guifont=Andale\ Mono:h14
       " set antialias linespace=1 guifont=Go\ Mono:h13
