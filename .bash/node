@@ -1,0 +1,5 @@
+# vim: set ft=sh:
+
+# node
+export PATH=$PATH:~/.npm-packages/bin/
+
