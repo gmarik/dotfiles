@@ -11,7 +11,7 @@ so ~/.bash/common                         # common stuff or overriding
 so ~/.bash/git                            #
 so ~/.bash/dotfilesrc                     # my git-dotfiles specific stuff
 so ~/.bash/python                         #
-so ~/bash/node                            # Node stuff.
+so ~/.bash/node                            # Node stuff.
 so ~/.bash/ruby                           #
 so ~/.rubyrc                              # Ruby stuff.
 so ~/.bash/golang                         # Golang Stuff
