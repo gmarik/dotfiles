@@ -319,11 +319,12 @@ nnoremap <C-W>gd <C-W>^zz
 " nand2tetris
 Plugin 'sevko/vim-nand2tetris-syntax'
 
-" Scala
-Plugin 'derekwyatt/vim-scala'
-
 " Ruby/Rails
 Plugin 'tpope/vim-rails'
+
+" Elm
+Plugin 'ElmCast/elm-vim'
+let g:elm_setup_keybindings = 0
 
 " Js
 Plugin 'pangloss/vim-javascript'
@@ -342,7 +343,7 @@ Plugin 'timcharper/textile.vim'
 " Git integration
 Plugin 'tpope/vim-git'
 Plugin 'tpope/vim-fugitive'
-Plugin 'junegunn/gv.vim'
+" Plugin 'junegunn/gv.vim'
 
 nnoremap <leader>W :Gwrite<CR>
 nnoremap <leader>C :Gcommit -v<CR>
@@ -367,7 +368,7 @@ Plugin 'AndrewRadev/splitjoin.vim'
 nmap sj :SplitjoinJoin<cr>
 nmap sk :SplitjoinSplit<cr>
 
-Plugin 'gmarik/github-search.vim'
+" Plugin 'gmarik/github-search.vim'
 
 Plugin 'gmarik/ide-popup.vim'
 Plugin 'gmarik/sudo-gui.vim'
