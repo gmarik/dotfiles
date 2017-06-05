@@ -409,6 +409,7 @@ vnoremap ## :<C-u>HlmPartVSel<CR>
 vnoremap <leader>## :<C-u>HlmPartGrepVSel<CR>
 
 Plugin 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_switch_buffer = 'et'
 let g:ctrlp_map = '<leader>t'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 let g:ctrlp_extensions = ['tag', 'buffertag', 'dir', 'rtscript',
