@@ -34,7 +34,7 @@ shopt -s cdspell                            # spelling error correction
 shopt -s checkwinsize                       # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
 export HISTCONTROL="ignoredups"             # ignore duplicates(store command once)
 export HISTCONTROL="ignoreboth"
-export HISTIGNORE="&:ls:[bf]g:exit:%[0-9]"  # ignore simple commands
+export HISTIGNORE='&:ls:[bf]g:exit:%[0-9]'  # ignore simple commands
 export HISTFILESIZE=5000                    # history file size
 
 #
