@@ -35,6 +35,8 @@ let g:is_posix = 1             " vim's default is archaic bourne shell, bring it
 let mapleader = ','
 let maplocalleader = '	'      " Tab as a local leader
 let g:netrw_banner = 0         " do not show Netrw help banner
+let g:netrw_sort_sequence = "[\/]$,^\.,*" " do not be C-specific
+
 " "}}}
 
 " Formatting "{{{
@@ -120,10 +122,10 @@ if has('gui_running')
   " :set guifont=* " to launch a GUI dialog
   if has('mac')
     if has('macligatures')
-      set antialias guifont=Fira\ Code\ Light:h13 macligatures " -> <=
+      set antialias macligatures guifont=Fira\ Code\ Light:h13 " -> <=
     else
-      set noantialias guifont=Andale\ Mono:h14 linespace=0
-      set antialias guifont=Go\ Mono:h13 linespace=1
+      set noantialias linespace=0 guifont=Andale\ Mono:h14
+      " set antialias linespace=1 guifont=Go\ Mono:h13
     end
   set fuoptions=maxvert,maxhorz ",background:#00AAaaaa
   else
