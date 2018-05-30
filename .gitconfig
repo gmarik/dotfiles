@@ -77,9 +77,9 @@
   #
 [pretty]
   # ll=tformat:%C(bold yellow)%h%Creset %s %C(bold blue)[%an]%Creset %Cblue{%G?}%Creset %Cgreen(%cr)%Creset
-  log=fuller
-  ll=tformat:%C(yellow)%h%Creset %s %Cgreen(%cr) %C(bold blue) %an %Creset%C(red)%d%Creset
-  lh=tformat:%C(red)%d%Creset %C(yellow)%h%Creset %Cgreen(%cr)%Creset %s %C(bold blue) %an %Creset
+  log = fuller
+  ll  = format:%C(auto,yellow)%h%C(auto,reset) %s %C(auto,green)(%cr) %C(auto,bold blue) %an %C(auto,reset)%C(auto,red)%d%C(auto,reset)
+  lh  = format:%C(red)%d%Creset %C(yellow)%h%Creset %Cgreen(%cr)%Creset %s %C(bold blue) %an %Creset
 
 [alias]
 
@@ -122,7 +122,7 @@
   zco    = "!f() { git checkout $(git bls \"$@\"|grep -v '^*'|fzf|awk '{print $1}'); }; f"
 
   # checkout a github PR
-  copr  = "!f() { local b=pull/$1; git fetch origin $b/head:$b && git checkout $b; }; f"
+  copr  = "!f() { local b=pull/$1; git fetch origin $b/head:$b && git checkout -b $b --track $b/head; }; f"
 
   # Add and Commit
   ca    = "!f() { git add $1; git ci -v $1; }; f"
@@ -261,6 +261,11 @@
   # xargs
   # run command on modified files
   x = "!f() { git status --short --untracked-files=no | cut -d' ' -f3 | xargs $1; }; f"
+
+  #
+  # remotes
+  #
+  blsr = "!git for-each-ref refs/remotes/ --sort=authordate --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)  %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=2) %(color:green)%(subject)%(color:reset)'"
 
   ## Hub
   hpr = "!hub pull-request"
