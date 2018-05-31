@@ -96,6 +96,7 @@
 
   brm   = branch -d # remove if branch-to-be-removed if fully merged into HEAD
   brmf  = branch -D # force removal
+  # blsm = "!git checkout -q master && git for-each-ref refs/heads/ --format=%(refname:short) | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && echo $branch; done"
 
   # bt - branch track configures current branch to "track" same name from origin or specified remote
   bt    = "!f() { B=$(git symbolic-ref HEAD|cut -f3 -d/) && git config branch.$B.remote ${1:-origin} && git config branch.$B.merge refs/heads/$B; }; f"
@@ -263,9 +264,13 @@
   x = "!f() { git status --short --untracked-files=no | cut -d' ' -f3 | xargs $1; }; f"
 
   #
-  # remotes
+  # Branches
   #
+  # List abandoned branches
   blsr = "!git for-each-ref refs/remotes/ --sort=authordate --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)  %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=2) %(color:green)%(subject)%(color:reset)'"
+
+  # List local branches that has been squash-merged upstream but not cleaned locally
+  blss = "!git fetch && git for-each-ref refs/heads/ '--format=%(refname:short)' | while read branch; do mergeBase=$(git merge-base origin/master $branch) && [[ $(git cherry origin/master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && echo $branch; done"
 
   ## Hub
   hpr = "!hub pull-request"
