@@ -271,6 +271,7 @@
 
   # List local branches that has been squash-merged upstream but not cleaned locally
   blss = "!git fetch && git for-each-ref refs/heads/ '--format=%(refname:short)' | while read branch; do mergeBase=$(git merge-base origin/master $branch) && [[ $(git cherry origin/master $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == "-"* ]] && echo $branch; done"
+  blsss = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow) %(align:45,left) %(refname:short)%(color:reset) %(end) %(color:red)%(objectname:short)%(color:reset) %(contents:subject) %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
   ## Hub
   hpr = "!hub pull-request"
