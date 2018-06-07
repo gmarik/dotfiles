@@ -10,8 +10,8 @@ set clipboard+=unnamed         " Yanks go on clipboard instead.
 set pastetoggle=<F10>          " toggle between paste and normal: for 'safer' pasting from keyboard
 set shiftround                 " round indent to multiple of 'shiftwidth'
 set tags=.git/tags;$HOME       " consider the repo tags first, then
-                               " walk directory tree upto $HOME looking for tags
-                               " note `;` sets the stop folder. :h file-search
+
+set path+=$HOME/.vim/bundle/
 
 set modeline
 set modelines=5                " default numbers of lines to read for modeline instructions
@@ -23,6 +23,8 @@ set nobackup
 set nowritebackup
 set directory=/tmp//           " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
 set noswapfile                 "
+
+set isfname-=:                 " do not treat `:` as part of the filename
 
 set hidden                     " The current buffer can be put to the background without writing to disk
 
@@ -47,8 +49,8 @@ set fo-=t                      " Do no auto-wrap text using textwidth (does not 
 set nowrap
 set textwidth=0                " Don't wrap lines by default
 
-set tabstop=2                  " tab size eql 2 spaces
-set softtabstop=2
+set tabstop=2                  " tab size eql 8 spaces
+set softtabstop=2	             "
 set shiftwidth=2               " default shift width for indents
 set expandtab                  " replace tabs with ${tabstop} spaces
 set smarttab                   "
@@ -135,11 +137,18 @@ endif
 " "}}}
 
 " Key mappings " {{{
+
+" Tmux
+nnoremap <localleader>rp :silent !tmux send-keys -t "wip:test" C-p C-m<CR>
+
+
 " Duplication
+" 
 nnoremap <leader>c mz"dyy"dp`z
 vnoremap <leader>c "dymz"dP`z
 
 " quick nav
+nnoremap <leader>rs :source ~/.vimrc<CR>
 nnoremap <leader>rs :source ~/.vimrc<CR>
 nnoremap <leader>rt :tabnew ~/.vim/vimrc<CR>
 nnoremap <leader>re :e ~/.vim/vimrc<CR>
@@ -234,8 +243,7 @@ map <leader>2h :runtime! syntax/2html.vim<CR>
 
 " AutoCommands " {{{
 "
-au BufRead,BufNewFile {*.go}                                          setl ft=go
-au BufRead,BufNewFile {*.coffee}                                      setl ft=coffee tabstop=2 softtabstop=2 expandtab smarttab
+au BufRead,BufNewFile {*.go}                                          setl ft=go tabstop=2
 au BufRead,BufNewFile {Gemfile,Rakefile,*.rake,config.ru,*.rabl}      setl ft=ruby tabstop=2 softtabstop=2 shiftwidth=2 expandtab smarttab
 au BufRead,BufNewFile {*.local}                                       setl ft=sh
 au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         setl ft=markdown
@@ -308,6 +316,8 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 autocmd Filetype go command! -bang AT GoAutoTypeInfoToggle<bang> <args>
 autocmd Filetype go command! -bang TT let g:auto_test = 1 - get(g:, 'auto_test')
+autocmd Filetype go exec ':set path+=$GOPATH/src,'.system('go env GOPATH')[:-2].'/src,'.system('go env GOROOT')[:-2].'/src,'
+
 
 augroup END
 
