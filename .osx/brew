@@ -1,125 +1,157 @@
 #!/usr/bin/env bash
 
 function App() {
-	brew cask install "${@}" #2> /dev/null
+	Brew cask install "${@}" #2> /dev/null
 }
 
 function Brew() {
 	brew install "${@}" #2> /dev/null
 }
 
-# Make sure we’re using the latest Homebrew
-brew update
-
 # Install native apps
-brew tap caskroom/cask
-# Versions
-brew tap homebrew/versions
+# Brew tap caskroom/cask
 
-brew install brew-cask
+# Brew install brew-cask
 
-# Programming
-Brew git
-Brew hub
-Brew hg
+function Update {
+	Brew update
+}
 
-Brew ruby-install
-Brew chruby
-Brew go
-Brew socat
+function Dev {
+	Brew git
+	Brew hub
+	Brew hg
 
-App iterm2
-App macvim
-App sequel-pro
-App p4merge
-App docker
+	Brew socat
 
-# CLI
-#
-# bash4
-Brew bash
-Brew bash-completion
-Brew homebrew/versions/bash-completion2
+	# App iterm2
+	App macvim
+	
+	App sequel-pro
+	
+	App p4v
 
-# Install GNU core utilities (those that come with OS X are outdated)
-Brew ctags
-Brew coreutils
-brew binutils
-brew findutils
-brew diffutils
-brew ed
-brew gawk
-brew gnu-indent
-brew gnu-sed
-brew gnu-tar
-brew gnu-which
-brew gnutls
-Brew homebrew/dupes/grep                # GNU grep instead of BSD one
-brew gzip
-brew watch
-brew wdiff
-brew wget
+	App docker
+	
+	# command-line tools
+	xcode-select --install
+}
 
-Brew pstree
-Brew tree
+function Ruby {
+	Brew ruby-install
+	Brew chruby
+}
 
-Brew tmux
-Brew reattach-to-user-namespace
-Brew entr                               # fs watcher entrproject.org
+function Go {
+	Brew go
+}
 
-Brew jq                                 # json tool and formatter
-Brew html-xml-utils
+function Tools {
+	# CLI
+	#
+	# bash4
+	Brew bash
+	Brew bash-completion
 
-Brew rename
-Brew mmv                                # mass mv/link/cp/append http://manpages.ubuntu.com/manpages/precise/man1/mmv.1.html
-Brew rmtrash                            # aliases rm to delete to OSX's trash
+	# Install GNU core utilities (those that come with OS X are outdated)
+	Brew ctags
+	Brew coreutils
+	Brew binutils
+	Brew findutils
+	Brew diffutils
+	Brew ed
+	Brew gawk
+	Brew gnu-indent
+	Brew gnu-sed
+	Brew gnu-tar
+	Brew gnu-which
+	Brew gnutls
+	Brew grep                				# GNU grep instead of BSD one
+	Brew gzip
+	Brew watch
+	Brew wdiff
+	Brew wget
 
-Brew lynx
+	Brew pstree
+	Brew tree
 
-Brew graphviz
-Brew imagemagick
-Brew rhino
-Brew webkit2png
-# Howto video->gif https://gist.github.com/dergachev/4627207
-Brew gifsicle
+	Brew tmux
+	Brew reattach-to-user-namespace
+	Brew entr                               # fs watcher entrproject.org
 
-Brew fzf
+	Brew jq                                 # json tool and formatter
+	Brew html-xml-utils
 
-# EncFS
-App osxfuse
-Brew homebrew/fuse/encfs
+	Brew rename
+	Brew mmv                                # mass mv/link/cp/append http://manpages.ubuntu.com/manpages/precise/man1/mmv.1.html
+	Brew rmtrash                            # aliases rm to delete to OSX's trash
 
-# GUI
-App virtualbox
-App Dash                               # Documentation
-App Slack
+	Brew fzf
+}
 
-App visual-studio-code
+# Make sure we’re using the latest Homebrew
 
-App Caskroom/cask/tunnelblick
 
-App slate                              # OSX window manager
+function Extra {
+	Brew lynx
 
-App google-chrome
-#App google-chrome-canary
+	Brew graphviz
+	Brew imagemagick
+	Brew rhino
+	Brew webkit2png
+	# Howto video->gif https://gist.github.com/dergachev/4627207
+	Brew gifsicle
+}
 
-App imagealpha
-App imageoptim
-App the-unarchiver
+function Tools_Crypto {
+	# EncFS
+	App osxfuse
+	Brew homebrew/fuse/encfs
+}
 
-App licecap
-App keycastr
 
-App miro-video-converter
-App vlc
 
-App tor-browser
-App transmission
 
-# App dropbox
+# # GUI
+# # App virtualbox
+# App Dash                               # Documentation
+# # App Slack
 
-# Remove outdated versions from the cellar
-brew cleanup
+# App visual-studio-code
 
-# command-line tools
-xcode-select --install
+# App Caskroom/cask/tunnelblick
+
+# App slate                              # OSX window manager
+
+# App google-chrome
+# #App google-chrome-canary
+
+# App imagealpha
+# App imageoptim
+# App the-unarchiver
+
+# App licecap
+# App keycastr
+
+# App miro-video-converter
+# App vlc
+
+# App tor-browser
+# App transmission
+
+# # App dropbox
+
+# # Remove outdated versions from the cellar
+# Brew cleanup
+
+function Main {
+	for task in "$@"; do
+		echo "running $task"
+		$task 
+	done
+}
+
+if [[ "${BASH_SOURCE[0]}" = "$0" ]]; then
+	echo $@
+	Main $@
+fi
