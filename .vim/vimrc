@@ -265,9 +265,9 @@ call vundle#rc()
 " Colorscheme
 Plugin 'gmarik/ingretu'
 
-if has("gui_running")
-  colorscheme ingretu
-endif
+" if has("gui_running")
+" colorscheme ingretu
+" endif
 
 " Programming
 Plugin 'majutsushi/tagbar'
