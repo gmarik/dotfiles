@@ -1,0 +1,160 @@
+{
+    // Overwrite settings by placing them into your settings file.
+    // See http://go.microsoft.com/fwlink/?LinkId=808995 for the most commonly used settings.
+    // Tips & Tricks: https://github.com/Microsoft/vscode-tips-and-tricks
+    // env vars: https://code.visualstudio.com/Docs/editor/debugging#_variable-substitution
+    // Editor
+    // Controls the font family.
+    "editor.fontFamily": "Andale Mono, Go Mono, Menlo, Monaco, 'Courier New', monospace",
+    // Controls the font weight.
+    "editor.fontWeight": "normal",
+    // Controls the font size in pixels.
+    "editor.fontSize": 14,
+    // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
+    "editor.formatOnSave": false,
+    // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
+    "editor.lineHeight": 0,
+    // Controls the display of line numbers. Possible values are 'on', 'off', and 'relative'. 'relative' shows the line count from the current cursor position.
+    "editor.lineNumbers": "off",
+    // Columns at which to show vertical rulers
+    "editor.rulers": [],
+    // Characters that will be used as word separators when doing word related navigations or operations
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+    // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+    "editor.tabSize": 2,
+    // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+    "editor.insertSpaces": true,
+    // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
+    "editor.detectIndentation": true,
+    // Controls if the editor will scroll beyond the last line
+    "editor.scrollBeyondLastLine": true,
+    // Controls if lines should wrap. The lines will wrap at min(editor.wrappingColumn, viewportWidthInColumns).
+    "editor.wordWrap": "off",
+    // Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'.
+    "editor.wrappingIndent": "same",
+    // A multiplier to be used on the `deltaX` and `deltaY` of mouse wheel scroll events
+    "editor.mouseWheelScrollSensitivity": 1,
+    // Controls if quick suggestions should show up or not while typing
+    "editor.quickSuggestions": true,
+    // Controls the delay in ms after which quick suggestions will show up
+    "editor.quickSuggestionsDelay": 10,
+    // Controls if the editor should automatically close brackets after opening them
+    "editor.autoClosingBrackets": "languageDefined",
+    // Controls if the editor should automatically format the line after typing
+    "editor.formatOnType": false,
+    // Controls if suggestions should automatically show up when typing trigger characters
+    "editor.suggestOnTriggerCharacters": true,
+    // Controls if suggestions should be accepted 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions.
+    "editor.acceptSuggestionOnEnter": true,
+    // Controls whether snippets are shown with other suggestions and how they are sorted.
+    "editor.snippetSuggestions": "bottom",
+    // Controls whether copying without a selection copies the current line.
+    "editor.emptySelectionClipboard": true,
+    // Enable word based suggestions.
+    "editor.wordBasedSuggestions": true,
+    // Font size for the suggest widget
+    "editor.suggestFontSize": 0,
+    // Line height for the suggest widget
+    "editor.suggestLineHeight": 0,
+    // Insert snippets when their prefix matches. Works best when 'quickSuggestions' aren't enabled.
+    "editor.tabCompletion": "on",
+    // Controls whether the editor should highlight similar matches to the selection
+    "editor.selectionHighlight": true,
+    // Controls the number of decorations that can show up at the same position in the overview ruler
+    "editor.overviewRulerLanes": 3,
+    // Control the cursor animation style, possible values are 'blink', 'smooth', 'phase', 'expand' and 'solid'
+    "editor.cursorBlinking": "smooth",
+    // Zoom the font of the editor when using mouse wheel and holding Ctrl
+    "editor.mouseWheelZoom": false,
+    // Controls the cursor style, accepted values are 'block', 'line' and 'underline'
+    "editor.cursorStyle": "line",
+    // Enables font ligatures
+    "editor.fontLigatures": true,
+    // Controls if the cursor should be hidden in the overview ruler.
+    "editor.hideCursorInOverviewRuler": false,
+
+    "editor.minimap.enabled": false,
+    // Controls how the editor should render whitespace characters, posibilties are 'none', 'boundary', and 'all'. The 'boundary' option does not render single spaces between words.
+    "editor.renderWhitespace": "all",
+    // Controls whether the editor should render control characters
+    "editor.renderControlCharacters": true,
+    // Controls whether the editor should render indent guides
+    "editor.renderIndentGuides": true,
+    // Controls whether the editor should render the current line highlight
+    "editor.renderLineHighlight": "gutter",
+    // Controls if the editor shows code lenses
+    "editor.codeLens": true,
+    // Controls whether the editor has code folding enabled
+    "editor.folding": true,
+    // Controls whether the editor should render the vertical glyph margin. Glyph margin is mostly used for debugging.
+    "editor.glyphMargin": true,
+    // Inserting and deleting whitespace follows tab stops
+    "editor.useTabStops": true,
+    // Remove trailing auto inserted whitespace
+    "editor.trimAutoWhitespace": true,
+    // Keep peek editors open even when double clicking their content or when hitting Escape.
+    "editor.stablePeek": false,
+    // Controls if the diff editor shows the diff side by side or inline
+    "diffEditor.renderSideBySide": true,
+    // Controls if the diff editor shows changes in leading or trailing whitespace as diffs
+    "diffEditor.ignoreTrimWhitespace": true,
+
+    "window.zoomLevel": 0,
+    // Files
+    // Configure glob patterns for excluding files and folders.
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true
+    },
+    // Configure file associations to languages (e.g. "*.extension": "html"). These have precedence over the default associations of the languages installed.
+    "files.associations": {},
+    // The default character set encoding to use when reading and writing files.
+    "files.encoding": "utf8",
+    // The default end of line character.
+    "files.eol": "\n",
+    // When enabled, will trim trailing whitespace when you save a file.
+    "files.trimTrailingWhitespace": false,
+    // Controls auto save of dirty files. Accepted values:  "off", "afterDelay", "onFocusChange" (editor loses focus), "onWindowChange" (window loses focus). If set to "afterDelay", you can configure the delay in "files.autoSaveDelay".
+    "files.autoSave": "off",
+    // Controls the delay in ms after which a dirty file is saved automatically. Only applies when "files.autoSave" is set to "afterDelay"
+    "files.autoSaveDelay": 1000,
+    // Configure glob patterns of file paths to exclude from file watching. Changing this setting requires a restart. When you experience Code consuming lots of cpu time on startup, you can exclude large folders to reduce the initial load.
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/node_modules/**": true
+    },
+    "files.insertFinalNewline": true,
+    // Configure glob patterns for excluding files and folders in searches. Inherits all glob patterns from the files.exclude setting.
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true
+    },
+    // Configure to include results from a global symbol search in the file results for Quick Open.
+    "search.quickOpen.includeSymbols": false,
+
+    // Git
+    // Is git enabled
+    "git.enabled": true,
+    "git.path": null,
+    "git.confirmSync": true,
+    "git.countBadge": "all",
+
+    // JSON
+    "json.schemas": [],
+    "json.format.enable": true,
+
+    // Go settings
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": false,
+        "editor.tabSize": 2,
+    },
+    // Vim configuration
+    "vim.easymotion": true,
+    "vim.autoindent": false,
+    "vim.hlsearch": true,
+    "vim.leader": "<TAB>",
+    "vim.useSystemClipboard": true,
+}
