@@ -6,7 +6,7 @@ set -eu
 
 gifify() {
   if [[ -n "$1" ]]; then
-    ffmpeg -i "$1" -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > "$1.gif"
+    ffmpeg -i "$1" -pix_fmt rgb24 -vf scale="iw/1:ih/1" -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > "$1.gif"
   else
     echo "proper usage: gifify <input_movie.mov>. You DO need to include extension."
   fi
