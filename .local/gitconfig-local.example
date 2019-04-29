@@ -1,7 +1,0 @@
-[user]
-	email = gmarik@example.com
-	name = gmarik
-
-[url "git@gmarik.github.com:gmarik/"]
-  insteadOf = "gmarik:"
-  pushInsteadOf = "gmarik:"

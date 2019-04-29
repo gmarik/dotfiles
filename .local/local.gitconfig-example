@@ -1,0 +1,8 @@
+# vim: set ft=gitconfig:
+
+[user]
+  email = gmarik+git@gmail.com
+  name = gmarik
+
+[includeIf "gitdir:~/src/work/"]
+  path = ~/.local/work.gitconfig

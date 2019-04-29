@@ -1,4 +1,4 @@
-# vim: st=2:ts=2:et
+# vim: st=2:ts=2:et:ft=gitconfig
 
 [core]
   excludesfile = ~/.gitignore-global
@@ -319,5 +319,5 @@
   insteadOf = "dx:"
 
 [include]
-  path = ~/.local/gitconfig-local
-  path = ~/.local/gitconfig-private
+  path = ~/.local/local.gitconfig
+  path = ~/.local/private.gitconfig
