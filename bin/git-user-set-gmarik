@@ -1,0 +1,6 @@
+#!/bin/bash
+
+git config --local user.email gmarik+git@gmail.com
+git config --local user.name gmarik
+
+
