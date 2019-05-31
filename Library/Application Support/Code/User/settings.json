@@ -157,4 +157,5 @@
     "vim.hlsearch": true,
     "vim.leader": "<TAB>",
     "vim.useSystemClipboard": true,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
 }
