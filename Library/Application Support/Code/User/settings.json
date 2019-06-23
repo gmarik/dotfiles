@@ -158,4 +158,5 @@
     "vim.leader": "<TAB>",
     "vim.useSystemClipboard": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
+    "breadcrumbs.enabled": true
 }
