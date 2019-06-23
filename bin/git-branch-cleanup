@@ -1,17 +1,21 @@
 #!/bin/bash
 
-echo "Cleaning remote refs"
+echo "* Fetching remotes"
 git fetch
 
-#deletes branches that have been merged into master
-branches=$(git branch --merged origin/master | tr '*' ' '| grep -v '  master$')
+local_branches=$(git branch    --merged origin/master | cut -c 2-| grep -v 'master$')
+echo "* Cleaning local,merged branches '$(echo $local_branches|xargs)'"
+echo $local_branches  | xargs git branch -d
 
-echo "Cleaning '$branches' merged in"
-for b in "$branches"; do
-  git branch -d $b
+remote_branches=$(git branch -r --merged origin/master | grep -Ev '/(master|HEAD)$')
+echo "* Cleaning remote,merged branch references '$(echo $remote_branches|xargs)'"
+echo $remote_branches | xargs git branch -d -r
+
+echo "* Deleting remote branches '$(echo $remote_branches|xargs)'" 
+for b in $remote_branches; do
+  # `${b/\// }` splits `origin/name` into `origin name`
+  # TODO: push can accept multiple names per origin
+  git push --delete ${b/\// }
 done
-
-echo "Cleaning remote refs"
-git fetch --prune
 
 # vim: ft=sh
