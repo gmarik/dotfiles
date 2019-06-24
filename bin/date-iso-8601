@@ -1,3 +1,4 @@
 #!/bin/bash
 
-date -u +"%Y-%m-%dT%H:%M:%SZ"
+# set $1 to `-u` for UTC time-zone
+date $1 +"%Y-%m-%dT%H:%M:%S%z"
