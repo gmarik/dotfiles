@@ -1,3 +1,5 @@
+# vim: ft=sh:
+
 # automatically create aliases from git config
 galias () {
   # TODO: optimize it
@@ -22,5 +24,3 @@ _git_status_stats() {
     fi
   fi
 }
-
-# vim: ft=sh

@@ -4,4 +4,4 @@ _expand() { return 0; }
 __expand_tilde_by_ref() { return 0; }
 
 
-# vim:ft=sh:ts=2
+# vim:ft=sh:ts=2:
