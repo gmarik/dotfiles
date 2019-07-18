@@ -275,8 +275,8 @@
 
   ## Hub
   hpr = "!hub pull-request"
-  hbr = "!hub browse"
-  h   = "!hub"
+  hbr = "!hub browse $(git remote get-url origin|cut -d: -f2)"
+  h   = "!hub "
 
 # read from given uri
 # push to writable one
@@ -292,13 +292,6 @@
   pushInsteadOf = "gh:"
   pushInsteadOf = "gh://"
 
-[url "git@github.com:gmarik/"]
-  pushInsteadOf = "gm:"
-  pushInsteadOf = "gm://"
-[url "http://github.com/gmarik/"]
-  insteadOf = "gm:"
-  insteadOf = "gm://"
-
 [url "https://gist.github.com/"]
   insteadOf = "gist:"
 [url "git@gist.github.com:"]
@@ -308,6 +301,14 @@
 
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
+
+[url "git@github.com:gmarik/"]
+  pushInsteadOf = "gm:"
+  pushInsteadOf = "gm://"
+[url "http://github.com/gmarik/"]
+  insteadOf = "gm:"
+  insteadOf = "gm://"
+
 
 [url "git@bitbucket.org:gmarik/"]
   insteadOf = "bbm:"
