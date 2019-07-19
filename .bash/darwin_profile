@@ -25,8 +25,6 @@ export BREW_HOME=/usr/local/
 export PATH=$BREW_HOME/bin:$BREW_HOME/sbin:$PATH:/usr/local/mysql/bin
 
 # Bash completion
-source ~/.bash/completion.d/*.bash
-source ~/.bash/completion.d/*.sh
 [ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
 [ -f $BREW_HOME/etc/bash_completion ] && source $BREW_HOME/etc/bash_completion
 [ -f $BREW_HOME/share/bash-completion/bash_completion ] && source $BREW_HOME/share/bash-completion/bash_completion

@@ -1,5 +1,8 @@
 # vim: ft=sh:
 
+source /usr/local/etc/bash_completion.d/git-*.sh
+source /usr/local/etc/bash_completion.d/git-*.bash
+
 # automatically create aliases from git config
 galias () {
   # TODO: optimize it
