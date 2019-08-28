@@ -3,7 +3,10 @@
 echo "* Fetching remotes"
 git fetch
 
-local_branches=$(git branch    --merged origin/master | cut -c 2-| grep -v 'master$')
+echo "* Pruning remote branches "
+git branch prune origin
+
+local_branches=$(git branch --merged origin/master | cut -c 2-| grep -v 'master$')
 echo "* Cleaning local,merged branches '$(echo $local_branches|xargs)'"
 echo $local_branches  | xargs git branch -d
 
