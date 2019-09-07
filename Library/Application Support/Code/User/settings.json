@@ -9,7 +9,7 @@
     // Controls the font weight.
     "editor.fontWeight": "normal",
     // Controls the font size in pixels.
-    "editor.fontSize": 14,
+    "editor.fontSize": 16,
     // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
     "editor.formatOnSave": false,
     // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
@@ -68,8 +68,6 @@
     "editor.mouseWheelZoom": false,
     // Controls the cursor style, accepted values are 'block', 'line' and 'underline'
     "editor.cursorStyle": "line",
-    // Enables font ligatures
-    "editor.fontLigatures": true,
     // Controls if the cursor should be hidden in the overview ruler.
     "editor.hideCursorInOverviewRuler": false,
 
@@ -150,6 +148,7 @@
         "editor.formatOnSave": true,
         "editor.insertSpaces": false,
         "editor.tabSize": 2,
+        "editor.fontFamily": "Go Mono, Andale Mono, Menlo, Monaco, 'Courier New', monospace",
     },
     // Vim configuration
     "vim.easymotion": true,
@@ -158,5 +157,13 @@
     "vim.leader": "<TAB>",
     "vim.useSystemClipboard": true,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "breadcrumbs.enabled": true
+    "breadcrumbs.enabled": true,
+    "go.autocompleteUnimportedPackages": true,
+    "go.installDependenciesWhenBuilding": false,
+    "go.useLanguageServer": true,
+    "workbench.colorTheme": "Material Theme High Contrast",
+    "material-icon-theme.activeIconPack": "react",
+    "materialTheme.accent": "Acid Lime",
+    "terminal.integrated.fontSize": 14,
+    "editor.fontLigatures": true
 }
