@@ -21,7 +21,7 @@ galias () {
 # depends on `__gitdir` from "bash-completion" package
 _git_status_stats() {
   if [ "$(type -t __gitdir)" == "function" -a -n "$(__gitdir)" ]; then
-    local stats=$(git status --short|cut -c1-2|sort|uniq -c|awk '{print $2"/"$1 }'|xargs)
+    local stats=$(git status --short|cut -c1-2|sort|uniq -c|awk '{print $2":"$1 }'|xargs)
     if [ -n "$stats" ]; then
       printf "$1" "$stats"
     fi
