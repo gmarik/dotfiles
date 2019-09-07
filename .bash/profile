@@ -43,26 +43,6 @@ export HISTFILE=~/.history/${MY_SHELL_ENV}.bash_history
 export HISTFILESIZE=5000                    # history file size
 
 #
-# Prompt command
-#
-export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-export PROMPT_COMMAND="$PROMPT_COMMAND;history -a" #evaluated each time command line-prompt is printed so we hook up history appending there
-
-_prompt () { 
-  PS1L=$(printf '%s' `basename $PWD`)
-  PS1R=$(printf '%s' `dirname $PWD`)
-  printf "%s>%$(( ${COLUMNS}-${#PS1L}-1 ))s" $PS1L $PS1R
-}
-
-# PS1='$(_prompt) [1A [7C'
-# PS1='$(_prompt) '
-
-#
-# Prompt string
-#
-PS1='\[$bgylw\]\D{%H:%M}\[$rst\] $(__git_ps1 "\[$bpur\]%s" )$( _git_status_stats "\[$tgrn\][%s]" )\[$tylw\]$(ssh_prompt)\W\[$tred\]\$\[$rst\] '
-
-#
 # Git
 #
 alias G='git'
