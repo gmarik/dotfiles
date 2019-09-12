@@ -15,28 +15,22 @@ bak_prompt () {
 # Prompt string
 #
 
-_prompt() {
-  # $? is preserved after last command exit until next command run
-  # but let's just print it once
-  __curr_exit=$PIPESTATUS
-  if [[ "$__last_exit" != "$__curr_exit" ]]; then
-    __last_exit=$__curr_exit
-    __last_exit_once=$(printf "${tred}%s" "${__last_exit}")
-  else
-    __last_exit_once=""
-  fi
-  ps1='${rst}${bwht}${bgblk}\D{%H:%M}'
-  ps1+='${rst}$( __git_ps1 "${bpur}%s" )'
-  ps1+='${rst}$( _git_status_stats "${tgrn}[%s]" )'
-  ps1+='\n'
-  ps1+='${rst}${tylw}$( ssh_prompt)'
-  ps1+='${rst}${tylw}\W'
-  ps1+='${rst}${__last_exit_once}'
-  ps1+='${rst}${tgrn}\$'
-  ps1+='${rst} '
+# https://wiki.archlinux.org/index.php/Bash/Prompt_customization
+# Note: Wrapping the output in \[ \] is recommended by the Bash man page. 
+# This helps Bash ignore non-printable characters so that it correctly calculates the size of the prompt.
+# https://wiki.archlinux.org/index.php/Bash/Prompt_customization#Embedding_commands
+# https://unix.stackexchange.com/questions/105958/terminal-prompt-not-wrapping-correctly
+ps1='\[${rst}${bwht}${bgblk}\]\D{%H:%M}'
+ps1+='\[${rst}${bpur}\]$( __git_ps1 "%s" )'
+ps1+='\[${rst}${tgrn}\]$( _git_status_stats "[%s]" )'
+ps1+='\[${rst}${tylw}\]$( ssh_prompt)'
+ps1+='\[${rst}${tred}\]$( V=$PIPESTATUS; if [[ $V -gt 0 ]]; then printf "%d" $V ; fi )'
+ps1+='\n'
+ps1+='\[${rst}${tylw}\]\W'
+ps1+='\[${tgrn}\]\$'
+ps1+='\[${rst}\] '
 
-  PS1="$ps1"
-}
+PS1="$ps1"
 
-export PROMPT_COMMAND="_prompt;history -a" #evaluated each time command line-prompt is printed so we hook up history appending there
+# export PROMPT_COMMAND="_prompt;history -a" #evaluated each time command line-prompt is printed so we hook up history appending there
 
