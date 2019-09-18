@@ -1,9 +1,14 @@
 # vim: st=2:ts=2:et:ft=gitconfig
 
 [core]
+
   excludesfile = ~/.gitignore-global
   quotepath = false
 
+
+  # see templatedir below
+  # https://git-scm.com/docs/git-config#Documentation/git-config.txt-coresshCommand
+  sshCommand=.git/hooks/bin/git-ssh
 
 [init]
   templatedir = ~/.gitfiles/templates/

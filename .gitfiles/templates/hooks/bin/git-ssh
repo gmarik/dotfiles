@@ -1,0 +1,13 @@
+#!/bin/sh
+# vim: set ft=sh
+
+set -euo pipefail
+
+IdentityFile=$(git config --get ssh.IdentityFile)
+
+# echo ${IdentityFile+-i $IdentityFile} $* >&2
+
+# NOTES:
+#{A+B} use B if A is set
+
+exec ssh ${IdentityFile+-i $IdentityFile} $*
