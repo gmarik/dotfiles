@@ -11,13 +11,13 @@
   sshCommand=.git/hooks/bin/git-ssh
 
 [init]
-  templatedir = ~/.gitfiles/templates/
+  templatedir = ~/.gitconfig.files/templates/
+
+[commit]
+  template = ~/.gitconfig.files/COMMIT_EDITMSG
 
 [push]
   default = current
-
-[commit]
-  template = ~/.gitfiles/COMMIT_EDITMSG
 
 [color]
   branch = auto
