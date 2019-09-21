@@ -6,3 +6,15 @@
 
 [includeIf "gitdir:~/src/work/"]
   path = ~/.local/work.gitconfig
+
+[url "https://github.com/work/"]
+  insteadOf = "work:"
+  pushInsteadOf = "work:"
+
+# requires an access token https://github.com/settings/tokens
+# https://git-scm.com/docs/gitcredentials
+[credentials "https://github.com/work/"]
+  username=workacct
+  helper = osxkeychain
+  # also match path ie `/work`
+  useHttpPath=true

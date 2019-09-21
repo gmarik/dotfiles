@@ -5,10 +5,9 @@
   excludesfile = ~/.gitignore-global
   quotepath = false
 
-
   # see templatedir below
   # https://git-scm.com/docs/git-config#Documentation/git-config.txt-coresshCommand
-  sshCommand=.git/hooks/bin/git-ssh
+  # sshCommand=~/bin/git-ssh
 
 [init]
   templatedir = ~/.gitconfig.files/templates/
@@ -280,7 +279,7 @@
 
   ## Hub
   hpr = "!hub pull-request"
-  hbr = "!hub browse $(git remote get-url origin|cut -d: -f2)"
+  hbr = "!hub browse"
   h   = "!hub "
 
 # read from given uri
