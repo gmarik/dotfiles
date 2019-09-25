@@ -144,7 +144,8 @@
 
   cii   = commit --interactive
 
-  cid   = commit --amend -v                                                       # edit last commit's message
+  # edit last commit's message
+  cid   = commit --amend --reset-author -v
   cim   = commit -m
   cip   = commit -am 'WIP!'
 
