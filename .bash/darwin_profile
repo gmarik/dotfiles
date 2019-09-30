@@ -12,8 +12,8 @@ then
   alias vim="${vim}"
 fi
 
-export EDITOR="${vim} -g"
-export GIT_EDITOR="${vim} -g -f"
+export EDITOR="code -w"
+export GIT_EDITOR="code -w"
 
 export MANPAGER=$_MANPAGER
 
