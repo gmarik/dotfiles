@@ -1,3 +1,5 @@
+#!/bin/sh
+
 ssh_prompt() {
   local ssh_host=''
   if [ "$SSH_CONNECTION" ]; then 

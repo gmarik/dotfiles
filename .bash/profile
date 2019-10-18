@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # vim: set ft=sh ts=2 sw=2 et:
 
 #
@@ -124,12 +126,5 @@ alias ,p='cd `mktemp -d /tmp/play-XXX`'
 alias vi='vim'
 alias E='f(){ $EDITOR ${*:-.};}; f'
 alias EE='f(){ vim -g ${*:-} ;}; f'
-
-# rails
-alias rails1='rails _1.2.6_'
-alias cap1='cap _1.4.0_'
-
-# ocaml
-alias ocaml='ledit -h ~/.ocaml_history ocaml' # enable readline in interactive ocaml
 
 alias reload='exec bash -l'

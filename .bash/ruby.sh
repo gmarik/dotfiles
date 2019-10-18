@@ -23,6 +23,10 @@ rails_script ()
   $cmd
 }
 
+# rails
+alias rails1='rails _1.2.6_'
+alias cap1='cap _1.4.0_'
+
 alias unexample="find ./config/ -name '*.example'|xargs basename -s .example | xargs -I % cp -i config/%{.example,}"
 alias Rdm='rake db:migrate'
 alias Rdmr='rake db:migrate:redo'

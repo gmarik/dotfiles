@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # http://gmarik.info/blog/2010/05/02/tracking-dotfiles-with-git 
 
 so() { for f in $@; do [ -s $1 ] && source "$f"; done; }
@@ -9,12 +11,13 @@ so ~/.bash/${ENV_NAME}_profile            # configuration per OS linux/OSX
 so ~/.bash/common                         # common stuff or overriding
 so ~/.bash/ssh.sh                         # ssh functions
 so ~/.bash/prompt.sh                      # PS1 prompt
+so ~/.bash/ocaml.sh                       #
 
 so ~/.bash/git                            #
 so ~/.bash/dotfilesrc                     # my git-dotfiles specific stuff
 so ~/.bash/python                         #
 so ~/.bash/node                           # Node stuff.
-so ~/.bash/ruby                           #
+so ~/.bash/ruby.sh                        #
 so ~/.rubyrc                              # Ruby stuff.
 so ~/.bash/golang                         # Golang Stuff
 so ~/.golangrc                            # Golang Stuff
