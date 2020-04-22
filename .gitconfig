@@ -279,7 +279,7 @@
   blsss = "!git for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow) %(align:45,left) %(refname:short)%(color:reset) %(end) %(color:red)%(objectname:short)%(color:reset) %(contents:subject) %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
 
   ## Hub
-  hpr = "!hub pull-request"
+  hpr = "!hub pull-request --draft --browse"
   hbr = "!hub browse"
   h   = "!hub "
 
