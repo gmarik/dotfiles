@@ -42,7 +42,11 @@ export HISTCONTROL="ignoredups"             # ignore duplicates(store command on
 export HISTCONTROL="ignoreboth"
 export HISTIGNORE="&:ls:[bf]g:exit:%[0-9]"  # ignore simple commands
 export HISTFILE=~/.history/${MY_SHELL_ENV}.bash_history
-export HISTFILESIZE=5000                    # history file size
+export HISTTIMEFORMAT="%F %T "
+export HISTFILESIZE=                        # NOTE: effectively "unlimited", since it's defined but without value
+export HISTSIZE=                            # https://superuser.com/questions/137438/how-to-unlimited-bash-shell-history
+                                            # https://unix.stackexchange.com/a/20925
+
 
 #
 # Git
