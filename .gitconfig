@@ -4,6 +4,7 @@
 
   excludesfile = ~/.gitignore-global
   quotepath = false
+  commentChar = ?
 
   # see templatedir below
   # https://git-scm.com/docs/git-config#Documentation/git-config.txt-coresshCommand
@@ -309,9 +310,10 @@
 
 [url "git@github.com:gmarik/"]
   pushInsteadOf = "gm:"
-  pushInsteadOf = "gm://"
-[url "http://github.com/gmarik/"]
   insteadOf = "gm:"
+
+[url "https://github.com/gmarik/"]
+  pushInsteadOf = "gm://"
   insteadOf = "gm://"
 
 
