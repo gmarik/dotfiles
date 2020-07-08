@@ -1,6 +1,17 @@
-<module>: <why-motivation>
+module: why is this?
 
-* Problem
-* Solution
-* Change
-* Risks
+## Context
+## Problem
+### Effects
+### Workarounds
+## Solution
+### Change
+### Risks
+
+? ## Context: describe desired behavior
+? ## Problem: cause(s) of undesired behavior
+? ### Effects: consequences of the cause, undesired behavior
+? ### Workarounds: if any
+? ## Solution: how to address the cause
+? ### Change: what changes
+? ### Risks: potential issues as result of the change
