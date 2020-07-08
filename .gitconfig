@@ -143,10 +143,14 @@
   # commit using branch name as an initial msg
   ciab  = !B=$(git symbolic-ref HEAD 2>/dev/null) && git commit -v -a --edit -m "${B##refs/heads/}:" --untracked-files=no
 
+  # commit first
+  cif   = "!git ci --allow-empty -t ~/.gitconfig.files/COMMIT_EDITMSG_START"
+
   cii   = commit --interactive
 
   # edit last commit's message
   cid   = commit --amend --reset-author -v
+  cide  = commit --amend --reset-author -v --allow-empty
   cim   = commit -m
   cip   = commit -am 'WIP!'
 
