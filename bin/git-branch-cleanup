@@ -16,7 +16,7 @@ echo $remote_branches | xargs git branch -d -r
 
 merged_branches=$(git blss)
 echo "* Cleaning squashed,merged branches '$(echo $merged_branches|xargs)'"
-echo $merged_branches | xargs git branch -d
+echo $merged_branches | xargs git branch -d -f
 
 echo "* Deleting remote branches '$(echo $remote_branches|xargs)'" 
 for b in $remote_branches; do
