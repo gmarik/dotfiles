@@ -180,12 +180,12 @@
   k     = "!gitk &"
 
   # Log
-  ll    = log --pretty=ll  --abbrev-commit                                    # compact log
+  ll    = log --pretty=ll  --abbrev-commit                       # compact log
   l     = log --pretty=log
-  lt    = log --pretty=log --name-status                                      # terse log with filenames
+  lt    = log --pretty=log --name-status                         # terse log with filenames
   ls    = log --pretty=log --stat
-  lp    = log --pretty=log --patch -m -c                                      # show merges and compressed diff format
-  lpw   = log --pretty=log --patch --word-diff
+  lp    = log --pretty=log --patch --color-moved -m -c           # show merges and compressed diff format
+  lpw   = log --pretty=log --patch --color-moved --word-diff
   l1    = !"git --no-pager ll -10"
   lg    = !git ll --graph
   lu    = log @{upstream}.. --stat --no-merges
