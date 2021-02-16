@@ -127,8 +127,6 @@
   # fzf checkout
   zco    = "!f() { git checkout $(git bls \"$@\"|grep -v '^*'|fzf|awk '{print $1}'); }; f"
 
-  # checkout a github PR
-  copr  = "!f() { local b=pull/$1; git fetch origin $b/head:$b && git checkout -b $b --track $b/head; }; f"
 
   # Add and Commit
   ca    = "!f() { git add $1; git ci -v $1; }; f"
@@ -287,6 +285,11 @@
   hpr = "!hub pull-request --draft --browse"
   hbr = "!hub browse"
   h   = "!hub "
+  hprco = "!hub pr checkout" # expects the number
+  hprls = "!hub pr list"
+  # checkout a github PR without hub
+  # https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/checking-out-pull-requests-locally
+  #hprco  = "!f() { local b=pull/$1; git fetch origin $b/head:$b; git checkout $b }; f"
 
 # read from given uri
 # push to writable one
