@@ -18,6 +18,10 @@ merged_branches=$(git blss)
 echo "* Cleaning squashed,merged branches '$(echo $merged_branches|xargs)'"
 echo $merged_branches | xargs git branch -d -f
 
+gone_branches=$(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}')
+echo "* Cleaning gone branches '$(echo $gone_branches|xargs)'"
+echo $gone_branches | xargs git branch -d -f
+
 echo "* Deleting remote branches '$(echo $remote_branches|xargs)'" 
 for b in $remote_branches; do
   # `${b/\// }` splits `origin/name` into `origin name`
