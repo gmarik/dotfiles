@@ -1,7 +1,12 @@
-# vim: ft=sh:
+
+# vim: set ft=sh ts=2 sw=2 et:
 
 source /usr/local/etc/bash_completion.d/git-*.sh
 source /usr/local/etc/bash_completion.d/git-*.bash
+
+
+alias G='git'
+complete -o default -o nospace -F _git G # allow git-completion to work with alias aswell
 
 # automatically create aliases from git config
 galias () {

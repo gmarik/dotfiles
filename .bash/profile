@@ -48,11 +48,6 @@ export HISTSIZE=                            # https://superuser.com/questions/13
                                             # https://unix.stackexchange.com/a/20925
 
 
-#
-# Git
-#
-alias G='git'
-complete -o default -o nospace -F _git G # allow git-completion to work with alias aswell
 
 #
 # Grep
