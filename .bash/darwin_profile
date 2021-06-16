@@ -24,6 +24,9 @@ export CLICOLOR=true
 export BREW_HOME=/usr/local/
 export PATH=$BREW_HOME/bin:$BREW_HOME/sbin:$PATH:/usr/local/mysql/bin
 
+# prevent auto-removals https://github.com/Homebrew/brew/issues/5654
+export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
+
 # Bash completion
 [ -f /opt/local/etc/bash_completion ] && source /opt/local/etc/bash_completion
 [ -f $BREW_HOME/etc/bash_completion ] && source $BREW_HOME/etc/bash_completion
