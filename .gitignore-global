@@ -1,5 +1,9 @@
+*.env
+.env
+
 *.local
 .vaultplainpass
+*.histfile
 
 TAGS
 tags
