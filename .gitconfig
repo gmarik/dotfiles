@@ -295,16 +295,6 @@
 # push to writable one
 # http://bit.ly/g9c9Y2
 
-[url "http://github.com/"]
-  insteadOf = "gh:"
-  insteadOf = "gh://"
-
-[url "git@github.com:"]
-  pushInsteadOf = "https://github.com/"
-  pushInsteadOf = "http://github.com/"
-  pushInsteadOf = "gh:"
-  pushInsteadOf = "gh://"
-
 [url "https://gist.github.com/"]
   insteadOf = "gist:"
 [url "git@gist.github.com:"]
