@@ -165,5 +165,8 @@
     "material-icon-theme.activeIconPack": "react",
     "materialTheme.accent": "Acid Lime",
     "terminal.integrated.fontSize": 14,
-    "editor.fontLigatures": true
+    "editor.fontLigatures": true,
+    "workbench.editorAssociations": {
+        "git-rebase-todo": "default"
+    }
 }
