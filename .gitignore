@@ -2,6 +2,9 @@
 /*
 .vim/bundle
 
+# OSX
+~/Library/Services/**/*.png
+
 # do not ignore:
 !.bash/
 !.vim/
