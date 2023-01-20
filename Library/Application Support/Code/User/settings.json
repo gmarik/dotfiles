@@ -9,7 +9,8 @@
     // Controls the font weight.
     "editor.fontWeight": "normal",
     // Controls the font size in pixels.
-    "editor.fontSize": 16,
+    "editor.fontSize": 14,
+    "window.zoomLevel": 1,
     // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
     "editor.formatOnSave": false,
     // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
@@ -35,7 +36,11 @@
     // A multiplier to be used on the `deltaX` and `deltaY` of mouse wheel scroll events
     "editor.mouseWheelScrollSensitivity": 1,
     // Controls if quick suggestions should show up or not while typing
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+    },
     // Controls the delay in ms after which quick suggestions will show up
     "editor.quickSuggestionsDelay": 10,
     // Controls if the editor should automatically close brackets after opening them
@@ -45,7 +50,7 @@
     // Controls if suggestions should automatically show up when typing trigger characters
     "editor.suggestOnTriggerCharacters": true,
     // Controls if suggestions should be accepted 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions.
-    "editor.acceptSuggestionOnEnter": true,
+    "editor.acceptSuggestionOnEnter": "on",
     // Controls whether snippets are shown with other suggestions and how they are sorted.
     "editor.snippetSuggestions": "bottom",
     // Controls whether copying without a selection copies the current line.
@@ -70,14 +75,11 @@
     "editor.cursorStyle": "line",
     // Controls if the cursor should be hidden in the overview ruler.
     "editor.hideCursorInOverviewRuler": false,
-
     "editor.minimap.enabled": false,
     // Controls how the editor should render whitespace characters, posibilties are 'none', 'boundary', and 'all'. The 'boundary' option does not render single spaces between words.
     "editor.renderWhitespace": "all",
     // Controls whether the editor should render control characters
     "editor.renderControlCharacters": true,
-    // Controls whether the editor should render indent guides
-    "editor.renderIndentGuides": true,
     // Controls whether the editor should render the current line highlight
     "editor.renderLineHighlight": "gutter",
     // Controls if the editor shows code lenses
@@ -96,8 +98,6 @@
     "diffEditor.renderSideBySide": true,
     // Controls if the diff editor shows changes in leading or trailing whitespace as diffs
     "diffEditor.ignoreTrimWhitespace": true,
-
-    "window.zoomLevel": 0,
     // Files
     // Configure glob patterns for excluding files and folders.
     "files.exclude": {
@@ -131,18 +131,15 @@
     },
     // Configure to include results from a global symbol search in the file results for Quick Open.
     "search.quickOpen.includeSymbols": false,
-
     // Git
     // Is git enabled
     "git.enabled": true,
     "git.path": null,
     "git.confirmSync": true,
     "git.countBadge": "all",
-
     // JSON
     "json.schemas": [],
     "json.format.enable": true,
-
     // Go settings
     "[go]": {
         "editor.formatOnSave": true,
@@ -168,5 +165,12 @@
     "editor.fontLigatures": true,
     "workbench.editorAssociations": {
         "git-rebase-todo": "default"
-    }
+    },
+    "remote.SSH.allowLocalServerDownload": true,
+    "terminal.integrated.enablePersistentSessions": false,
+    "remote.SSH.connectTimeout": 45,
+    "diffEditor.renderSideBySide": false,
+    "python.analysis.typeCheckingMode": "basic",
+    "editor.guides.indentation": true,
+
 }
