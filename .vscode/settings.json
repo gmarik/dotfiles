@@ -45,7 +45,7 @@
     "editor.scrollBeyondLastLine": true,
 
     // Controls if lines should wrap. The lines will wrap at min(editor.wrappingColumn, viewportWidthInColumns).
-    "editor.wordWrap": false,
+    "editor.wordWrap": "off",
 
     // Controls the indentation of wrapped lines. Can be one of 'none', 'same' or 'indent'.
     "editor.wrappingIndent": "same",
@@ -54,7 +54,11 @@
     "editor.mouseWheelScrollSensitivity": 1,
 
     // Controls if quick suggestions should show up or not while typing
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+    },
 
     // Controls the delay in ms after which quick suggestions will show up
     "editor.quickSuggestionsDelay": 10,
@@ -72,7 +76,7 @@
     "editor.suggestOnTriggerCharacters": true,
 
     // Controls if suggestions should be accepted 'Enter' - in addition to 'Tab'. Helps to avoid ambiguity between inserting new lines or accepting suggestions.
-    "editor.acceptSuggestionOnEnter": true,
+    "editor.acceptSuggestionOnEnter": "on",
 
     // Controls whether snippets are shown with other suggestions and how they are sorted.
     "editor.snippetSuggestions": "bottom",
@@ -90,7 +94,7 @@
     "editor.suggestLineHeight": 0,
 
     // Insert snippets when their prefix matches. Works best when 'quickSuggestions' aren't enabled.
-    "editor.tabCompletion": false,
+    "editor.tabCompletion": "off",
 
     // Controls whether the editor should highlight similar matches to the selection
     "editor.selectionHighlight": true,
@@ -119,11 +123,8 @@
     // Controls whether the editor should render control characters
     "editor.renderControlCharacters": false,
 
-    // Controls whether the editor should render indent guides
-    "editor.renderIndentGuides": false,
-
     // Controls whether the editor should render the current line highlight
-    "editor.renderLineHighlight": true,
+    "editor.renderLineHighlight": "line",
 
     // Controls if the editor shows code lenses
     "editor.codeLens": true,
@@ -849,6 +850,7 @@
 
     // Set to `false` to disable `Ctrl+<key>` keybindings.
     "amVim.bindCtrlCommands": true,
+    "editor.guides.indentation": false,
 
 
 }
