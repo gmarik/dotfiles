@@ -2,6 +2,24 @@
 #
 # Some OS X specific definitions
 
+# https://stackoverflow.com/questions/57972341/how-to-install-and-use-gnu-ls-on-macos
+# Make all GNU flavor commands available, may override same-name BSD flavor commands
+# For x86 Mac
+# export PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
+# export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
+
+# For M1 Mac
+export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
+export MANPATH="/opt/homebrew/opt/findutils/libexec/gnuman:${MANPATH}"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:${PATH}"
+export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:${MANPATH}"
+
+export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+export MANPATH="/opt/homebrew/opt/grep/libexec/gnuman:$PATH"
+
+export PATH="/opt/homebrew/bin:${PATH}"
+export PATH="$HOME/bin:/usr/local/linkedin/bin:$PATH"
+
 if [ -f ~/Applications/MacVim.app/Contents/MacOS/Vim ]
 then
   vim="$HOME/Applications/MacVim.app/Contents/MacOS/Vim -n"
@@ -12,8 +30,11 @@ then
   alias vim="${vim}"
 fi
 
-export EDITOR="code -w"
-export GIT_EDITOR="code -w"
+
+export VISUAL='code --wait -n'
+export EDITOR='code --wait -n'
+export SVN_EDITOR='code --wait -n'
+export GIT_EDITOR='code --wait -n'
 
 export MANPAGER=$_MANPAGER
 

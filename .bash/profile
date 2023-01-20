@@ -127,3 +127,7 @@ alias E='f(){ $EDITOR ${*:-.};}; f'
 alias EE='f(){ vim -g ${*:-} ;}; f'
 
 alias reload='exec bash -l'
+
+export CLICOLOR=1
+alias ls='ls --color --group-directories-first'
+alias ll='ls -l --color --group-directories-first'
