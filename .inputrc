@@ -4,6 +4,7 @@ set editing-mode emacs # vi
 set bell-style visible
 set colored-stats on
 set completion-ignore-case on
+set completion-prefix-display-length 3
 set mark-directories on
 set mark-symlinked-directories on
 # set show-all-if-ambiguous on
@@ -11,13 +12,14 @@ set mark-symlinked-directories on
 set skip-completed-text on
 set visible-stats on
 
+
 set keymap emacs
 ## History navigation
 
-"\e[A": history-search-backward
-"\e[B": history-search-forward
 Control-p: history-search-backward
 Control-n: history-search-forward
+# "\C-p":history-search-backward
+# "\C-n":history-search-forward
 
 set show-all-if-ambiguous On
 set completion-ignore-case on
@@ -26,14 +28,14 @@ set completion-ignore-case on
 # TAB: menu-complete
 
 set keymap vi-command
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+# "\e[A": history-search-backward
+# "\e[B": history-search-forward
 Control-p: history-search-backward
 Control-n: history-search-forward
 
 set keymap vi-insert
-"\e[A": history-search-backward
-"\e[B": history-search-forward
+# "\e[A": history-search-backward
+# "\e[B": history-search-forward
 Control-p: history-search-backward
 Control-n: history-search-forward
 
