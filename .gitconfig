@@ -121,7 +121,7 @@
   co-   = checkout -                                                                # previous one
   cob   = checkout -b                                                               # checkout into a new branch
   com   = "!f() { git fetch; git checkout -b master origin/master; }; f"            # checkout master branch
-  cot   = "!f() { git fetch; git checkout -b ${1##*/} $1; }; f "                    # 
+  cot   = "!f() { git fetch; git checkout -b ${1##*/} $1; }; f "                    #
   con   = "!f() { git fetch; git checkout -b $1 origin/master }; f "                # new branch off master
 
   # fzf checkout
@@ -154,7 +154,7 @@
 
   # change author of latest commit
   # assumes properly configured author to be now set in the local config
-  ciu   ="!git commit --amend --author=\"`git config --local --get user.name` <`git config --local --get user.email`>\""
+  ciu   ="!git commit --amend --author=\"`git config --get user.name` <`git config --get user.email`>\""
 
   chp   = cherry-pick
 
@@ -188,6 +188,9 @@
   lg    = !git ll --graph
   lu    = log @{upstream}.. --stat --no-merges
   llu    = !git ll @{upstream}..
+
+  smartlog = log --all --graph --pretty=format:'commit: %C(bold red)%h%Creset %C(red)<%H>%Creset %C(bold magenta)%d           %Creset%ndate: %C(bold yellow)%cd %Creset%C(yellow)%cr%Creset%nauthor: %C(bold blue)%an%Creset                                  %C(blue)<%ae>%Creset%n%C(cyan)%s%n%Creset'
+  sl = smartlog
 
   # Push
   po    = push --set-upstream origin HEAD
@@ -242,7 +245,7 @@
   # sync
   sy     = !git pull --rebase && git push
 
-  sw    = update-index  --skip-worktree 
+  sw    = update-index  --skip-worktree
   nosw  = update-index --no-skip-worktree
 
   ta    ="!f() { tn=$1; shift; git tag -a $tn -m $tn $@; }; f "
@@ -252,7 +255,7 @@
   mtt   = mergetool -t
 
   # Show current `"user" <em@a.il>` configured
-  w     = "! echo \"$(git config user.name) <$(git config user.email)> \"" 
+  w     = "! echo \"$(git config user.name) <$(git config user.email)> \""
 
   # me2 == "merge to" merge current branch to named one.
   # does 3 operations in one shot unless merge conflicts
@@ -291,6 +294,9 @@
   # https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/checking-out-pull-requests-locally
   #hprco  = "!f() { local b=pull/$1; git fetch origin $b/head:$b; git checkout $b }; f"
 
+  hpr = !gh pr create --draft
+  hvi = !gh pr view
+
 # read from given uri
 # push to writable one
 # http://bit.ly/g9c9Y2
@@ -326,3 +332,11 @@
 [include]
   path = ~/.local/local.gitconfig
   path = ~/.local/private.gitconfig
+
+# https://stackoverflow.com/questions/53419660/how-to-add-credentials-from-the-command-line-using-git-credential-osxkeychain-s
+# printf "protocol=https\nhost=github.com\nusername=$USER\npassword=$GITHUB_TOKEN\n" | git credential-osxkeychain store
+# printf "protocol=https\nhost=github.com\n" | git credential-osxkeychain get
+# [credential "https://github.com/workorg/*"]
+# 	username = workuser
+#   useHttpPath=true
+#   helper=osxkeychain
