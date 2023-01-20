@@ -1,12 +1,19 @@
 
 # vim: set ft=sh ts=2 sw=2 et:
 
-source /usr/local/etc/bash_completion.d/git-*.sh
-source /usr/local/etc/bash_completion.d/git-*.bash
+# TODO: fix on linux
+# source /usr/local/etc/bash_completion.d/git-*.sh
+# source /usr/local/etc/bash_completion.d/git-*.bash
 
+source /opt/homebrew/etc/bash_completion.d/git-completion.bash
+source /opt/homebrew/etc/bash_completion.d/git-prompt.sh
 
+# to find current completion, run
+# $ complete -p git
+# complete -o bashdefault -o default -o nospace -F __git_wrap__git_main git
+# then use it for custom completions
+complete -o bashdefault -o default -o nospace -F __git_wrap__git_main G
 alias G='git'
-complete -o default -o nospace -F _git G # allow git-completion to work with alias aswell
 
 # automatically create aliases from git config
 galias () {
@@ -32,3 +39,13 @@ _git_status_stats() {
     fi
   fi
 }
+
+
+
+# http://gmarik.info/blog/2010/05/02/tracking-dotfiles-with-git
+
+alias .G="git --work-tree=$HOME --git-dir=$HOME/dotfiles.git"
+# complete -o default -o nospace -F _git .G # allow git-completion to work with alias aswell
+complete -o bashdefault -o default -o nospace -F __git_wrap__git_main .G
+
+# vim: ft=sh:ts=2
