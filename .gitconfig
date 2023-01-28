@@ -333,6 +333,10 @@
   path = ~/.local/local.gitconfig
   path = ~/.local/private.gitconfig
 
+# also see global config /Library/Developer/CommandLineTools/usr/share/git-core/gitconfig
+# docs: https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage
+# debugging: https://stackoverflow.com/questions/54176758/how-do-you-debug-git-credential-helpers
+# src: https://github.com/git/git/blob/7f4e64169352e03476b0ea64e7e2973669e491a2/contrib/credential/osxkeychain/git-credential-osxkeychain.c#L113
 # https://stackoverflow.com/questions/53419660/how-to-add-credentials-from-the-command-line-using-git-credential-osxkeychain-s
 # printf "protocol=https\nhost=github.com\nusername=$USER\npassword=$GITHUB_TOKEN\n" | git credential-osxkeychain store
 # printf "protocol=https\nhost=github.com\n" | git credential-osxkeychain get
