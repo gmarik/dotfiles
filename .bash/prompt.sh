@@ -55,7 +55,7 @@ ps1+='\[${rst}${tgrn}\]$( _git_status_stats "[%s]" )'
 ps1+='\[${rst}${tylw}\]$( ssh_prompt)'
 ps1+='\[${rst}${tred}\]$( V=$PIPESTATUS; if [[ $V -gt 0 ]]; then printf "%d" $V ; fi )'
 # https://apple.stackexchange.com/questions/139807/what-does-update-terminal-cwd-do-in-the-terminal-of-os-x/139808#139808
-ps1+='\[${rst}\]$(update_terminal_cwd)'
+[[ "$(type -t update_terminal_cwd)" == "function" ]] && ps1+='\[${rst}\]$(update_terminal_cwd)'
 ps1+='\[${rst}\]\n'
 ps1+='\[${rst}${tylw}\]\W'
 ps1+='\[${tgrn}\]\$'

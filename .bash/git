@@ -5,8 +5,8 @@
 # source /usr/local/etc/bash_completion.d/git-*.sh
 # source /usr/local/etc/bash_completion.d/git-*.bash
 
-source /opt/homebrew/etc/bash_completion.d/git-completion.bash
-source /opt/homebrew/etc/bash_completion.d/git-prompt.sh
+so /opt/homebrew/etc/bash_completion.d/git-completion.bash
+so /opt/homebrew/etc/bash_completion.d/git-prompt.sh
 
 # to find current completion, run
 # $ complete -p git
@@ -32,7 +32,10 @@ galias () {
 # use: _git_status_stats "%s"
 # depends on `__gitdir` from "bash-completion" package
 _git_status_stats() {
-  if [ "$(type -t __gitdir)" == "function" -a -n "$(__gitdir)" ]; then
+  if [ "$(type -t __gitdir)" != "function" ]; then
+    return 1;
+  fi
+  if [ -n "$(__gitdir)" ]; then
     local stats=$(git status --short|cut -c1-2|sort|uniq -c|awk '{print $2":"$1 }'|xargs)
     if [ -n "$stats" ]; then
       printf "$1" "$stats"
