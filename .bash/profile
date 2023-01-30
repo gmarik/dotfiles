@@ -53,7 +53,7 @@ export HISTSIZE=                            # https://superuser.com/questions/13
 # Grep
 #
 export GREP_DIR_IGNORES=".git/,.svn/,__MACOSX"
-alias ?="ggrep --color=auto --exclude-dir={$GREP_DIR_IGNORES} --exclude-from=$HOME/.ignore.grep"
+alias ?="grep --color=auto --exclude-dir={$GREP_DIR_IGNORES} --exclude-from=$HOME/.ignore.grep"
 # recursivly search case insensitively, print filenames and line numbers with matches
 alias ??='? -Rin'
 # list files having matches
