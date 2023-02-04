@@ -13,9 +13,10 @@ export PATH="/opt/homebrew/opt/findutils/libexec/gnubin:$PATH"
 export MANPATH="/opt/homebrew/opt/findutils/libexec/gnuman:${MANPATH}"
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:${PATH}"
 export MANPATH="/opt/homebrew/opt/coreutils/libexec/gnuman:${MANPATH}"
-
 export PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
 export MANPATH="/opt/homebrew/opt/grep/libexec/gnuman:$PATH"
+
+export MANPATH="/opt/homebrew/opt/parallel/share/man/:${MANPATH}"
 
 
 ## TODO improve
